@@ -33,27 +33,28 @@ Use those tokens in scripts and operator commands. Do not mix `prod` and `produc
 5. Narrow secret utility scripts are allowed and recommended.
 6. Every deployment uses an explicit immutable release tag.
 7. The Git tag and Docker image tag must be the same string.
-8. The deployed commit and tag must be recorded in `shinjeom-deployments`.
+8. `deployed_tag`, `deployed_commit`, `deployed_at`, and `updated_at` must be recorded in `shinjeom-deployments`.
 
 ## Release Tag Policy
 
-Release tags are explicit semantic versions:
+Release tags are explicit service-prefixed semantic versions:
 
-- `v2.0.0`
-- `v2.0.1`
-- `v2.1.0`
-- `v3.0.0`
+- `shinjeom-api-v2.0.0`
+- `shinjeom-api-v2.0.1`
+- `shinjeom-agents-sarang-v2.1.0`
+- `long-term-memory-v3.0.0`
 
 Optional prerelease tags are allowed when useful:
 
-- `v2.0.0-rc.1`
-- `v2.0.0-rc.2`
+- `shinjeom-api-v2.0.0-rc1`
+- `shinjeom-api-v2.0.0-rc2`
 
 Rules:
 
 - tags are created manually
 - tags are immutable
 - tags point to one exact commit
+- tags use the form `<service-name>-vX.Y.Z` or `<service-name>-vX.Y.Z-rcN`
 - Docker images use the exact same tag
 - Helm deploys use the exact same tag
 - never use `latest`
@@ -76,7 +77,8 @@ After each deploy:
 2. record the deployed tag
 3. record the deployed commit SHA
 4. record the deployed timestamp
-5. commit that state change
+5. record `updated_at`
+6. commit that state change
 
 This answers:
 
@@ -103,7 +105,7 @@ Those wrappers hide too much and create drift between services.
 
 Secret flow:
 
-1. local secret file is prepared outside Git
+1. local secret JSON file is prepared outside Git
 2. `put-secret.py` uploads it to AWS Secrets Manager
 3. `sync-secrets.py` copies it into the Kubernetes `Secret`
 4. Helm deploy references the existing Kubernetes `Secret`
@@ -113,7 +115,7 @@ Rules:
 - AWS Secrets Manager is the source of truth
 - Kubernetes `Secret` is only a runtime copy
 - Helm values files must not contain real secrets
-- real secret JSON or env files must never be committed
+- real secret JSON files must never be committed
 - only example files may live in Git
 
 ## Kubernetes Targeting Standard
@@ -175,28 +177,6 @@ The normal deploy command must pass the tag explicitly:
 --set-string image.tag="$TAG"
 ```
 
-## App-Specific Standard
-
-### Shinjeom API
-
-- keep Helm deploy
-- keep secret sync script
-- keep migration job in Helm if it is stable and trusted
-
-### Shinjeom Agents
-
-- keep one secret set shared by agents if that still matches your design
-- deploy each agent explicitly
-- track `shinjeom-agents-sarang` and `shinjeom-agents-yeona` independently in deployment state
-
-### Long-Term Memory
-
-- keep secret sync script
-- remove tracked real secret payload files from Git
-- use the same tag rule as the other apps
-- move toward the same chart and values naming convention as the other services
-- prefer making migrations part of the standard deploy flow once stable
-
 ## Standard Manual Deploy Flow
 
 The manual flow should be the same shape for every app.
@@ -207,15 +187,15 @@ Inside the service repo:
 
 ```bash
 git checkout <branch>
-git pull
-git tag -a v2.0.0 -m "Release v2.0.0"
-git push origin v2.0.0
+git pull --ff-only
+git tag -a <service-name>-v2.0.0-rc1 -m "<service-name> v2.0.0-rc1"
+git push origin <service-name>-v2.0.0-rc1
 ```
 
 Set variables:
 
 ```bash
-export TAG=v2.0.0
+export TAG=<service-name>-v2.0.0-rc1
 export KUBECONFIG=~/.kube/config-staging
 export NAMESPACE=<app-namespace>
 ```
@@ -288,6 +268,7 @@ Update `shinjeom-deployments/staging.yaml` or `shinjeom-deployments/prod.yaml`:
 - `deployed_tag`
 - `deployed_commit`
 - `deployed_at`
+- `updated_at`
 - optional notes
 
 Then commit the state repo change.
@@ -298,9 +279,9 @@ Promotion from staging to prod should reuse the same release tag.
 
 Example:
 
-- deploy `v2.0.0` to staging
+- deploy `<service-name>-v2.0.0` to staging
 - verify staging
-- deploy the same `v2.0.0` image to prod
+- deploy the same `<service-name>-v2.0.0` image to prod
 
 Do not rebuild a new image for prod from the same branch state.
 
@@ -330,45 +311,18 @@ helm upgrade --install <release-name> <chart-path> \
   --kubeconfig "$KUBECONFIG" \
   --namespace "$NAMESPACE" \
   -f <values-file> \
-  --set-string image.tag="v1.9.4"
+  --set-string image.tag="<service-name>-v1.9.4"
 ```
 
 Add `--kube-context "$KUBE_CONTEXT"` only when the kubeconfig needs an explicit context override.
 
 After rollback, update `shinjeom-deployments` so recorded state matches real state.
 
-## Migration Rule
-
-Database-backed apps must define one stable migration rule.
-
-Preferred order:
-
-1. Helm pre-upgrade or pre-install migration job
-2. explicit documented one-command Kubernetes job
-3. manual `kubectl exec` into a running pod only as a temporary fallback
-
-The long-term target is to avoid ad hoc pod shell migrations during routine deploys.
-
-## Refactor Checklist
-
-Apply the following everywhere:
-
-1. remove real secret payload files from Git and rotate exposed secrets
-2. keep only secret utility scripts
-3. delete deploy wrapper scripts
-4. remove namespace hardcoding from Helm templates
-5. standardize values file names
-6. standardize explicit Helm flags
-7. standardize on semantic version release tags
-8. deploy by explicit commands only
-9. record every deploy in `shinjeom-deployments`
-10. document each service with the same `DEPLOY.md` and `SECRETS.md` shape
-
 ## Final Standard
 
 The target operating model is:
 
-- explicit semantic release tags like `v2.0.0`
+- explicit service-prefixed release tags like `shinjeom-api-v2.0.0` or `shinjeom-api-v2.0.0-rc1`
 - one Git tag equals one Docker image tag
 - one Docker image tag equals one Helm deploy version
 - secrets handled by small utility scripts only
