@@ -11,7 +11,7 @@ It is intentionally simple:
 - This repo records which tag is live in each environment.
 - `deployed_commit`, `deployed_at`, and `updated_at` are required so deployment state stays auditable.
 
-This operating model is designed for a one-person team:
+This operating model is designed for a small team:
 
 - manual and explicit
 - low cognitive load
