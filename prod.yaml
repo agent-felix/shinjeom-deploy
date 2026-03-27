@@ -1,0 +1,38 @@
+environment: prod
+updated_at: null
+services:
+  shinjeom-agents-sarang:
+    repo_path: ../shinjeom-agents
+    tracked_branch: dev
+    deployed_tag: null
+    deployed_commit: null
+    deployed_at: null
+    notes: ""
+  shinjeom-agents-yeona:
+    repo_path: ../shinjeom-agents
+    tracked_branch: dev
+    deployed_tag: null
+    deployed_commit: null
+    deployed_at: null
+    notes: ""
+  shinjeom-api:
+    repo_path: ../shinjeom-api
+    tracked_branch: dev
+    deployed_tag: null
+    deployed_commit: null
+    deployed_at: null
+    notes: ""
+  long-term-memory:
+    repo_path: ../agent-station/apps/long-term-memory
+    tracked_branch: dev
+    deployed_tag: null
+    deployed_commit: null
+    deployed_at: null
+    notes: ""
+  shinjeom-mobile:
+    repo_path: ../shinjeom-mobile
+    tracked_branch: dev
+    deployed_tag: null
+    deployed_commit: null
+    deployed_at: null
+    notes: ""
