@@ -1,33 +1,33 @@
 environment: prod
-updated_at: null
+updated_at: "2026-04-01T16:12:58+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
     tracked_branch: dev
-    deployed_tag: null
-    deployed_commit: null
-    deployed_at: null
+    deployed_tag: shinjeom-agents-sarang-v2.0.7
+    deployed_commit: 135db9709238d5cb58d9ede315821b18a1959675
+    deployed_at: "2026-04-01T15:49:07+09:00"
     notes: ""
   shinjeom-agents-yeona:
     repo_path: ../shinjeom-agents
     tracked_branch: dev
-    deployed_tag: null
-    deployed_commit: null
-    deployed_at: null
+    deployed_tag: shinjeom-agents-yeona-v2.0.1
+    deployed_commit: 8c9fda7c77fb4215aa35c4d8b7fa28b6fa06466b
+    deployed_at: "2026-03-31T17:49:59+09:00"
     notes: ""
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: dev
-    deployed_tag: null
-    deployed_commit: null
-    deployed_at: null
+    deployed_tag: shinjeom-api-v2.0.2
+    deployed_commit: d6c0c2e4441520dfaf8561888d3409874a66ef29
+    deployed_at: "2026-04-01T15:32:35+09:00"
     notes: ""
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: dev
-    deployed_tag: null
-    deployed_commit: null
-    deployed_at: null
+    deployed_tag: long-term-memory-v2.0.0
+    deployed_commit: 425e4d073449dc1f7d9dbb7f220e771bc381d9c2
+    deployed_at: "2026-04-01T13:44:31+09:00"
     notes: ""
   shinjeom-mobile:
     repo_path: ../shinjeom-mobile
