@@ -1,19 +1,19 @@
 environment: prod
-updated_at: "2026-04-01T16:12:58+09:00"
+updated_at: "2026-04-01T22:41:29+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
     tracked_branch: dev
-    deployed_tag: shinjeom-agents-sarang-v2.0.7
-    deployed_commit: 135db9709238d5cb58d9ede315821b18a1959675
-    deployed_at: "2026-04-01T15:49:07+09:00"
+    deployed_tag: shinjeom-agents-sarang-v2.0.8
+    deployed_commit: f9593b6c5d9ac7a3e083d0737b4843bd1e231792
+    deployed_at: "2026-04-01T22:32:45+09:00"
     notes: ""
   shinjeom-agents-yeona:
     repo_path: ../shinjeom-agents
     tracked_branch: dev
-    deployed_tag: shinjeom-agents-yeona-v2.0.1
-    deployed_commit: 8c9fda7c77fb4215aa35c4d8b7fa28b6fa06466b
-    deployed_at: "2026-03-31T17:49:59+09:00"
+    deployed_tag: shinjeom-agents-yeona-v2.0.2
+    deployed_commit: f9593b6c5d9ac7a3e083d0737b4843bd1e231792
+    deployed_at: "2026-04-01T22:36:04+09:00"
     notes: ""
   shinjeom-api:
     repo_path: ../shinjeom-api
