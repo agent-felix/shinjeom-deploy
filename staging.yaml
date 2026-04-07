@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-04-01T22:41:29+09:00"
+updated_at: "2026-04-07T14:13:12+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -11,9 +11,9 @@ services:
   shinjeom-agents-yeona:
     repo_path: ../shinjeom-agents
     tracked_branch: feature/enahance-prompt
-    deployed_tag: shinjeom-agents-yeona-v2.0.2
-    deployed_commit: f9593b6c5d9ac7a3e083d0737b4843bd1e231792
-    deployed_at: "2026-04-01T18:16:25+09:00"
+    deployed_tag: shinjeom-agents-yeona-v2.0.4
+    deployed_commit: 9b7d645477b7c7e96e42b3931697b182fc1b2b85
+    deployed_at: "2026-04-03T17:08:41+09:00"
     notes: ""
   shinjeom-api:
     repo_path: ../shinjeom-api
