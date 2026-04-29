@@ -1,33 +1,33 @@
 environment: staging
-updated_at: "2026-04-22T14:03:43+09:00"
+updated_at: "2026-04-29T09:22:13+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
     tracked_branch: feature/enahance-prompt
-    deployed_tag: shinjeom-agents-sarang-v2.1.2
-    deployed_commit: 1d48a7de5274b204101adc9bf373ba5f10ef5505
-    deployed_at: "2026-04-20T17:08:01+09:00"
+    deployed_tag: shinjeom-agents-sarang-v2.1.5
+    deployed_commit: be9e8184d48d29927fe10844fe4922b27e45a8c1
+    deployed_at: "2026-04-28T18:28:50+09:00"
     notes: ""
   shinjeom-agents-yeona:
     repo_path: ../shinjeom-agents
     tracked_branch: feature/enahance-prompt
-    deployed_tag: shinjeom-agents-yeona-v2.1.1
-    deployed_commit: 42f2c316f8c10e82313bdd7593bb7ddb1ce6078f
-    deployed_at: "2026-04-17T13:40:35+09:00"
+    deployed_tag: shinjeom-agents-yeona-v2.1.4
+    deployed_commit: be9e8184d48d29927fe10844fe4922b27e45a8c1
+    deployed_at: "2026-04-28T18:29:44+09:00"
     notes: ""
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: dev
-    deployed_tag: shinjeom-api-v2.0.7
-    deployed_commit: 735567bd67ae4c9a868df0afe772d9f036b8b3ab
-    deployed_at: "2026-04-21T19:37:48+09:00"
+    deployed_tag: shinjeom-api-v2.0.12
+    deployed_commit: 783ef16aaeb8cde1dd70acd5fab42f648bdc169e
+    deployed_at: "2026-04-29T09:09:01+09:00"
     notes: ""
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
-    deployed_tag: long-term-memory-v2.0.0
-    deployed_commit: 425e4d073449dc1f7d9dbb7f220e771bc381d9c2
-    deployed_at: "2026-04-01T13:14:39+09:00"
+    deployed_tag: long-term-memory-v2.0.4
+    deployed_commit: f1d2f276ef55291071b74241258f797dbe1040d9
+    deployed_at: "2026-04-28T18:18:27+09:00"
     notes: ""
   shinjeom-mobile:
     repo_path: ../shinjeom-mobile
