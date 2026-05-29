@@ -1,26 +1,26 @@
 environment: prod
-updated_at: "2026-05-13T11:59:31+09:00"
+updated_at: "2026-05-29T18:25:53+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
     tracked_branch: dev
-    deployed_tag: shinjeom-agents-sarang-v2.1.9
-    deployed_commit: 46c2b78ab5bd2adf76ec2153906aa01bae69d305
-    deployed_at: "2026-05-05T23:28:49+09:00"
+    deployed_tag: shinjeom-agents-sarang-v2.1.10
+    deployed_commit: 2e425a2e251ef160b7d3250f932cb706e1658ad9
+    deployed_at: "2026-05-20T21:07:14+09:00"
     notes: ""
   shinjeom-agents-yeona:
     repo_path: ../shinjeom-agents
     tracked_branch: dev
-    deployed_tag: shinjeom-agents-yeona-v2.1.6
-    deployed_commit: 46c2b78ab5bd2adf76ec2153906aa01bae69d305
-    deployed_at: "2026-05-05T23:33:28+09:00"
+    deployed_tag: shinjeom-agents-yeona-v2.1.7
+    deployed_commit: 2e425a2e251ef160b7d3250f932cb706e1658ad9
+    deployed_at: "2026-05-20T21:06:54+09:00"
     notes: ""
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: dev
-    deployed_tag: shinjeom-api-v2.0.17
-    deployed_commit: a87054d78016f06a210c4b79d3a86db4119b0671
-    deployed_at: "2026-05-13T11:42:10+09:00"
+    deployed_tag: shinjeom-api-v2.0.20
+    deployed_commit: a20e9e06289be95f82549b4afd2b43926edf68cd
+    deployed_at: "2026-05-28T18:59:45+09:00"
     notes: ""
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
