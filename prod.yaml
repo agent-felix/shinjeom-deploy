@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-05-29T18:25:53+09:00"
+updated_at: "2026-06-10T22:41:04+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -28,6 +28,13 @@ services:
     deployed_tag: long-term-memory-v2.0.5
     deployed_commit: 3a9aabc18445d57d4aaf50620bb06e5d0bac15f4
     deployed_at: "2026-05-12T16:13:17+09:00"
+    notes: ""
+  orrery-api:
+    repo_path: ../orrery
+    tracked_branch: main
+    deployed_tag: null
+    deployed_commit: null
+    deployed_at: null
     notes: ""
   shinjeom-mobile:
     repo_path: ../shinjeom-mobile

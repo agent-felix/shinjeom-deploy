@@ -28,6 +28,7 @@ This avoids using long-lived `staging` and `prod` code branches just to remember
 - `shinjeom-agents-yeona`
 - `shinjeom-api`
 - `long-term-memory`
+- `orrery-api`
 - `shinjeom-mobile`
 
 The two agents are tracked separately as `shinjeom-agents-sarang` and `shinjeom-agents-yeona` even though they deploy from the same repo.
@@ -44,6 +45,7 @@ This operating standard is currently written for:
 - `shinjeom-api`
 - `shinjeom-agents`
 - `long-term-memory`
+- `orrery-api`
 
 `shinjeom-mobile` is also tracked in deployment state.
 
