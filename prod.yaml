@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-06-10T22:41:04+09:00"
+updated_at: "2026-06-11T18:09:31+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -32,9 +32,9 @@ services:
   orrery-api:
     repo_path: ../orrery
     tracked_branch: main
-    deployed_tag: null
-    deployed_commit: null
-    deployed_at: null
+    deployed_tag: orrery-api-v0.1.2
+    deployed_commit: 813b90f3763edd39ca1aa7546ddd040d67b9405b
+    deployed_at: "2026-06-11T16:12:14+09:00"
     notes: ""
   shinjeom-mobile:
     repo_path: ../shinjeom-mobile
