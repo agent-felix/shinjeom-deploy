@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-06-11T18:09:31+09:00"
+updated_at: "2026-06-12T13:30:15+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -18,9 +18,9 @@ services:
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: dev
-    deployed_tag: shinjeom-api-v2.0.20
-    deployed_commit: a20e9e06289be95f82549b4afd2b43926edf68cd
-    deployed_at: "2026-05-28T18:59:45+09:00"
+    deployed_tag: shinjeom-api-v2.1.3
+    deployed_commit: 5327a95dc61376d5cda4baf32b1514feb5071ba8
+    deployed_at: "2026-06-11T19:52:38+09:00"
     notes: ""
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
