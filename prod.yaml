@@ -1,12 +1,12 @@
 environment: prod
-updated_at: "2026-07-08T15:19:16+09:00"
+updated_at: "2026-07-09T17:00:15+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
     tracked_branch: dev
-    deployed_tag: shinjeom-agents-sarang-v3.0.5
-    deployed_commit: b126cf8beeb5d94b79050e2d119fe449c94a64f2
-    deployed_at: "2026-07-07T19:19:18+09:00"
+    deployed_tag: shinjeom-agents-sarang-v3.0.6
+    deployed_commit: 2c1f3df4b7757b76fce6ba0b3d6a754d22633fd4
+    deployed_at: "2026-07-09T16:21:03+09:00"
     notes: ""
   shinjeom-agents-yeona:
     repo_path: ../shinjeom-agents
@@ -25,9 +25,9 @@ services:
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: dev
-    deployed_tag: long-term-memory-v3.0.1
-    deployed_commit: 77adb91ded22a65f640cca3b475d10bea784fd0c
-    deployed_at: "2026-07-07T17:30:00+09:00"
+    deployed_tag: long-term-memory-v3.0.2
+    deployed_commit: e55b5bfb54b380b79bd56f65987e7f5283faf4c4
+    deployed_at: "2026-07-08T16:44:28+09:00"
     notes: ""
   orrery-api:
     repo_path: ../orrery
