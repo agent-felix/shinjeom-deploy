@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-07-12T11:27:20+09:00"
+updated_at: "2026-07-13T14:42:47+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
