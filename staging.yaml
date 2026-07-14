@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-07-13T14:42:47+09:00"
+updated_at: "2026-07-14T10:59:01+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -15,12 +15,19 @@ services:
     deployed_commit: 7942ba4cc45b95a3add655454b20bc6d86668340
     deployed_at: "2026-07-11T22:56:16+09:00"
     notes: ""
+  yeona-agent:
+    repo_path: ../yeona-agent
+    tracked_branch: main
+    deployed_tag: yeona-agent-v0.1.0
+    deployed_commit: 5cd40e75629f73ebf95742c48ba2e7122451a235
+    deployed_at: "2026-07-13T16:25:12+09:00"
+    notes: ""
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: dev
-    deployed_tag: shinjeom-api-v2.1.18
-    deployed_commit: b0d3e608ab50185600ad0de8d857b1a69f987f79
-    deployed_at: "2026-07-06T22:17:06+09:00"
+    deployed_tag: shinjeom-api-v2.1.20
+    deployed_commit: 577b8dd3e43baa1ab02d3f0261dd1ea12e026da1
+    deployed_at: "2026-07-13T17:24:46+09:00"
     notes: ""
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
