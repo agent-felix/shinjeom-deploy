@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-07-14T10:59:01+09:00"
+updated_at: "2026-07-20T11:50:35+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -18,9 +18,9 @@ services:
   yeona-agent:
     repo_path: ../yeona-agent
     tracked_branch: main
-    deployed_tag: yeona-agent-v0.1.0
-    deployed_commit: 5cd40e75629f73ebf95742c48ba2e7122451a235
-    deployed_at: "2026-07-14T10:41:34+09:00"
+    deployed_tag: yeona-agent-v0.1.1
+    deployed_commit: 792478e26c8e7ede9cc39caf4e9d07949d8162a0
+    deployed_at: "2026-07-16T13:17:48+09:00"
     notes: ""
   shinjeom-api:
     repo_path: ../shinjeom-api
@@ -39,9 +39,9 @@ services:
   orrery-api:
     repo_path: ../orrery
     tracked_branch: main
-    deployed_tag: orrery-api-v0.1.2
-    deployed_commit: 813b90f3763edd39ca1aa7546ddd040d67b9405b
-    deployed_at: "2026-06-11T16:12:14+09:00"
+    deployed_tag: orrery-api-v0.1.3
+    deployed_commit: 3f05d1b0ab734a9d9bed5bca5a8bdbb608181a2f
+    deployed_at: "2026-07-16T13:16:30+09:00"
     notes: ""
   shinjeom-mobile:
     repo_path: ../shinjeom-mobile
