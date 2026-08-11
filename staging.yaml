@@ -1,47 +1,47 @@
 environment: staging
-updated_at: "2026-08-11T13:52:44+09:00"
+updated_at: "2026-08-11T18:30:31+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
-    tracked_branch: feature/enahance-prompt
-    deployed_tag: shinjeom-agents-sarang-v3.0.8
-    deployed_commit: 7942ba4cc45b95a3add655454b20bc6d86668340
-    deployed_at: "2026-07-11T22:53:33+09:00"
+    tracked_branch: feature/add-saju-profile
+    deployed_tag: shinjeom-agents-sarang-v3.0.9
+    deployed_commit: 15fab663325779458b2d1457d5452a79437afcc4
+    deployed_at: "2026-08-11T16:30:01+09:00"
     notes: ""
   shinjeom-agents-yeona:
     repo_path: ../shinjeom-agents
-    tracked_branch: feature/enahance-prompt
-    deployed_tag: shinjeom-agents-yeona-v3.0.4
-    deployed_commit: 7942ba4cc45b95a3add655454b20bc6d86668340
-    deployed_at: "2026-07-11T22:56:16+09:00"
+    tracked_branch: feature/add-saju-profile
+    deployed_tag: shinjeom-agents-yeona-v3.0.5
+    deployed_commit: 15fab663325779458b2d1457d5452a79437afcc4
+    deployed_at: "2026-08-11T17:27:01+09:00"
     notes: ""
   yeona-agent:
     repo_path: ../yeona-agent
     tracked_branch: main
-    deployed_tag: yeona-agent-v0.1.2
-    deployed_commit: 9dbf3f65a5056916b0c7238b85a07e8cbd89ec6e
-    deployed_at: "2026-07-20T18:11:31+09:00"
+    deployed_tag: yeona-agent-v0.1.3
+    deployed_commit: d7818943d503a0af3dcde9aedca7ed1409db50d8
+    deployed_at: "2026-08-04T18:04:57+09:00"
     notes: ""
   darae-agent:
     repo_path: ../darae-agent
     tracked_branch: refactor/add-user-profile
-    deployed_tag: darae-agent-v0.1.8
-    deployed_commit: bcea027a33cbc66603f3a13a39cd7d52080f50e9
-    deployed_at: "2026-08-10T15:06:05+09:00"
+    deployed_tag: darae-agent-v0.1.9
+    deployed_commit: 43ca7e69d0348ff1becc7619be6e0093aa46a06c
+    deployed_at: "2026-08-11T18:30:31+09:00"
     notes: ""
   minjun-agent:
     repo_path: ../minjun-agent
     tracked_branch: main
-    deployed_tag: minjun-agent-v0.1.0
-    deployed_commit: a442c3f2b1de307d8a58d83da1fcd64d784362ec
-    deployed_at: "2026-08-11T12:04:43+09:00"
+    deployed_tag: minjun-agent-v0.1.1
+    deployed_commit: d52f695527338e672de92c522a20fc5204530d1f
+    deployed_at: "2026-08-11T18:30:31+09:00"
     notes: ""
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: dev
-    deployed_tag: shinjeom-api-v2.1.22
-    deployed_commit: d38a21820664373ba1dd918212d97a8c92ffc167
-    deployed_at: "2026-07-22T11:04:32+09:00"
+    tracked_branch: feature/integrate-shinjeom-web
+    deployed_tag: shinjeom-api-v2.2.5
+    deployed_commit: 65ec133bf98da385a68d154f3c36d88629a3e421
+    deployed_at: "2026-08-11T18:27:36+09:00"
     notes: ""
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
