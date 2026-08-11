@@ -22,6 +22,20 @@ services:
     deployed_commit: 792478e26c8e7ede9cc39caf4e9d07949d8162a0
     deployed_at: "2026-07-16T13:17:48+09:00"
     notes: ""
+  darae-agent:
+    repo_path: ../darae-agent
+    tracked_branch: refactor/add-user-profile
+    deployed_tag: null
+    deployed_commit: null
+    deployed_at: null
+    notes: ""
+  minjun-agent:
+    repo_path: ../minjun-agent
+    tracked_branch: main
+    deployed_tag: null
+    deployed_commit: null
+    deployed_at: null
+    notes: ""
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: dev
