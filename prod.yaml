@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-08-11T17:45:04+09:00"
+updated_at: "2026-08-11T19:53:04+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -18,30 +18,30 @@ services:
   yeona-agent:
     repo_path: ../yeona-agent
     tracked_branch: main
-    deployed_tag: yeona-agent-v0.1.1
-    deployed_commit: 792478e26c8e7ede9cc39caf4e9d07949d8162a0
-    deployed_at: "2026-07-16T13:17:48+09:00"
+    deployed_tag: yeona-agent-v0.1.3
+    deployed_commit: d7818943d503a0af3dcde9aedca7ed1409db50d8
+    deployed_at: "2026-08-11T19:53:04+09:00"
     notes: ""
   darae-agent:
     repo_path: ../darae-agent
     tracked_branch: refactor/add-user-profile
-    deployed_tag: null
-    deployed_commit: null
-    deployed_at: null
+    deployed_tag: darae-agent-v0.1.0-43ca7e6
+    deployed_commit: 43ca7e69d0348ff1becc7619be6e0093aa46a06c
+    deployed_at: "2026-08-11T19:13:33+09:00"
     notes: ""
   minjun-agent:
     repo_path: ../minjun-agent
     tracked_branch: main
-    deployed_tag: null
-    deployed_commit: null
-    deployed_at: null
+    deployed_tag: minjun-agent-v0.1.0-d52f695
+    deployed_commit: d52f695527338e672de92c522a20fc5204530d1f
+    deployed_at: "2026-08-11T19:13:33+09:00"
     notes: ""
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: dev
-    deployed_tag: shinjeom-api-v2.1.20
-    deployed_commit: 577b8dd3e43baa1ab02d3f0261dd1ea12e026da1
-    deployed_at: "2026-07-14T10:53:11+09:00"
+    tracked_branch: feature/integrate-shinjeom-web
+    deployed_tag: shinjeom-api-v2.2.5
+    deployed_commit: 65ec133bf98da385a68d154f3c36d88629a3e421
+    deployed_at: "2026-08-11T19:48:37+09:00"
     notes: ""
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
