@@ -26,12 +26,15 @@ This avoids using long-lived `staging` and `prod` code branches just to remember
 
 - `shinjeom-agents-sarang`
 - `shinjeom-agents-yeona`
+- `yeona-agent`
+- `darae-agent`
+- `minjun-agent`
 - `shinjeom-api`
 - `long-term-memory`
 - `orrery-api`
 - `shinjeom-mobile`
 
-The two agents are tracked separately as `shinjeom-agents-sarang` and `shinjeom-agents-yeona` even though they deploy from the same repo.
+`shinjeom-agents-sarang` and `shinjeom-agents-yeona` are tracked separately even though they deploy from the same repo. `yeona-agent`, `darae-agent`, and `minjun-agent` each deploy from their own repo.
 
 ## Files
 
@@ -44,6 +47,9 @@ This operating standard is currently written for:
 
 - `shinjeom-api`
 - `shinjeom-agents`
+- `yeona-agent`
+- `darae-agent`
+- `minjun-agent`
 - `long-term-memory`
 - `orrery-api`
 
