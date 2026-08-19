@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-08-14T20:56:23+09:00"
+updated_at: "2026-08-19T20:31:23+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -36,12 +36,19 @@ services:
     deployed_commit: f5bc738cbf078833e005adb55b863872f0493664
     deployed_at: "2026-08-14T20:56:23+09:00"
     notes: ""
+  heejin-agent:
+    repo_path: ../shinjeom-report-agents
+    tracked_branch: main
+    deployed_tag: heejin-agent-v0.1.0
+    deployed_commit: 80618819f6bdcd401b89d69deb01a058318213c5
+    deployed_at: "2026-08-19T20:20:07+09:00"
+    notes: ""
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: feature/integrate-shinjeom-web
-    deployed_tag: shinjeom-api-v2.2.5
-    deployed_commit: 65ec133bf98da385a68d154f3c36d88629a3e421
-    deployed_at: "2026-08-11T18:27:36+09:00"
+    deployed_tag: shinjeom-api-v2.2.7
+    deployed_commit: d20a8f2424923c5c677d89155db019631596acd6
+    deployed_at: "2026-08-19T20:31:23+09:00"
     notes: ""
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
