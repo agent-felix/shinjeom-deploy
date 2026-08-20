@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-08-19T20:31:23+09:00"
+updated_at: "2026-08-20T14:36:45+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -39,9 +39,9 @@ services:
   heejin-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: heejin-agent-v0.1.0
-    deployed_commit: 80618819f6bdcd401b89d69deb01a058318213c5
-    deployed_at: "2026-08-19T20:20:07+09:00"
+    deployed_tag: heejin-agent-v0.2.0-rc1
+    deployed_commit: 8339758bf29d9c201584f28199a8b15c53e606ef
+    deployed_at: "2026-08-20T14:36:45+09:00"
     notes: ""
   shinjeom-api:
     repo_path: ../shinjeom-api
