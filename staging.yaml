@@ -4,9 +4,9 @@ services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
     tracked_branch: feature/add-saju-profile
-    deployed_tag: shinjeom-agents-sarang-v3.0.9
-    deployed_commit: 15fab663325779458b2d1457d5452a79437afcc4
-    deployed_at: "2026-08-11T16:30:01+09:00"
+    deployed_tag: shinjeom-agents-sarang-v3.0.10
+    deployed_commit: a0efe607921e3fc84b90d69542b728b1008fae5f
+    deployed_at: "2026-08-12T17:33:30+09:00"
     notes: ""
   shinjeom-agents-yeona:
     repo_path: ../shinjeom-agents
@@ -55,7 +55,7 @@ services:
     tracked_branch: feature/refactor-ltm-deploy-process
     deployed_tag: long-term-memory-v3.0.2
     deployed_commit: e55b5bfb54b380b79bd56f65987e7f5283faf4c4
-    deployed_at: "2026-07-08T16:31:52+09:00"
+    deployed_at: "2026-08-04T17:31:58+09:00"
     notes: ""
   orrery-api:
     repo_path: ../orrery
