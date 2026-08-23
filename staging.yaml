@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-08-23T14:46:46+09:00"
+updated_at: "2026-08-23T22:54:44+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -46,9 +46,9 @@ services:
   ken-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: ken-agent-v0.1.0-rc1
-    deployed_commit: ee6c4bd542183be62b9c9515a5d27796c5e0ccf6
-    deployed_at: "2026-08-23T14:46:46+09:00"
+    deployed_tag: ken-agent-v0.1.0-rc2
+    deployed_commit: 9c0af61dc87f028b9230a228b6ceff26df13c226
+    deployed_at: "2026-08-23T22:54:44+09:00"
     notes: ""
   shinjeom-api:
     repo_path: ../shinjeom-api
