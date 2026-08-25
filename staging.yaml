@@ -46,9 +46,9 @@ services:
   ken-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: ken-agent-v0.1.0-rc2
-    deployed_commit: 9c0af61dc87f028b9230a228b6ceff26df13c226
-    deployed_at: "2026-08-23T22:54:11+09:00"
+    deployed_tag: ken-agent-v0.1.0-rc3
+    deployed_commit: 0a170b0061e7d1ee73bd1cd8a211524b30bfc6c5
+    deployed_at: "2026-08-25T14:13:15+09:00"
     notes: ""
   shinjeom-api:
     repo_path: ../shinjeom-api
