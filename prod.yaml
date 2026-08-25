@@ -1,19 +1,19 @@
 environment: prod
-updated_at: "2026-08-14T20:57:59+09:00"
+updated_at: "2026-08-25T09:21:16+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
     tracked_branch: feature/add-saju-profile
     deployed_tag: shinjeom-agents-sarang-v3.0.9
     deployed_commit: 15fab663325779458b2d1457d5452a79437afcc4
-    deployed_at: "2026-08-11T16:46:48+09:00"
+    deployed_at: "2026-08-17T20:26:12+09:00"
     notes: ""
   shinjeom-agents-yeona:
     repo_path: ../shinjeom-agents
     tracked_branch: feature/add-saju-profile
     deployed_tag: shinjeom-agents-yeona-v3.0.5
     deployed_commit: 15fab663325779458b2d1457d5452a79437afcc4
-    deployed_at: "2026-08-11T17:45:04+09:00"
+    deployed_at: "2026-08-17T20:29:43+09:00"
     notes: ""
   yeona-agent:
     repo_path: ../yeona-agent
@@ -25,23 +25,37 @@ services:
   darae-agent:
     repo_path: ../darae-agent
     tracked_branch: feature/enhance-report-prmopt
-    deployed_tag: darae-agent-v0.2.2
-    deployed_commit: bfcf7d8c2afa1ac640f1b3f01cff7f846c2be051
-    deployed_at: "2026-08-14T20:57:57+09:00"
+    deployed_tag: darae-agent-977644c
+    deployed_commit: 977644c
+    deployed_at: "2026-08-14T23:00:48+09:00"
     notes: ""
   minjun-agent:
     repo_path: ../minjun-agent
     tracked_branch: feature/enhance-report-prmopt
-    deployed_tag: minjun-agent-v0.2.2
-    deployed_commit: f5bc738cbf078833e005adb55b863872f0493664
-    deployed_at: "2026-08-14T20:57:59+09:00"
+    deployed_tag: minjun-agent-77dff61
+    deployed_commit: 77dff61
+    deployed_at: "2026-08-14T23:40:02+09:00"
     notes: ""
+  heejin-agent:
+    repo_path: ../shinjeom-report-agents
+    tracked_branch: main
+    deployed_tag: null
+    deployed_commit: null
+    deployed_at: null
+    notes: "Not deployed to prod"
+  ken-agent:
+    repo_path: ../shinjeom-report-agents
+    tracked_branch: main
+    deployed_tag: null
+    deployed_commit: null
+    deployed_at: null
+    notes: "Not deployed to prod"
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: feature/integrate-shinjeom-web
-    deployed_tag: shinjeom-api-v2.2.5
-    deployed_commit: 65ec133bf98da385a68d154f3c36d88629a3e421
-    deployed_at: "2026-08-11T19:48:37+09:00"
+    deployed_tag: shinjeom-api-v2.2.6
+    deployed_commit: 53056f580cb7bb7c52a5e4044ad8c4b23f85a573
+    deployed_at: "2026-08-14T10:11:57+09:00"
     notes: ""
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
