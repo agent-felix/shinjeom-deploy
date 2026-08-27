@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-08-27T18:09:29+09:00"
+updated_at: "2026-08-27T19:17:19+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -23,25 +23,25 @@ services:
     deployed_at: "2026-08-04T18:04:57+09:00"
     notes: ""
   darae-agent:
-    repo_path: ../darae-agent
-    tracked_branch: feature/enhance-report-prmopt
-    deployed_tag: darae-agent-2b0299c
-    deployed_commit: 2b0299c368f01e95af189786ac5729c93725ec86
-    deployed_at: "2026-08-20T22:23:47+09:00"
+    repo_path: ../shinjeom-report-agents
+    tracked_branch: main
+    deployed_tag: darae-agent-3f6b50b
+    deployed_commit: 3f6b50bbdd6bb743f756081e6ece3d14886c165d
+    deployed_at: "2026-08-27T19:15:06+09:00"
     notes: ""
   minjun-agent:
-    repo_path: ../minjun-agent
-    tracked_branch: feature/enhance-report-prmopt
-    deployed_tag: minjun-agent-2b0299c
-    deployed_commit: 2b0299c368f01e95af189786ac5729c93725ec86
-    deployed_at: "2026-08-20T22:24:22+09:00"
+    repo_path: ../shinjeom-report-agents
+    tracked_branch: main
+    deployed_tag: minjun-agent-3f6b50b
+    deployed_commit: 3f6b50bbdd6bb743f756081e6ece3d14886c165d
+    deployed_at: "2026-08-27T19:15:38+09:00"
     notes: ""
   heejin-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: heejin-agent-60d0e54
-    deployed_commit: 60d0e54ad5981f95e11f8eaac80a0ec68b7c458c
-    deployed_at: "2026-08-20T22:57:20+09:00"
+    deployed_tag: heejin-agent-3f6b50b
+    deployed_commit: 3f6b50bbdd6bb743f756081e6ece3d14886c165d
+    deployed_at: "2026-08-27T19:16:06+09:00"
     notes: ""
   ken-agent:
     repo_path: ../shinjeom-report-agents
