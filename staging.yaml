@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-08-28T10:51:18+09:00"
+updated_at: "2026-08-28T10:55:13+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -46,10 +46,10 @@ services:
   ken-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: ken-agent-v0.1.0-rc7
-    deployed_commit: b30117ac23a27f76039baf01185f06a2ec62751c
-    deployed_at: "2026-08-27T23:59:27+09:00"
-    notes: ""
+    deployed_tag: ken-agent-v0.1.0-rc9
+    deployed_commit: 64936c111f065c07ab71be08b36f07e278f1cfdc
+    deployed_at: "2026-08-28T10:55:13+09:00"
+    notes: "Generation concurrency limited to 1 per process"
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: feature/media-asset-foundation
