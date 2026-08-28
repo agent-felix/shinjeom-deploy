@@ -1,19 +1,19 @@
 environment: staging
-updated_at: "2026-08-28T10:55:13+09:00"
+updated_at: "2026-08-28T17:13:23+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
     tracked_branch: feature/add-saju-profile
     deployed_tag: shinjeom-agents-sarang-v3.0.10
     deployed_commit: a0efe607921e3fc84b90d69542b728b1008fae5f
-    deployed_at: "2026-08-12T17:33:30+09:00"
+    deployed_at: "2026-08-28T11:47:28+09:00"
     notes: ""
   shinjeom-agents-yeona:
     repo_path: ../shinjeom-agents
     tracked_branch: feature/add-saju-profile
     deployed_tag: shinjeom-agents-yeona-v3.0.5
     deployed_commit: 15fab663325779458b2d1457d5452a79437afcc4
-    deployed_at: "2026-08-11T17:27:01+09:00"
+    deployed_at: "2026-08-28T11:54:54+09:00"
     notes: ""
   yeona-agent:
     repo_path: ../yeona-agent
@@ -27,36 +27,36 @@ services:
     tracked_branch: main
     deployed_tag: darae-agent-v0.1.0-rc1
     deployed_commit: b30117ac23a27f76039baf01185f06a2ec62751c
-    deployed_at: "2026-08-28T10:44:26+09:00"
+    deployed_at: "2026-08-28T10:44:29+09:00"
     notes: "Helm resources updated from 5c841da"
   minjun-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
     deployed_tag: minjun-agent-v0.1.0-rc1
     deployed_commit: b30117ac23a27f76039baf01185f06a2ec62751c
-    deployed_at: "2026-08-28T10:45:01+09:00"
+    deployed_at: "2026-08-28T10:45:03+09:00"
     notes: "Helm resources updated from 5c841da"
   heejin-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
     deployed_tag: heejin-agent-v0.2.0-rc3
     deployed_commit: b30117ac23a27f76039baf01185f06a2ec62751c
-    deployed_at: "2026-08-28T10:45:37+09:00"
+    deployed_at: "2026-08-28T10:45:39+09:00"
     notes: "Helm resources updated from 5c841da"
   ken-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: ken-agent-v0.1.0-rc9
-    deployed_commit: 64936c111f065c07ab71be08b36f07e278f1cfdc
-    deployed_at: "2026-08-28T10:55:13+09:00"
-    notes: "Generation concurrency limited to 1 per process"
+    deployed_tag: ken-agent-v0.1.0-rc10
+    deployed_commit: 6f3db75369be3f8c8906e2a8aaf8eb5a468b493d
+    deployed_at: "2026-08-28T16:27:14+09:00"
+    notes: "Removed full-body input; refined report persona and closing message"
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: feature/media-asset-foundation
-    deployed_tag: shinjeom-api-v2.2.14
-    deployed_commit: 00640fb5a7f93f6ece255689aa07c9aea7dfe9c6
-    deployed_at: "2026-08-28T10:48:52+09:00"
-    notes: ""
+    deployed_tag: shinjeom-api-v2.2.15
+    deployed_commit: 2f75a694d87c1915fd9e47e8d3c9ad7a91a7e7bf
+    deployed_at: "2026-08-28T16:40:03+09:00"
+    notes: "Restricted pet face reading to face image"
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
@@ -69,7 +69,7 @@ services:
     tracked_branch: main
     deployed_tag: orrery-api-v0.1.5
     deployed_commit: 77c0bf62db2404bb3732b6ea45e7306d24a7ecf2
-    deployed_at: "2026-08-28T10:43:32+09:00"
+    deployed_at: "2026-08-28T10:43:35+09:00"
     notes: "Helm resources updated from 984f4a9"
   shinjeom-mobile:
     repo_path: ../shinjeom-mobile
