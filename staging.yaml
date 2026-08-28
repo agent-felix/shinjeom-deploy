@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-08-27T19:19:56+09:00"
+updated_at: "2026-08-28T10:51:18+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -25,37 +25,37 @@ services:
   darae-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: darae-agent-3f6b50b
-    deployed_commit: 3f6b50bbdd6bb743f756081e6ece3d14886c165d
-    deployed_at: "2026-08-27T19:15:06+09:00"
-    notes: ""
+    deployed_tag: darae-agent-v0.1.0-rc1
+    deployed_commit: b30117ac23a27f76039baf01185f06a2ec62751c
+    deployed_at: "2026-08-28T10:44:26+09:00"
+    notes: "Helm resources updated from 5c841da"
   minjun-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: minjun-agent-3f6b50b
-    deployed_commit: 3f6b50bbdd6bb743f756081e6ece3d14886c165d
-    deployed_at: "2026-08-27T19:15:38+09:00"
-    notes: ""
+    deployed_tag: minjun-agent-v0.1.0-rc1
+    deployed_commit: b30117ac23a27f76039baf01185f06a2ec62751c
+    deployed_at: "2026-08-28T10:45:01+09:00"
+    notes: "Helm resources updated from 5c841da"
   heejin-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: heejin-agent-3f6b50b
-    deployed_commit: 3f6b50bbdd6bb743f756081e6ece3d14886c165d
-    deployed_at: "2026-08-27T19:16:06+09:00"
-    notes: ""
+    deployed_tag: heejin-agent-v0.2.0-rc3
+    deployed_commit: b30117ac23a27f76039baf01185f06a2ec62751c
+    deployed_at: "2026-08-28T10:45:37+09:00"
+    notes: "Helm resources updated from 5c841da"
   ken-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
     deployed_tag: ken-agent-v0.1.0-rc7
     deployed_commit: b30117ac23a27f76039baf01185f06a2ec62751c
-    deployed_at: "2026-08-27T19:19:06+09:00"
+    deployed_at: "2026-08-27T23:59:27+09:00"
     notes: ""
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: feature/integrate-shinjeom-web
-    deployed_tag: shinjeom-api-v2.2.9
-    deployed_commit: e75e5061c6ffeef773f72e3166d4bf758efadfbf
-    deployed_at: "2026-08-23T23:18:08+09:00"
+    tracked_branch: feature/media-asset-foundation
+    deployed_tag: shinjeom-api-v2.2.14
+    deployed_commit: 00640fb5a7f93f6ece255689aa07c9aea7dfe9c6
+    deployed_at: "2026-08-28T10:48:52+09:00"
     notes: ""
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
@@ -69,8 +69,8 @@ services:
     tracked_branch: main
     deployed_tag: orrery-api-v0.1.5
     deployed_commit: 77c0bf62db2404bb3732b6ea45e7306d24a7ecf2
-    deployed_at: "2026-08-12T19:35:06+09:00"
-    notes: ""
+    deployed_at: "2026-08-28T10:43:32+09:00"
+    notes: "Helm resources updated from 984f4a9"
   shinjeom-mobile:
     repo_path: ../shinjeom-mobile
     tracked_branch: dev
