@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-08-25T09:21:16+09:00"
+updated_at: "2026-08-28T11:06:15+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -23,39 +23,39 @@ services:
     deployed_at: "2026-08-11T19:53:04+09:00"
     notes: ""
   darae-agent:
-    repo_path: ../darae-agent
-    tracked_branch: feature/enhance-report-prmopt
-    deployed_tag: darae-agent-977644c
-    deployed_commit: 977644c
-    deployed_at: "2026-08-14T23:00:48+09:00"
-    notes: ""
+    repo_path: ../shinjeom-report-agents
+    tracked_branch: main
+    deployed_tag: darae-agent-v0.1.0-rc1
+    deployed_commit: b30117ac23a27f76039baf01185f06a2ec62751c
+    deployed_at: "2026-08-28T10:57:27+09:00"
+    notes: "Helm resources updated from 5c841da"
   minjun-agent:
-    repo_path: ../minjun-agent
-    tracked_branch: feature/enhance-report-prmopt
-    deployed_tag: minjun-agent-77dff61
-    deployed_commit: 77dff61
-    deployed_at: "2026-08-14T23:40:02+09:00"
-    notes: ""
+    repo_path: ../shinjeom-report-agents
+    tracked_branch: main
+    deployed_tag: minjun-agent-v0.1.0-rc1
+    deployed_commit: b30117ac23a27f76039baf01185f06a2ec62751c
+    deployed_at: "2026-08-28T10:58:18+09:00"
+    notes: "Helm resources updated from 5c841da"
   heejin-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: null
-    deployed_commit: null
-    deployed_at: null
-    notes: "Not deployed to prod"
+    deployed_tag: heejin-agent-v0.2.0-rc3
+    deployed_commit: b30117ac23a27f76039baf01185f06a2ec62751c
+    deployed_at: "2026-08-28T10:59:25+09:00"
+    notes: "Helm resources updated from 5c841da"
   ken-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: null
-    deployed_commit: null
-    deployed_at: null
-    notes: "Not deployed to prod"
+    deployed_tag: ken-agent-v0.1.0-rc9
+    deployed_commit: 64936c111f065c07ab71be08b36f07e278f1cfdc
+    deployed_at: "2026-08-28T11:06:15+09:00"
+    notes: "Pod-local generation concurrency limited to 1; replicas 3"
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: feature/integrate-shinjeom-web
-    deployed_tag: shinjeom-api-v2.2.6
-    deployed_commit: 53056f580cb7bb7c52a5e4044ad8c4b23f85a573
-    deployed_at: "2026-08-14T10:11:57+09:00"
+    tracked_branch: feature/media-asset-foundation
+    deployed_tag: shinjeom-api-v2.2.14
+    deployed_commit: 00640fb5a7f93f6ece255689aa07c9aea7dfe9c6
+    deployed_at: "2026-08-28T11:02:44+09:00"
     notes: ""
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
@@ -69,8 +69,8 @@ services:
     tracked_branch: main
     deployed_tag: orrery-api-v0.1.5
     deployed_commit: 77c0bf62db2404bb3732b6ea45e7306d24a7ecf2
-    deployed_at: "2026-08-12T19:37:07+09:00"
-    notes: ""
+    deployed_at: "2026-08-28T10:56:26+09:00"
+    notes: "Helm resources updated from 984f4a9"
   shinjeom-mobile:
     repo_path: ../shinjeom-mobile
     tracked_branch: dev
