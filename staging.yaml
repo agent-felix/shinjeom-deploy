@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-08-31T17:00:50+09:00"
+updated_at: "2026-08-31T20:02:18+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -50,13 +50,20 @@ services:
     deployed_commit: d0ebc18de7c7cfe091eb14e7390ce1dd40f570d0
     deployed_at: "2026-08-31T16:26:48+09:00"
     notes: "Removed report chat deletion endpoint"
+  mio-agent:
+    repo_path: ../shinjeom-report-agents
+    tracked_branch: main
+    deployed_tag: mio-agent-v0.1.0-rc1
+    deployed_commit: 752abda064673285d7ff03301ef94649fb6f6c0c
+    deployed_at: "2026-08-31T19:59:38+09:00"
+    notes: "Initial staging deployment for Mio report consult"
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: feature/media-asset-foundation
-    deployed_tag: shinjeom-api-v2.2.16
-    deployed_commit: d1a8dadd7aad0dcbdeee3d4d480c18fd3264c7b7
-    deployed_at: "2026-08-31T15:08:01+09:00"
-    notes: "Restored account deletion email copy"
+    tracked_branch: feature/introduce-mio
+    deployed_tag: shinjeom-api-v2.2.17
+    deployed_commit: 7a86456b9da3b1547e85cf35570b50548deabc82
+    deployed_at: "2026-08-31T19:53:50+09:00"
+    notes: "Added Mio report consult support"
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
