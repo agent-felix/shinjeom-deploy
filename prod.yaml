@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-08-28T17:13:23+09:00"
+updated_at: "2026-08-31T16:29:08+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -25,31 +25,31 @@ services:
   darae-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: darae-agent-v0.1.0-rc1
-    deployed_commit: b30117ac23a27f76039baf01185f06a2ec62751c
-    deployed_at: "2026-08-28T10:57:34+09:00"
-    notes: "Helm resources updated from 5c841da"
+    deployed_tag: darae-agent-v0.1.0-rc2
+    deployed_commit: d0ebc18de7c7cfe091eb14e7390ce1dd40f570d0
+    deployed_at: "2026-08-31T16:22:44+09:00"
+    notes: "Removed report chat deletion endpoint"
   minjun-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: minjun-agent-v0.1.0-rc1
-    deployed_commit: b30117ac23a27f76039baf01185f06a2ec62751c
-    deployed_at: "2026-08-28T10:58:24+09:00"
-    notes: "Helm resources updated from 5c841da"
+    deployed_tag: minjun-agent-v0.1.0-rc2
+    deployed_commit: d0ebc18de7c7cfe091eb14e7390ce1dd40f570d0
+    deployed_at: "2026-08-31T16:24:12+09:00"
+    notes: "Removed report chat deletion endpoint"
   heejin-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: heejin-agent-v0.2.0-rc3
-    deployed_commit: b30117ac23a27f76039baf01185f06a2ec62751c
-    deployed_at: "2026-08-28T10:59:31+09:00"
-    notes: "Helm resources updated from 5c841da"
+    deployed_tag: heejin-agent-v0.2.0-rc4
+    deployed_commit: d0ebc18de7c7cfe091eb14e7390ce1dd40f570d0
+    deployed_at: "2026-08-31T16:25:31+09:00"
+    notes: "Removed report chat deletion endpoint"
   ken-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: ken-agent-v0.1.0-rc10
-    deployed_commit: 6f3db75369be3f8c8906e2a8aaf8eb5a468b493d
-    deployed_at: "2026-08-28T16:43:55+09:00"
-    notes: "Removed full-body input; refined report persona and closing message; replicas 3"
+    deployed_tag: ken-agent-v0.1.0-rc11
+    deployed_commit: d0ebc18de7c7cfe091eb14e7390ce1dd40f570d0
+    deployed_at: "2026-08-31T16:27:58+09:00"
+    notes: "Removed report chat deletion endpoint; replicas 3"
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: feature/media-asset-foundation
