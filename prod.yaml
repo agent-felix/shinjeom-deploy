@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-09-11T21:08:43+09:00"
+updated_at: "2026-09-11T21:13:12+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -32,10 +32,10 @@ services:
   minjun-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: minjun-agent-v0.1.0-rc2
-    deployed_commit: d0ebc18de7c7cfe091eb14e7390ce1dd40f570d0
-    deployed_at: "2026-08-31T16:24:17+09:00"
-    notes: "Removed report chat deletion endpoint"
+    deployed_tag: minjun-agent-v0.1.0-rc3
+    deployed_commit: 168ab5e5d90ba29c30dcdfbc4aee3370f0140cf7
+    deployed_at: "2026-09-11T21:12:55+09:00"
+    notes: "Template greetings; inactivity CronJob disabled; replicas 2"
   heejin-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
