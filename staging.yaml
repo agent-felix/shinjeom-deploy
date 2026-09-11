@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-11T14:36:07+09:00"
+updated_at: "2026-09-11T22:52:26+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -60,10 +60,10 @@ services:
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: dev
-    deployed_tag: shinjeom-api-v2.3.5
-    deployed_commit: 9fcbd1979e2d4fcaa6dbd2c335390256c2b90081
-    deployed_at: "2026-09-11T14:34:16+09:00"
-    notes: "Agent-independent WebView entry and localized purchase labels; no new migrations; Helm revision 97"
+    deployed_tag: shinjeom-api-v2.3.6
+    deployed_commit: 1498e842d7880be7a80d78825cd89f4b686edf33
+    deployed_at: "2026-09-11T22:48:25+09:00"
+    notes: "Shared report URL uses reports/share/<uuid>/; no new migrations; Helm revision 98"
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
