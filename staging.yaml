@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-08-31T20:02:18+09:00"
+updated_at: "2026-09-11T11:12:57+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -53,10 +53,10 @@ services:
   mio-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: mio-agent-v0.1.0-rc1
-    deployed_commit: 752abda064673285d7ff03301ef94649fb6f6c0c
-    deployed_at: "2026-08-31T19:59:38+09:00"
-    notes: "Initial staging deployment for Mio report consult"
+    deployed_tag: mio-agent-v0.1.0-rc2
+    deployed_commit: 934c9d10ac97ff439b9913dfd651ee75272ac43b
+    deployed_at: "2026-09-11T11:11:56+09:00"
+    notes: "Mio v4 reports, colored-pencil fortune images and updated chat greetings; scheduled follow-ups disabled"
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: feature/introduce-mio
