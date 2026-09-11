@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-09-11T15:18:27+09:00"
+updated_at: "2026-09-11T20:58:02+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -53,10 +53,10 @@ services:
   mio-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: null
-    deployed_commit: null
-    deployed_at: null
-    notes: "Not deployed to prod"
+    deployed_tag: mio-agent-v0.1.0-rc3
+    deployed_commit: 168ab5e5d90ba29c30dcdfbc4aee3370f0140cf7
+    deployed_at: "2026-09-11T20:58:02+09:00"
+    notes: "First prod deployment; Redis Mio namespace and ACL enabled (shared-redis revision 3); product inactive; inactivity CronJob disabled"
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: feature/media-asset-foundation
