@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-08-31T17:00:50+09:00"
+updated_at: "2026-09-11T15:18:27+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -50,6 +50,13 @@ services:
     deployed_commit: d0ebc18de7c7cfe091eb14e7390ce1dd40f570d0
     deployed_at: "2026-08-31T16:28:02+09:00"
     notes: "Removed report chat deletion endpoint; replicas 3"
+  mio-agent:
+    repo_path: ../shinjeom-report-agents
+    tracked_branch: main
+    deployed_tag: null
+    deployed_commit: null
+    deployed_at: null
+    notes: "Not deployed to prod"
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: feature/media-asset-foundation

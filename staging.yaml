@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-11T14:36:07+09:00"
+updated_at: "2026-09-11T15:18:27+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -34,35 +34,35 @@ services:
     tracked_branch: main
     deployed_tag: minjun-agent-v0.1.0-rc3
     deployed_commit: 168ab5e5d90ba29c30dcdfbc4aee3370f0140cf7
-    deployed_at: "2026-09-11T12:57:08+09:00"
+    deployed_at: "2026-09-11T12:57:09+09:00"
     notes: "Synced Notion greeting templates and per-variant Korean addressing"
   heejin-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
     deployed_tag: heejin-agent-v0.2.0-rc5
     deployed_commit: 168ab5e5d90ba29c30dcdfbc4aee3370f0140cf7
-    deployed_at: "2026-09-11T12:59:46+09:00"
+    deployed_at: "2026-09-11T12:59:47+09:00"
     notes: "Synced Notion greeting templates and per-variant Korean addressing"
   ken-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
     deployed_tag: ken-agent-v0.1.0-rc12
     deployed_commit: 168ab5e5d90ba29c30dcdfbc4aee3370f0140cf7
-    deployed_at: "2026-09-11T13:00:24+09:00"
+    deployed_at: "2026-09-11T13:00:25+09:00"
     notes: "Synced Notion greeting templates and per-variant Korean addressing"
   mio-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
     deployed_tag: mio-agent-v0.1.0-rc3
     deployed_commit: 168ab5e5d90ba29c30dcdfbc4aee3370f0140cf7
-    deployed_at: "2026-09-11T13:00:49+09:00"
+    deployed_at: "2026-09-11T13:00:50+09:00"
     notes: "Synced Notion greeting templates and per-variant Korean addressing"
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: dev
     deployed_tag: shinjeom-api-v2.3.5
     deployed_commit: 9fcbd1979e2d4fcaa6dbd2c335390256c2b90081
-    deployed_at: "2026-09-11T14:34:16+09:00"
+    deployed_at: "2026-09-11T14:34:43+09:00"
     notes: "Agent-independent WebView entry and localized purchase labels; no new migrations; Helm revision 97"
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
