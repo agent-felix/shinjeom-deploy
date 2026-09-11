@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-09-11T20:58:02+09:00"
+updated_at: "2026-09-11T21:08:43+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -25,10 +25,10 @@ services:
   darae-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: darae-agent-v0.1.0-rc2
-    deployed_commit: d0ebc18de7c7cfe091eb14e7390ce1dd40f570d0
-    deployed_at: "2026-08-31T16:22:48+09:00"
-    notes: "Removed report chat deletion endpoint"
+    deployed_tag: darae-agent-v0.1.0-rc3
+    deployed_commit: 168ab5e5d90ba29c30dcdfbc4aee3370f0140cf7
+    deployed_at: "2026-09-11T21:08:14+09:00"
+    notes: "Template greetings; inactivity CronJob disabled; replicas 2"
   minjun-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
@@ -39,17 +39,17 @@ services:
   heejin-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: heejin-agent-v0.2.0-rc4
-    deployed_commit: d0ebc18de7c7cfe091eb14e7390ce1dd40f570d0
-    deployed_at: "2026-08-31T16:25:35+09:00"
-    notes: "Removed report chat deletion endpoint"
+    deployed_tag: heejin-agent-v0.2.0-rc5
+    deployed_commit: 168ab5e5d90ba29c30dcdfbc4aee3370f0140cf7
+    deployed_at: "2026-09-11T21:06:21+09:00"
+    notes: "Template greetings; inactivity CronJob disabled; replicas 2"
   ken-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: ken-agent-v0.1.0-rc11
-    deployed_commit: d0ebc18de7c7cfe091eb14e7390ce1dd40f570d0
-    deployed_at: "2026-08-31T16:28:02+09:00"
-    notes: "Removed report chat deletion endpoint; replicas 3"
+    deployed_tag: ken-agent-v0.1.0-rc12
+    deployed_commit: 168ab5e5d90ba29c30dcdfbc4aee3370f0140cf7
+    deployed_at: "2026-09-11T21:04:22+09:00"
+    notes: "Template greetings; inactivity CronJob disabled; Gemini thinking medium; replicas 3"
   mio-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
