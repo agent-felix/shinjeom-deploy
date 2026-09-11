@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-08-31T17:00:50+09:00"
+updated_at: "2026-09-11T22:56:55+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -52,11 +52,11 @@ services:
     notes: "Removed report chat deletion endpoint; replicas 3"
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: feature/media-asset-foundation
-    deployed_tag: shinjeom-api-v2.2.16
-    deployed_commit: d1a8dadd7aad0dcbdeee3d4d480c18fd3264c7b7
-    deployed_at: "2026-08-31T16:13:53+09:00"
-    notes: "Restored account deletion email copy"
+    tracked_branch: dev
+    deployed_tag: shinjeom-api-v2.3.6
+    deployed_commit: 1498e842d7880be7a80d78825cd89f4b686edf33
+    deployed_at: "2026-09-11T22:52:29+09:00"
+    notes: "Shared report URL uses reports/share/<uuid>/; promoted same image as staging from v2.3.5; no new migrations; Helm revision 36"
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: dev
