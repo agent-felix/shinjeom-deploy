@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-11T11:12:57+09:00"
+updated_at: "2026-09-11T12:06:22+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -59,11 +59,11 @@ services:
     notes: "Mio v4 reports, colored-pencil fortune images and updated chat greetings; scheduled follow-ups disabled"
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: feature/introduce-mio
-    deployed_tag: shinjeom-api-v2.2.17
-    deployed_commit: 7a86456b9da3b1547e85cf35570b50548deabc82
-    deployed_at: "2026-08-31T19:53:50+09:00"
-    notes: "Added Mio report consult support"
+    tracked_branch: dev
+    deployed_tag: shinjeom-api-v2.3.4
+    deployed_commit: a2c93028341157c474623e344773cb77a5b00d45
+    deployed_at: "2026-09-11T12:03:22+09:00"
+    notes: "Allow saved cat profiles to include birth time; migration f18c6a43e0b7 applied"
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
