@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-11T22:52:26+09:00"
+updated_at: "2026-09-14T18:56:15+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -59,11 +59,11 @@ services:
     notes: "Synced Notion greeting templates and per-variant Korean addressing"
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: dev
-    deployed_tag: shinjeom-api-v2.3.6
-    deployed_commit: 1498e842d7880be7a80d78825cd89f4b686edf33
-    deployed_at: "2026-09-11T22:48:25+09:00"
-    notes: "Shared report URL uses reports/share/<uuid>/; no new migrations; Helm revision 98"
+    tracked_branch: feature/faceless-foundation
+    deployed_tag: shinjeom-api-v2.4.0-rc1
+    deployed_commit: 455f68111de25644f0840d37cacfd0b0ffa01d33
+    deployed_at: "2026-09-14T18:56:15+09:00"
+    notes: "Faceless plot APIs, migration e07b5f32d9a6, Backstage CORS and admin ingress. Runtime secrets synced via secretctl."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
@@ -85,3 +85,10 @@ services:
     deployed_commit: null
     deployed_at: null
     notes: ""
+  faceless:
+    repo_path: ../shinjeom-faceless
+    tracked_branch: main
+    deployed_tag: faceless-v0.1.0-rc3
+    deployed_commit: ae2b27f7cf27b6237607e0784a5d625788991c41
+    deployed_at: "2026-09-14T18:56:15+09:00"
+    notes: "Initial deployment with dedicated noeviction Redis and HTTP-01 TLS. LTM dedicated key applied; LTM API and worker restarted. User will perform interactive Backstage testing."
