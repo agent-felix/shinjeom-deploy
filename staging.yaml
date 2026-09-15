@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-15T18:10:00+09:00"
+updated_at: "2026-09-15T18:21:32+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -88,10 +88,10 @@ services:
   faceless:
     repo_path: ../shinjeom-faceless
     tracked_branch: main
-    deployed_tag: faceless-v0.1.0-rc4
-    deployed_commit: d4214c89e0e99b52e869d1ef591d5bd7ca52e696
-    deployed_at: "2026-09-15T18:03:36+09:00"
-    notes: "Author intro displayed before generated history and supplied as prior conversation without source metadata. Helm revision 3, Redis, API connectivity, CORS and authentication checks passed. One unresponsive LTM API pod restarted; both instances and service passed authenticated read checks. LTM code unchanged."
+    deployed_tag: faceless-v0.1.0-rc5
+    deployed_commit: a7c8f6a0a189e97465527c6f3870f8e2902ceda0
+    deployed_at: "2026-09-15T18:21:32+09:00"
+    notes: "Gemini 3.8 Flash with low thinking, the lowest supported level (minimal unsupported). Helm revision 4; runtime settings and live structured streaming verified. Intro continuation and player suggestions passed real model checks; 19 related tests passed."
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
     tracked_branch: main
