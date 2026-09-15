@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-14T18:56:15+09:00"
+updated_at: "2026-09-15T18:10:00+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -60,10 +60,10 @@ services:
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: feature/faceless-foundation
-    deployed_tag: shinjeom-api-v2.4.0-rc1
-    deployed_commit: 455f68111de25644f0840d37cacfd0b0ffa01d33
-    deployed_at: "2026-09-14T18:56:15+09:00"
-    notes: "Faceless plot APIs, migration e07b5f32d9a6, Backstage CORS and admin ingress. Runtime secrets synced via secretctl."
+    deployed_tag: shinjeom-api-v2.4.0-rc2
+    deployed_commit: 165f2e13e3a1aa48257db353093e81d0220addcb
+    deployed_at: "2026-09-15T18:06:19+09:00"
+    notes: "Plot intro persistence with shared AuthoredMessage schema, WebP uploads and Mio avatar notification fix. Migration f18c6a42b7e9 and Helm revision 100 succeeded; health, OpenAPI and Backstage CORS verified."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
@@ -88,7 +88,14 @@ services:
   faceless:
     repo_path: ../shinjeom-faceless
     tracked_branch: main
-    deployed_tag: faceless-v0.1.0-rc3
-    deployed_commit: ae2b27f7cf27b6237607e0784a5d625788991c41
-    deployed_at: "2026-09-14T18:56:15+09:00"
-    notes: "Initial deployment with dedicated noeviction Redis and HTTP-01 TLS. LTM dedicated key applied; LTM API and worker restarted. User will perform interactive Backstage testing."
+    deployed_tag: faceless-v0.1.0-rc4
+    deployed_commit: d4214c89e0e99b52e869d1ef591d5bd7ca52e696
+    deployed_at: "2026-09-15T18:03:36+09:00"
+    notes: "Author intro displayed before generated history and supplied as prior conversation without source metadata. Helm revision 3, Redis, API connectivity, CORS and authentication checks passed. One unresponsive LTM API pod restarted; both instances and service passed authenticated read checks. LTM code unchanged."
+  shinjeom-backstage:
+    repo_path: ../shinjeom-backstage
+    tracked_branch: main
+    deployed_tag: shinjeom-backstage-v0.1.0-rc1
+    deployed_commit: fad13d524f22e7b21d2241beec014f4a05495227
+    deployed_at: "2026-09-15T18:08:29+09:00"
+    notes: "Prompt/intro editor tabs and intro preview. Published to manshin-backstage-staging/faceless with staging API/runtime URLs; CloudFront invalidation completed and public asset SHA256 hashes matched the release build."
