@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-16T13:55:40+09:00"
+updated_at: "2026-09-16T16:12:56+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -88,10 +88,10 @@ services:
   faceless:
     repo_path: ../shinjeom-faceless
     tracked_branch: main
-    deployed_tag: faceless-v0.1.0-rc6
-    deployed_commit: 2624e4e9e60e368e77893d7431be3deaf13d08f5
-    deployed_at: "2026-09-15T18:51:25+09:00"
-    notes: "Story-only Zeta style reference with private internal guidance; suggestions unchanged. Helm revision 5; 21 related tests passed. Deployed prompt SHA256 matched commit, readiness and HTTP health passed, Redis reachable. Probe scripts excluded from release commit."
+    deployed_tag: faceless-v0.1.0-rc7
+    deployed_commit: 3317392b3fc1ce27530f2ddbf47791a95de5abbc
+    deployed_at: "2026-09-16T16:12:56+09:00"
+    notes: "Contextual comprehensive/relationship saju tools, formatted Korean source data and diagnostic logging. Helm revision 6; 179 tests passed. Source hashes matched commit; readiness, Orrery calculations, live Gemini tool-to-story flow, public routing and Backstage CORS passed. Gemini 3.8 Flash/low preserved; tool payload logging remains disabled. Image digest sha256:3851a9005843aafed16982d6232b9e0616c02c3f5c34f77b1d08c8c49c58e61a."
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
     tracked_branch: main
