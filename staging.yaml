@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-16T16:12:56+09:00"
+updated_at: "2026-09-16T19:28:42+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -60,10 +60,10 @@ services:
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: feature/faceless-foundation
-    deployed_tag: shinjeom-api-v2.4.0-rc3
-    deployed_commit: d7945f2500fc0e0f40f0771d53ea6fd38317a828
-    deployed_at: "2026-09-16T13:55:40+09:00"
-    notes: "Staging admin MFA access tokens now last 7 days (10080 minutes); regular access tokens remain 30 minutes. Helm revision 101, migration, 2/2 rollout, health and issued-token TTL (604800 seconds) verified."
+    deployed_tag: "shinjeom-api-v2.4.0-rc4"
+    deployed_commit: "3be73fd6fdc75ab21cbaeb6118b304c46a2b8ed4"
+    deployed_at: "2026-09-16T19:28:42+09:00"
+    notes: "Public plot images reuse existing private-media API credentials; Terraform added only plots/images/* PutObject policy. Secretctl synced, no secret changes. Helm revision 102; SKU migration a29d7b54f1c8 succeeded; 2/2 ready and public health/CORS passed. Live storage upload and anonymous CDN read verified; unauthenticated upload returns 401. Image digest sha256:e23284d15891bbd9b8212ff7710d5a2d172b50613d550040c7f0729507f5e946."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
@@ -88,14 +88,14 @@ services:
   faceless:
     repo_path: ../shinjeom-faceless
     tracked_branch: main
-    deployed_tag: faceless-v0.1.0-rc7
-    deployed_commit: 3317392b3fc1ce27530f2ddbf47791a95de5abbc
-    deployed_at: "2026-09-16T16:12:56+09:00"
-    notes: "Contextual comprehensive/relationship saju tools, formatted Korean source data and diagnostic logging. Helm revision 6; 179 tests passed. Source hashes matched commit; readiness, Orrery calculations, live Gemini tool-to-story flow, public routing and Backstage CORS passed. Gemini 3.8 Flash/low preserved; tool payload logging remains disabled. Image digest sha256:3851a9005843aafed16982d6232b9e0616c02c3f5c34f77b1d08c8c49c58e61a."
+    deployed_tag: "faceless-v0.1.0-rc8"
+    deployed_commit: "d6708bd6ac63e55fa2e52f0e8f5ea72581d303bc"
+    deployed_at: "2026-09-16T19:28:42+09:00"
+    notes: "Public image metadata and ordered intro images retained in snapshots. Helm revision 7; 1/1 ready. Live API snapshot -> Faceless -> LTM storage/retrieval, text/image/text order, access reissue and snapshot mutation rejection verified. Synthetic preview room 53579c02-7b8a-4e85-ae2f-a04540e60d76 for deployment verification only. Image digest sha256:9a9cd4df1bc9b89c5f33b6d6dcf2118363ac0ec62b6ef1a4949b57a1314dafa4."
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
     tracked_branch: main
-    deployed_tag: shinjeom-backstage-v0.1.0-rc1
-    deployed_commit: fad13d524f22e7b21d2241beec014f4a05495227
-    deployed_at: "2026-09-15T18:08:29+09:00"
-    notes: "Prompt/intro editor tabs and intro preview. Published to manshin-backstage-staging/faceless with staging API/runtime URLs; CloudFront invalidation completed and public asset SHA256 hashes matched the release build."
+    deployed_tag: "shinjeom-backstage-v0.1.0-rc2"
+    deployed_commit: "c97aca97edf873b840804f0f44ee43a06e9d8fee"
+    deployed_at: "2026-09-16T19:28:42+09:00"
+    notes: "Plot/character galleries and ordered intro images published to manshin-backstage-staging/faceless. CloudFront invalidation completed; public HTML and all asset SHA256 hashes match clean release build. Login page rendered and upload CORS passed. Authenticated browser editing was not exercised in this deployment verification."
