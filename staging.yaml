@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-16T19:28:42+09:00"
+updated_at: "2026-09-16T20:19:13+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -59,11 +59,11 @@ services:
     notes: "Synced Notion greeting templates and per-variant Korean addressing"
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: feature/faceless-foundation
-    deployed_tag: "shinjeom-api-v2.4.0-rc4"
-    deployed_commit: "3be73fd6fdc75ab21cbaeb6118b304c46a2b8ed4"
-    deployed_at: "2026-09-16T19:28:42+09:00"
-    notes: "Public plot images reuse existing private-media API credentials; Terraform added only plots/images/* PutObject policy. Secretctl synced, no secret changes. Helm revision 102; SKU migration a29d7b54f1c8 succeeded; 2/2 ready and public health/CORS passed. Live storage upload and anonymous CDN read verified; unauthenticated upload returns 401. Image digest sha256:e23284d15891bbd9b8212ff7710d5a2d172b50613d550040c7f0729507f5e946."
+    tracked_branch: "feature/faceless-foundation"
+    deployed_tag: "shinjeom-api-v2.4.0-rc5"
+    deployed_commit: "f64bb4e1d20fe189db8b36496187695add544bdf"
+    deployed_at: "2026-09-16T20:16:20+09:00"
+    notes: "Consumer Text Consult room details expose saved speaker display fields only; owned room listing supports SKU filtering. Helm revision 103; migration succeeded; 2/2 ready. Live health, unauthorized protection and OpenAPI contract verified. Secretctl status synced; no secret changes. Image digest sha256:201a07affd2232c4e6bb6856682788eba5fb8002336786aa3a8b9e855e4296ae."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
@@ -87,11 +87,11 @@ services:
     notes: ""
   faceless:
     repo_path: ../shinjeom-faceless
-    tracked_branch: main
-    deployed_tag: "faceless-v0.1.0-rc8"
-    deployed_commit: "d6708bd6ac63e55fa2e52f0e8f5ea72581d303bc"
-    deployed_at: "2026-09-16T19:28:42+09:00"
-    notes: "Public image metadata and ordered intro images retained in snapshots. Helm revision 7; 1/1 ready. Live API snapshot -> Faceless -> LTM storage/retrieval, text/image/text order, access reissue and snapshot mutation rejection verified. Synthetic preview room 53579c02-7b8a-4e85-ae2f-a04540e60d76 for deployment verification only. Image digest sha256:9a9cd4df1bc9b89c5f33b6d6dcf2118363ac0ec62b6ef1a4949b57a1314dafa4."
+    tracked_branch: "feature/text-consult-web-access"
+    deployed_tag: "faceless-v0.1.0-rc9"
+    deployed_commit: "d79e02209909ef38fec33eb81473832b1b8faa91"
+    deployed_at: "2026-09-16T20:16:20+09:00"
+    notes: "Allow staging and dev consumer web origins alongside Backstage. Helm revision 8; 1/1 ready. Live CORS allows all three configured origins and rejects untrusted origins; anonymous chat access is 401 and internal access-grant endpoint stays private. Secretctl status synced; no secret changes. Image digest sha256:32283f5290dfc4d2873513be017a4d200ed572c74a5bba788cd7d9e10853398a."
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
     tracked_branch: main
@@ -99,3 +99,10 @@ services:
     deployed_commit: "c97aca97edf873b840804f0f44ee43a06e9d8fee"
     deployed_at: "2026-09-16T19:28:42+09:00"
     notes: "Plot/character galleries and ordered intro images published to manshin-backstage-staging/faceless. CloudFront invalidation completed; public HTML and all asset SHA256 hashes match clean release build. Login page rendered and upload CORS passed. Authenticated browser editing was not exercised in this deployment verification."
+  shinjeom-web:
+    repo_path: ../shinjeom-web
+    tracked_branch: feature/text-consult-catalog
+    deployed_tag: "shinjeom-web-v1.0.0-rc1"
+    deployed_commit: "548987696da7ddca83f55df53e69d5ccb8bdcfad"
+    deployed_at: "2026-09-16T20:19:13+09:00"
+    notes: "Staging direct deployment of catalog and resumable chat with Backstage UI. SSM Faceless URL and CloudFront detail HTML/RSC rewrite applied via Terraform. Full 1218 tests, lint, types and build passed; 51 media assets verified. Invalidation I4RBW37ACQDGVVO6RIX3IVADRM completed. Live catalog/detail/RSC and existing report routes plus 20 referenced assets match the release build. Staging-branch promotion will replace this feature-branch deployment."
