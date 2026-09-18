@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-09-18T22:42:55+09:00"
+updated_at: "2026-09-18T23:06:14+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -62,8 +62,8 @@ services:
     tracked_branch: "dev"
     deployed_tag: "shinjeom-api-v2.4.0"
     deployed_commit: "ff0e666808494a58de5f92f9723db8d0ddb4a625"
-    deployed_at: "2026-09-18T22:40:35+09:00"
-    notes: "PRs #275 and #276 integrated; promoted the verified staging rc10 image without rebuilding. Helm 37; 2/2 ready; DB f82d3a0b5c41, with a persistent badge default for rolling signup compatibility. Health, Backstage CORS, protected routes and API/Faceless authentication verified. Text-consult limits and Apple sales remain disabled pending production product setup and device purchase validation. Digest sha256:7964975bad9e54ab3a79baf0cdd2d51ea72042861f83953e79763ed9d0ea55c4. See docs/2026-09-18-api-v2.4.0-rollout.md."
+    deployed_at: "2026-09-18T23:06:14+09:00"
+    notes: "Configuration-only rollout, Helm 38; 2/2 ready. Image remains v2.4.0 at ff0e666, digest sha256:7964975bad9e54ab3a79baf0cdd2d51ea72042861f83953e79763ed9d0ea55c4. Production config 7630f76 (PR #277) enables 10 free answers per account/plot and Apple sales with registered day/monthly products. Existing Apple team IAP key connected through secretctl version 0c6fcceb-c18f-451e-9dda-ddd857199492. Runtime flags/keys, health, DB f82d3a0b5c41, and Apple Sandbox/Production TEST notification delivery verified. Consumer web deployment is user-owned and was not performed. See docs/2026-09-18-manshin-pass-api-activation.md."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: dev
@@ -91,7 +91,7 @@ services:
     deployed_tag: faceless-v0.1.0-rc10
     deployed_commit: f73240a1d24640298db31cf4a593a893d8e9590a
     deployed_at: "2026-09-18T22:42:55+09:00"
-    notes: "Helm revision 3; application 1/1 and Redis 1/1 ready. Enabled TEXT_CONSULT_USAGE_ENABLED after API v2.4.0 deployment; authenticated API usage checks verified. API commercial limits and Apple sales remain disabled. Production configuration commit bb5aeab84a37305dd61135f4d3699535b0153207; image remains faceless-v0.1.0-rc10 without rebuilding, digest sha256:c828b04d9333812337c027878c93569a3b0bb00086f3f0e537aad9a6c42a5730. DNS, TLS and dedicated runtime keys were prepared earlier. See docs/2026-09-18-api-v2.4.0-rollout.md."
+    notes: "Helm revision 3; application 1/1 and Redis 1/1 ready. Enabled TEXT_CONSULT_USAGE_ENABLED after API v2.4.0 deployment; authenticated API usage checks verified. API commercial limits (10 free answers) and Apple sales were enabled by the subsequent Helm 38 API rollout. Production configuration commit bb5aeab84a37305dd61135f4d3699535b0153207; image remains faceless-v0.1.0-rc10 without rebuilding, digest sha256:c828b04d9333812337c027878c93569a3b0bb00086f3f0e537aad9a6c42a5730. DNS, TLS and dedicated runtime keys were prepared earlier. See docs/2026-09-18-api-v2.4.0-rollout.md."
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
     tracked_branch: main
