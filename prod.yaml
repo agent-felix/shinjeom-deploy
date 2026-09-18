@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-09-18T23:39:31+09:00"
+updated_at: "2026-09-18T23:57:00+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -60,10 +60,10 @@ services:
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: "dev"
-    deployed_tag: "shinjeom-api-v2.4.0"
-    deployed_commit: "ff0e666808494a58de5f92f9723db8d0ddb4a625"
-    deployed_at: "2026-09-18T23:06:14+09:00"
-    notes: "Configuration-only rollout, Helm 38; 2/2 ready. Image remains v2.4.0 at ff0e666, digest sha256:7964975bad9e54ab3a79baf0cdd2d51ea72042861f83953e79763ed9d0ea55c4. Production config 7630f76 (PR #277) enables 10 free answers per account/plot and Apple sales with registered day/monthly products. Existing Apple team IAP key connected through secretctl version 0c6fcceb-c18f-451e-9dda-ddd857199492. Runtime flags/keys, health, DB f82d3a0b5c41, and Apple Sandbox/Production TEST notification delivery verified. Consumer web was subsequently deployed at the user's request through PRs #97/#98 and the branch promotion workflow; see docs/2026-09-18-manshin-pass-web-release.md. See docs/2026-09-18-manshin-pass-api-activation.md."
+    deployed_tag: "shinjeom-api-v2.4.1"
+    deployed_commit: "9778210330f2aacb434081da3fd5619f2783a968"
+    deployed_at: "2026-09-18T23:54:31+09:00"
+    notes: "Prod-only placeholder frequency fix, Helm 39; 2/2 ready. Release source is fix/plot-translation-placeholder-presence (not merged into tracked dev). Runtime configuration unchanged from Helm 38; free limit 10 and limits/sales enabled. Tests 66 passed; health healthy. Real draft validation still blocked by translated hashtag count differences; no plot published. Staging remains Helm 109 / v2.4.0-rc10. See docs/2026-09-18-plot-placeholder-prod-fix.md and docs/2026-09-18-manshin-pass-api-activation.md."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: dev
