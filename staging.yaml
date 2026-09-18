@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-18T20:57:00+09:00"
+updated_at: "2026-09-18T22:37:20+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -59,11 +59,11 @@ services:
     notes: "Synced Notion greeting templates and per-variant Korean addressing"
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: "feature/faceless-foundation"
-    deployed_tag: "shinjeom-api-v2.4.0-rc9"
-    deployed_commit: "16244a951a6e45970e182652d61b02e8ec717c3b"
-    deployed_at: "2026-09-18T20:55:00.561554+09:00"
-    notes: "Manshin Pass staging: Apple sales and per-account/plot 10 free answers enabled. Registered staging day/monthly products; real IAP server key supplied through secretctl; Xcode mode disabled. Helm 108; 2/2 ready; DB e71c2f9a4b30. Fixed Sandbox notification verification when appAppleId is absent; 57 verification/webhook tests passed and Apple Sandbox test notification delivery succeeded. Device purchase verification remains for the user's new TestFlight build. Digest sha256:3b2cbbfe7f5917c3ecd6fcb1891840b570a2d2c78ae2f9483e9955637a4f79c2."
+    tracked_branch: "dev"
+    deployed_tag: "shinjeom-api-v2.4.0-rc10"
+    deployed_commit: "ff0e666808494a58de5f92f9723db8d0ddb4a625"
+    deployed_at: "2026-09-18T22:37:20+09:00"
+    notes: "PRs #275 and #276 merged to dev; text-consult and rating eligibility integrated. Helm 109; 2/2 ready; DB f82d3a0b5c41 retains the user badge default for rolling signup compatibility. Limits and Apple sales remain enabled with existing staging products and 10 free answers. Health, Backstage CORS and API/Faceless authentication in both directions verified. 409 integration tests, 725 final unit tests and 50 focused regression checks passed. Device purchase validation remains pending. Digest sha256:7964975bad9e54ab3a79baf0cdd2d51ea72042861f83953e79763ed9d0ea55c4."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
