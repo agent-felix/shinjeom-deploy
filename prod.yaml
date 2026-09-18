@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-09-18T22:04:05+09:00"
+updated_at: "2026-09-18T22:42:55+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -59,11 +59,11 @@ services:
     notes: "First prod deployment; Redis Mio namespace and ACL enabled (shared-redis revision 3); product inactive; inactivity CronJob disabled; replicas 2 (Helm revision 2); resource requests and limits unchanged"
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: dev
-    deployed_tag: shinjeom-api-v2.3.6
-    deployed_commit: 1498e842d7880be7a80d78825cd89f4b686edf33
-    deployed_at: "2026-09-11T22:52:29+09:00"
-    notes: "Shared report URL uses reports/share/<uuid>/; promoted same image as staging from v2.3.5; no new migrations; Helm revision 36. On 2026-09-18, prepared FACELESS_API_KEY through secretctl without restarting the API; existing keys preserved, 2/2 ready. Text-consult application/DB rollout remains pending."
+    tracked_branch: "dev"
+    deployed_tag: "shinjeom-api-v2.4.0"
+    deployed_commit: "ff0e666808494a58de5f92f9723db8d0ddb4a625"
+    deployed_at: "2026-09-18T22:40:35+09:00"
+    notes: "PRs #275 and #276 integrated; promoted the verified staging rc10 image without rebuilding. Helm 37; 2/2 ready; DB f82d3a0b5c41, with a persistent badge default for rolling signup compatibility. Health, Backstage CORS, protected routes and API/Faceless authentication verified. Text-consult limits and Apple sales remain disabled pending production product setup and device purchase validation. Digest sha256:7964975bad9e54ab3a79baf0cdd2d51ea72042861f83953e79763ed9d0ea55c4. See docs/2026-09-18-api-v2.4.0-rollout.md."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: dev
@@ -90,12 +90,12 @@ services:
     tracked_branch: feature/text-consult-web-access
     deployed_tag: faceless-v0.1.0-rc10
     deployed_commit: f73240a1d24640298db31cf4a593a893d8e9590a
-    deployed_at: "2026-09-18T21:52:54+09:00"
-    notes: "Production runtime prepared; consumer rollout pending. Helm revision 2; application 1/1 and Redis 1/1 ready. Dedicated Gemini/internal keys applied through secretctl; LTM authentication and actual Gemini stream verified. Cloudflare DNS and TLS ready; public unauthenticated history 401, internal access-grant route 404. TEXT_CONSULT_USAGE_ENABLED=False until API rollout. Image promoted from staging without rebuild; digest sha256:c828b04d9333812337c027878c93569a3b0bb00086f3f0e537aad9a6c42a5730. See docs/2026-09-18-text-consult-prod-preparation.md."
+    deployed_at: "2026-09-18T22:42:55+09:00"
+    notes: "Helm revision 3; application 1/1 and Redis 1/1 ready. Enabled TEXT_CONSULT_USAGE_ENABLED after API v2.4.0 deployment; authenticated API usage checks verified. API commercial limits and Apple sales remain disabled. Production configuration commit bb5aeab84a37305dd61135f4d3699535b0153207; image remains faceless-v0.1.0-rc10 without rebuilding, digest sha256:c828b04d9333812337c027878c93569a3b0bb00086f3f0e537aad9a6c42a5730. DNS, TLS and dedicated runtime keys were prepared earlier. See docs/2026-09-18-api-v2.4.0-rollout.md."
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
     tracked_branch: main
     deployed_tag: shinjeom-backstage-v0.1.0-rc3
     deployed_commit: 696480077ebe3a9e9291996811c388eb28c2a441
     deployed_at: "2026-09-18T22:04:05+09:00"
-    notes: "Published before API rollout at the user's request, from the same clean tag as staging with production API/Faceless URLs. Private S3 manshin-backstage-prod/faceless; CloudFront E326HEXH1LVR6L; invalidation IAZSO6XO3Q1L8NRSUM4VKS3L09 completed. TypeScript/build passed; HTTPS 200, HTML/JS/CSS/font match artifacts, browser login screen verified. API v2.3.6 still rejects Backstage login preflight with Disallowed CORS origin; authenticated flows await API/CORS/DB rollout. See docs/2026-09-18-backstage-prod-deployment.md."
+    notes: "Published before API rollout at the user's request, from the same clean tag as staging with production API/Faceless URLs. Private S3 manshin-backstage-prod/faceless; CloudFront E326HEXH1LVR6L; invalidation IAZSO6XO3Q1L8NRSUM4VKS3L09 completed. TypeScript/build passed; HTTPS 200, HTML/JS/CSS/font match artifacts, browser login screen verified. API v2.4.0 now supplies Backstage CORS and plot/billing DB support; authenticated login and plot authoring can be tested with an administrator account. See docs/2026-09-18-backstage-prod-deployment.md."
