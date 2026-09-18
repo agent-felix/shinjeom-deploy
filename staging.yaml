@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-18T17:46:51+09:00"
+updated_at: "2026-09-18T20:57:00+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -60,10 +60,10 @@ services:
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: "feature/faceless-foundation"
-    deployed_tag: "shinjeom-api-v2.4.0-rc7"
-    deployed_commit: "e6071adb6ab7aa51da65002e2a6e12d282d95e78"
-    deployed_at: "2026-09-18T17:41:32.688397+09:00"
-    notes: "Rating plus rebased faceless foundation. Helm 106; 2/2 ready; DB 8ddca1032366. Restored 10 plots and 37 rooms from CSV; preserved 1 publication with 11 locales. Existing 36 tables unchanged by restoration. Active room history and new-room smoke passed. Billing limits and Apple sales remain disabled. Digest sha256:52351f33a31e4ccce9db846818b53548521e417b9538811c956c8aa653a61237."
+    deployed_tag: "shinjeom-api-v2.4.0-rc9"
+    deployed_commit: "16244a951a6e45970e182652d61b02e8ec717c3b"
+    deployed_at: "2026-09-18T20:55:00.561554+09:00"
+    notes: "Manshin Pass staging: Apple sales and per-account/plot 10 free answers enabled. Registered staging day/monthly products; real IAP server key supplied through secretctl; Xcode mode disabled. Helm 108; 2/2 ready; DB e71c2f9a4b30. Fixed Sandbox notification verification when appAppleId is absent; 57 verification/webhook tests passed and Apple Sandbox test notification delivery succeeded. Device purchase verification remains for the user's new TestFlight build. Digest sha256:3b2cbbfe7f5917c3ecd6fcb1891840b570a2d2c78ae2f9483e9955637a4f79c2."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
@@ -84,14 +84,14 @@ services:
     deployed_tag: null
     deployed_commit: null
     deployed_at: null
-    notes: ""
+    notes: "Staging pass catalog registered and read back with no pending changes; review screenshots remain pending. Local staging release URLs configured. User will Archive ShinjeomStaging and upload to TestFlight; no mobile build uploaded by this deployment. Existing Xcode local StoreKit configuration retained."
   faceless:
     repo_path: ../shinjeom-faceless
     tracked_branch: "feature/text-consult-web-access"
     deployed_tag: "faceless-v0.1.0-rc10"
     deployed_commit: "f73240a1d24640298db31cf4a593a893d8e9590a"
-    deployed_at: "2026-09-18T17:40:54.143326+09:00"
-    notes: "Localized runtime and translation endpoint. Helm 9; 1/1 ready. 191 tests passed. Backed up 37 LTM states and 394 events; added source.locale=ko without changing events. All 36 active room histories verified. Secretctl synced. Digest sha256:c828b04d9333812337c027878c93569a3b0bb00086f3f0e537aad9a6c42a5730."
+    deployed_at: "2026-09-18T20:43:24.274196+09:00"
+    notes: "Existing rc10 image retained; configuration-only upgrade enables TEXT_CONSULT_USAGE_ENABLED (source commit 1e8ba94). Helm 10; 1/1 ready. Secretctl 7182c50 supplies SHINJEOM_API_INTERNAL_TOKEN from the shared API token; applied staging secrets and confirmed token match. Prior localized runtime/history validation remains unchanged. Digest sha256:c828b04d9333812337c027878c93569a3b0bb00086f3f0e537aad9a6c42a5730."
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
     tracked_branch: "main"
@@ -102,7 +102,7 @@ services:
   shinjeom-web:
     repo_path: ../shinjeom-web
     tracked_branch: "feature/text-consult-catalog"
-    deployed_tag: "shinjeom-web-v1.0.0-rc2"
-    deployed_commit: "6593c7325f3b3a877424fe42ead32ae7043d4032"
-    deployed_at: "2026-09-18T17:46:51+09:00"
-    notes: "Localized chat catalog, public profiles and player characters from clean tagged worktree. 1232 unit tests and 12 text-consult browser tests passed; lint/typecheck/build passed. Staging SSM environment used. Updated only CloudFront chat route function; no SSM changes. Media 51/51 verified; invalidation completed; 9 public HTML/RSC routes match artifacts. Direct staging publish; next staging-branch deployment replaces it."
+    deployed_tag: "shinjeom-web-v1.0.0-rc3"
+    deployed_commit: "0bf23b5268b0db10f16cea0550645fb78ebfda92"
+    deployed_at: "2026-09-18T20:47:59.292868+09:00"
+    notes: "Manshin Pass paywall and FAQ/legal updates from detached tagged worktree. 1241 tests passed; lint/typecheck/assets check and isolated build passed. Published directly to staging S3 with staging SSM values; CloudFront invalidation I3OXAW1D9C1BJWO0NYTQVM3K8X created; /en/ HTTP 200 and / HTTP 302. No staging/dev branch merge. User will reconcile the existing GitHub branch deployment workflow later; future web deployments must use that workflow. Next staging-branch deployment replaces this release."
