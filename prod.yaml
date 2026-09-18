@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-09-18T23:57:00+09:00"
+updated_at: "2026-09-19T00:26:27+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -103,6 +103,6 @@ services:
     repo_path: ../shinjeom-web
     tracked_branch: "main"
     deployed_tag: null
-    deployed_commit: "2de7e0acf9bf71bf75ceca6b65f9db661b7e56bf"
-    deployed_at: "2026-09-18T23:39:31+09:00"
-    notes: "Web 1.1.0 via staging-to-main fast-forward promotion and GitHub Actions, run 35357145623. Includes text-consult/Manshin Pass PR #96, production Faceless origin/version PR #97, and test-only fix #98. Build, S3/CloudFront deployment and post-deploy smoke succeeded; full checks reused from the successful dev deployment of the same SHA. Public home/settings/chat list/chat shell returned 200; locale redirect 302; served JavaScript contains release SHA and https://faceless.manshin.ai. dev/staging/main all point to the same commit. Actual device purchase/restore remains unverified. See docs/2026-09-18-manshin-pass-web-release.md."
+    deployed_commit: "4a434316848e44fce0635daa5dc80b2dfe389818"
+    deployed_at: "2026-09-19T00:26:27+09:00"
+    notes: "User-requested direct production S3 deployment from local fix/manshin-pass-price-confirmation. Unconfirmed native pass prices show Apple checkout guidance. Full web suite 1244 passed; assets/lint/typecheck/build/media checks passed. CloudFront invalidation IENQ74S9KLUFKOMHABI65BJ41H completed. Public pages and JS match the build; root locale redirect verified. Native retry change is committed locally as 9fbb09fc and still requires a new TestFlight build. Shared branches and staging were not changed. See docs/2026-09-19-pass-price-web-direct-release.md."
