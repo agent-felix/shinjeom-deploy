@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-09-11T22:56:55+09:00"
+updated_at: "2026-09-18T21:33:16+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -85,3 +85,10 @@ services:
     deployed_commit: null
     deployed_at: null
     notes: ""
+  faceless:
+    repo_path: ../shinjeom-faceless
+    tracked_branch: feature/text-consult-web-access
+    deployed_tag: faceless-v0.1.0-rc10
+    deployed_commit: f73240a1d24640298db31cf4a593a893d8e9590a
+    deployed_at: "2026-09-18T21:32:07+09:00"
+    notes: "Infrastructure preparation only, not live chat. Helm revision 1; application replicas 0 pending user-provided dedicated Gemini key; Redis 1/1 ready. Namespace, Service, Ingress and Issuer created. TEXT_CONSULT_USAGE_ENABLED=False until API rollout. Cloudflare DNS and TLS pending. Image promoted from staging without rebuild; digest sha256:c828b04d9333812337c027878c93569a3b0bb00086f3f0e537aad9a6c42a5730. See docs/2026-09-18-text-consult-prod-preparation.md."
