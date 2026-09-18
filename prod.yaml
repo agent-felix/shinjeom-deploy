@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-09-18T21:33:16+09:00"
+updated_at: "2026-09-18T21:54:30+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -63,14 +63,14 @@ services:
     deployed_tag: shinjeom-api-v2.3.6
     deployed_commit: 1498e842d7880be7a80d78825cd89f4b686edf33
     deployed_at: "2026-09-11T22:52:29+09:00"
-    notes: "Shared report URL uses reports/share/<uuid>/; promoted same image as staging from v2.3.5; no new migrations; Helm revision 36"
+    notes: "Shared report URL uses reports/share/<uuid>/; promoted same image as staging from v2.3.5; no new migrations; Helm revision 36. On 2026-09-18, prepared FACELESS_API_KEY through secretctl without restarting the API; existing keys preserved, 2/2 ready. Text-consult application/DB rollout remains pending."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: dev
     deployed_tag: long-term-memory-v3.0.2
     deployed_commit: e55b5bfb54b380b79bd56f65987e7f5283faf4c4
     deployed_at: "2026-08-11T17:58:10+09:00"
-    notes: ""
+    notes: "On 2026-09-18, added the dedicated Faceless key through secretctl while preserving the original key. API and worker rolling restarts completed; API 2/2, worker 1/1 ready. Existing autoscaler increased stable workers from 1 to 2 for rollout CPU capacity. Image unchanged."
   orrery-api:
     repo_path: ../orrery
     tracked_branch: main
@@ -90,5 +90,12 @@ services:
     tracked_branch: feature/text-consult-web-access
     deployed_tag: faceless-v0.1.0-rc10
     deployed_commit: f73240a1d24640298db31cf4a593a893d8e9590a
-    deployed_at: "2026-09-18T21:32:07+09:00"
-    notes: "Infrastructure preparation only, not live chat. Helm revision 1; application replicas 0 pending user-provided dedicated Gemini key; Redis 1/1 ready. Namespace, Service, Ingress and Issuer created. TEXT_CONSULT_USAGE_ENABLED=False until API rollout. Cloudflare DNS and TLS pending. Image promoted from staging without rebuild; digest sha256:c828b04d9333812337c027878c93569a3b0bb00086f3f0e537aad9a6c42a5730. See docs/2026-09-18-text-consult-prod-preparation.md."
+    deployed_at: "2026-09-18T21:52:54+09:00"
+    notes: "Production runtime prepared; consumer rollout pending. Helm revision 2; application 1/1 and Redis 1/1 ready. Dedicated Gemini/internal keys applied through secretctl; LTM authentication and actual Gemini stream verified. Cloudflare DNS and TLS ready; public unauthenticated history 401, internal access-grant route 404. TEXT_CONSULT_USAGE_ENABLED=False until API rollout. Image promoted from staging without rebuild; digest sha256:c828b04d9333812337c027878c93569a3b0bb00086f3f0e537aad9a6c42a5730. See docs/2026-09-18-text-consult-prod-preparation.md."
+  shinjeom-backstage:
+    repo_path: ../shinjeom-backstage
+    tracked_branch: main
+    deployed_tag: null
+    deployed_commit: null
+    deployed_at: null
+    notes: "Hosting infrastructure only, prepared 2026-09-18 from a5711c5. Private S3 manshin-backstage-prod; CloudFront E326HEXH1LVR6L (d3km1pizpmsjgi.cloudfront.net) Deployed; backstage.manshin.ai DNS and ACM TLS ready. Final Terraform plan has no changes. Frontend files have not been published; /faceless/ returns 403 and / redirects there. See docs/2026-09-18-text-consult-prod-preparation.md."
