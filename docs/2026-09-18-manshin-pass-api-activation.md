@@ -40,3 +40,7 @@ At verification, production contained two draft plots, `장군신, 다함` and `
 The API checkout is clean on dev and matches origin/dev. The merged API launch branch was deleted locally and remotely. The web preparation branch/PR and existing mobile working-tree changes were left in place for the user.
 
 If the configuration must be reverted, use the explicit production cluster/namespace and Helm revision **37**. The application image and database schema are unchanged. Retaining the valid Apple verification credentials does not enable sales when the sales flag is disabled.
+
+## Subsequent web deployment
+
+After this API handoff, the user explicitly authorized PR #97 and staging-to-production web deployment, then requested staging promotion without waiting for dev deployment completion. Web 1.1.0 at `2de7e0acf9bf71bf75ceca6b65f9db661b7e56bf` was verified in production at 23:39:31 Asia/Seoul. See [the web release record](2026-09-18-manshin-pass-web-release.md) for PR #98's test-only follow-up, successful workflow runs and public artifact checks. The earlier handoff paragraphs above describe the state at the API activation time.

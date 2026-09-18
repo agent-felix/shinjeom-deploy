@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-09-18T23:06:14+09:00"
+updated_at: "2026-09-18T23:39:31+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -63,7 +63,7 @@ services:
     deployed_tag: "shinjeom-api-v2.4.0"
     deployed_commit: "ff0e666808494a58de5f92f9723db8d0ddb4a625"
     deployed_at: "2026-09-18T23:06:14+09:00"
-    notes: "Configuration-only rollout, Helm 38; 2/2 ready. Image remains v2.4.0 at ff0e666, digest sha256:7964975bad9e54ab3a79baf0cdd2d51ea72042861f83953e79763ed9d0ea55c4. Production config 7630f76 (PR #277) enables 10 free answers per account/plot and Apple sales with registered day/monthly products. Existing Apple team IAP key connected through secretctl version 0c6fcceb-c18f-451e-9dda-ddd857199492. Runtime flags/keys, health, DB f82d3a0b5c41, and Apple Sandbox/Production TEST notification delivery verified. Consumer web deployment is user-owned and was not performed. See docs/2026-09-18-manshin-pass-api-activation.md."
+    notes: "Configuration-only rollout, Helm 38; 2/2 ready. Image remains v2.4.0 at ff0e666, digest sha256:7964975bad9e54ab3a79baf0cdd2d51ea72042861f83953e79763ed9d0ea55c4. Production config 7630f76 (PR #277) enables 10 free answers per account/plot and Apple sales with registered day/monthly products. Existing Apple team IAP key connected through secretctl version 0c6fcceb-c18f-451e-9dda-ddd857199492. Runtime flags/keys, health, DB f82d3a0b5c41, and Apple Sandbox/Production TEST notification delivery verified. Consumer web was subsequently deployed at the user's request through PRs #97/#98 and the branch promotion workflow; see docs/2026-09-18-manshin-pass-web-release.md. See docs/2026-09-18-manshin-pass-api-activation.md."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: dev
@@ -99,3 +99,10 @@ services:
     deployed_commit: 696480077ebe3a9e9291996811c388eb28c2a441
     deployed_at: "2026-09-18T22:04:05+09:00"
     notes: "Published before API rollout at the user's request, from the same clean tag as staging with production API/Faceless URLs. Private S3 manshin-backstage-prod/faceless; CloudFront E326HEXH1LVR6L; invalidation IAZSO6XO3Q1L8NRSUM4VKS3L09 completed. TypeScript/build passed; HTTPS 200, HTML/JS/CSS/font match artifacts, browser login screen verified. API v2.4.0 now supplies Backstage CORS and plot/billing DB support; authenticated login and plot authoring can be tested with an administrator account. See docs/2026-09-18-backstage-prod-deployment.md."
+  shinjeom-web:
+    repo_path: ../shinjeom-web
+    tracked_branch: "main"
+    deployed_tag: null
+    deployed_commit: "2de7e0acf9bf71bf75ceca6b65f9db661b7e56bf"
+    deployed_at: "2026-09-18T23:39:31+09:00"
+    notes: "Web 1.1.0 via staging-to-main fast-forward promotion and GitHub Actions, run 35357145623. Includes text-consult/Manshin Pass PR #96, production Faceless origin/version PR #97, and test-only fix #98. Build, S3/CloudFront deployment and post-deploy smoke succeeded; full checks reused from the successful dev deployment of the same SHA. Public home/settings/chat list/chat shell returned 200; locale redirect 302; served JavaScript contains release SHA and https://faceless.manshin.ai. dev/staging/main all point to the same commit. Actual device purchase/restore remains unverified. See docs/2026-09-18-manshin-pass-web-release.md."

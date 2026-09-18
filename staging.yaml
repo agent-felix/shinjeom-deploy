@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-18T22:37:20+09:00"
+updated_at: "2026-09-18T23:34:58+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -101,8 +101,8 @@ services:
     notes: "Localized plot editor from clean tagged worktree. 59 browser tests passed. Published to manshin-backstage-staging/faceless; CloudFront invalidation completed; public HTML and JS/CSS match release artifacts."
   shinjeom-web:
     repo_path: ../shinjeom-web
-    tracked_branch: "feature/text-consult-catalog"
-    deployed_tag: "shinjeom-web-v1.0.0-rc3"
-    deployed_commit: "0bf23b5268b0db10f16cea0550645fb78ebfda92"
-    deployed_at: "2026-09-18T20:47:59.292868+09:00"
-    notes: "Manshin Pass paywall and FAQ/legal updates from detached tagged worktree. 1241 tests passed; lint/typecheck/assets check and isolated build passed. Published directly to staging S3 with staging SSM values; CloudFront invalidation I3OXAW1D9C1BJWO0NYTQVM3K8X created; /en/ HTTP 200 and / HTTP 302. No staging/dev branch merge. User will reconcile the existing GitHub branch deployment workflow later; future web deployments must use that workflow. Next staging-branch deployment replaces this release."
+    tracked_branch: "staging"
+    deployed_tag: null
+    deployed_commit: "2de7e0acf9bf71bf75ceca6b65f9db661b7e56bf"
+    deployed_at: "2026-09-18T23:34:58+09:00"
+    notes: "Web 1.1.0 via the normal branch/Actions workflow, replacing the earlier direct staging release. Includes PRs #96/#97 and test synchronization fix #98. User requested promotion without waiting for dev; staging ran its own full checks, build, deploy and smoke successfully. Run 35356302206. Public home/settings/chat list/chat shell returned 200; locale redirect 302; deployed SHA and staging Faceless origin found in served JavaScript. See docs/2026-09-18-manshin-pass-web-release.md."
