@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-18T16:58:40+09:00"
+updated_at: "2026-09-18T17:46:51+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -59,11 +59,11 @@ services:
     notes: "Synced Notion greeting templates and per-variant Korean addressing"
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: dev
-    deployed_tag: "shinjeom-api-v2.4.0-rc6"
-    deployed_commit: "e21f47760a41793a839c0c5df969ad0f51721257"
-    deployed_at: "2026-09-18T16:56:43+09:00"
-    notes: "In-app rating merged into dev; faceless remains rolled back. Helm revision 105; migration f18c6a43e0b7 -> b2c3d4e5f6a7 succeeded; 2/2 ready. 42 rating tests passed. Public API smoke verified auth, first-experience gating, prompt creation, rating persistence and cooldown; temporary smoke data removed. Secretctl synced with no secret changes. Image digest sha256:1a0a99005eb03654ca583bf7a8a35c8d362e7f154c94635152efa2d9934e5168."
+    tracked_branch: "feature/faceless-foundation"
+    deployed_tag: "shinjeom-api-v2.4.0-rc7"
+    deployed_commit: "e6071adb6ab7aa51da65002e2a6e12d282d95e78"
+    deployed_at: "2026-09-18T17:41:32.688397+09:00"
+    notes: "Rating plus rebased faceless foundation. Helm 106; 2/2 ready; DB 8ddca1032366. Restored 10 plots and 37 rooms from CSV; preserved 1 publication with 11 locales. Existing 36 tables unchanged by restoration. Active room history and new-room smoke passed. Billing limits and Apple sales remain disabled. Digest sha256:52351f33a31e4ccce9db846818b53548521e417b9538811c956c8aa653a61237."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
@@ -88,21 +88,21 @@ services:
   faceless:
     repo_path: ../shinjeom-faceless
     tracked_branch: "feature/text-consult-web-access"
-    deployed_tag: "faceless-v0.1.0-rc9"
-    deployed_commit: "d79e02209909ef38fec33eb81473832b1b8faa91"
-    deployed_at: "2026-09-16T20:16:20+09:00"
-    notes: "Allow staging and dev consumer web origins alongside Backstage. Helm revision 8; 1/1 ready. Live CORS allows all three configured origins and rejects untrusted origins; anonymous chat access is 401 and internal access-grant endpoint stays private. Secretctl status synced; no secret changes. Image digest sha256:32283f5290dfc4d2873513be017a4d200ed572c74a5bba788cd7d9e10853398a."
+    deployed_tag: "faceless-v0.1.0-rc10"
+    deployed_commit: "f73240a1d24640298db31cf4a593a893d8e9590a"
+    deployed_at: "2026-09-18T17:40:54.143326+09:00"
+    notes: "Localized runtime and translation endpoint. Helm 9; 1/1 ready. 191 tests passed. Backed up 37 LTM states and 394 events; added source.locale=ko without changing events. All 36 active room histories verified. Secretctl synced. Digest sha256:c828b04d9333812337c027878c93569a3b0bb00086f3f0e537aad9a6c42a5730."
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
-    tracked_branch: main
-    deployed_tag: "shinjeom-backstage-v0.1.0-rc2"
-    deployed_commit: "c97aca97edf873b840804f0f44ee43a06e9d8fee"
-    deployed_at: "2026-09-16T19:28:42+09:00"
-    notes: "Plot/character galleries and ordered intro images published to manshin-backstage-staging/faceless. CloudFront invalidation completed; public HTML and all asset SHA256 hashes match clean release build. Login page rendered and upload CORS passed. Authenticated browser editing was not exercised in this deployment verification."
+    tracked_branch: "main"
+    deployed_tag: "shinjeom-backstage-v0.1.0-rc3"
+    deployed_commit: "696480077ebe3a9e9291996811c388eb28c2a441"
+    deployed_at: "2026-09-18T17:46:51+09:00"
+    notes: "Localized plot editor from clean tagged worktree. 59 browser tests passed. Published to manshin-backstage-staging/faceless; CloudFront invalidation completed; public HTML and JS/CSS match release artifacts."
   shinjeom-web:
     repo_path: ../shinjeom-web
-    tracked_branch: feature/text-consult-catalog
-    deployed_tag: "shinjeom-web-v1.0.0-rc1"
-    deployed_commit: "548987696da7ddca83f55df53e69d5ccb8bdcfad"
-    deployed_at: "2026-09-16T20:19:13+09:00"
-    notes: "Staging direct deployment of catalog and resumable chat with Backstage UI. SSM Faceless URL and CloudFront detail HTML/RSC rewrite applied via Terraform. Full 1218 tests, lint, types and build passed; 51 media assets verified. Invalidation I4RBW37ACQDGVVO6RIX3IVADRM completed. Live catalog/detail/RSC and existing report routes plus 20 referenced assets match the release build. Staging-branch promotion will replace this feature-branch deployment."
+    tracked_branch: "feature/text-consult-catalog"
+    deployed_tag: "shinjeom-web-v1.0.0-rc2"
+    deployed_commit: "6593c7325f3b3a877424fe42ead32ae7043d4032"
+    deployed_at: "2026-09-18T17:46:51+09:00"
+    notes: "Localized chat catalog, public profiles and player characters from clean tagged worktree. 1232 unit tests and 12 text-consult browser tests passed; lint/typecheck/build passed. Staging SSM environment used. Updated only CloudFront chat route function; no SSM changes. Media 51/51 verified; invalidation completed; 9 public HTML/RSC routes match artifacts. Direct staging publish; next staging-branch deployment replaces it."
