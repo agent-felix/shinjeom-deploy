@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-09-18T21:54:30+09:00"
+updated_at: "2026-09-18T22:04:05+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -95,7 +95,7 @@ services:
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
     tracked_branch: main
-    deployed_tag: null
-    deployed_commit: null
-    deployed_at: null
-    notes: "Hosting infrastructure only, prepared 2026-09-18 from a5711c5. Private S3 manshin-backstage-prod; CloudFront E326HEXH1LVR6L (d3km1pizpmsjgi.cloudfront.net) Deployed; backstage.manshin.ai DNS and ACM TLS ready. Final Terraform plan has no changes. Frontend files have not been published; /faceless/ returns 403 and / redirects there. See docs/2026-09-18-text-consult-prod-preparation.md."
+    deployed_tag: shinjeom-backstage-v0.1.0-rc3
+    deployed_commit: 696480077ebe3a9e9291996811c388eb28c2a441
+    deployed_at: "2026-09-18T22:04:05+09:00"
+    notes: "Published before API rollout at the user's request, from the same clean tag as staging with production API/Faceless URLs. Private S3 manshin-backstage-prod/faceless; CloudFront E326HEXH1LVR6L; invalidation IAZSO6XO3Q1L8NRSUM4VKS3L09 completed. TypeScript/build passed; HTTPS 200, HTML/JS/CSS/font match artifacts, browser login screen verified. API v2.3.6 still rejects Backstage login preflight with Disallowed CORS origin; authenticated flows await API/CORS/DB rollout. See docs/2026-09-18-backstage-prod-deployment.md."

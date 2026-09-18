@@ -3,6 +3,9 @@
 This records step 1 of the production rollout on 2026-09-18. API application/DB
 deployment, Apple product registration, consumer Web and mobile release are separate steps.
 
+Backstage static files were subsequently published before the API at the user's
+request; see the [production static deployment record](2026-09-18-backstage-prod-deployment.md).
+
 Source commits: Backstage `a5711c5`, Faceless deployment configuration `0babe98`,
 central cluster ECR configuration `5c34c9b`. Runtime image remains the existing
 `faceless-v0.1.0-rc10` tag at `f73240a`.
@@ -28,8 +31,9 @@ central cluster ECR configuration `5c34c9b`. Runtime image remains the existing
 - Backstage production state: `s3://shinjeom-tfstate-prod/shinjeom-backstage/terraform.tfstate`.
 - CloudFront distribution `E326HEXH1LVR6L` is Deployed, serving
   `d3km1pizpmsjgi.cloudfront.net`; its S3 origin policy is applied.
-- No Backstage frontend files have been published in this step. The private bucket
-  is empty, so `/faceless/` returns 403; the edge function redirects `/` to `/faceless/`.
+- At the end of this infrastructure step, no Backstage frontend files had been
+  published and `/faceless/` returned 403. The subsequent static deployment is
+  recorded separately above; the edge function redirects `/` to `/faceless/`.
 
 ## DNS registration
 
@@ -96,8 +100,9 @@ helm upgrade --install faceless deploy/helm/faceless \
 ```
 
 Keep usage approval disabled until production API supports it. API application/DB
-rollout, Apple production purchase configuration, Backstage/Web publication and
-mobile distribution still need their subsequent release steps.
+rollout, Apple production purchase configuration, Web publication and mobile
+distribution still need their subsequent release steps. Backstage publication
+was completed in the separately recorded follow-up.
 
 ## Verification performed
 
@@ -115,6 +120,7 @@ mobile distribution still need their subsequent release steps.
 - Gemini `gemini-3.8-flash` completed an actual Interactions API stream using the
   running application's client and new key (`store=false`, generic JSON probe).
 - Public room history without a token: 401; internal access-grant path: 404.
-- Backstage trusted HTTPS and root redirect verified. Frontend publication is pending.
+- Backstage trusted HTTPS and root redirect verified. Frontend publication was
+  completed in the separately recorded follow-up.
 - Existing production API remains `shinjeom-api-v2.3.6`, 2/2 ready; no API restart,
   DB migration or Apple configuration change in this step.
