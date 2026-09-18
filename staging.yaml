@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-16T20:19:13+09:00"
+updated_at: "2026-09-18T16:58:40+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -59,11 +59,11 @@ services:
     notes: "Synced Notion greeting templates and per-variant Korean addressing"
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: "feature/faceless-foundation"
-    deployed_tag: "shinjeom-api-v2.4.0-rc5"
-    deployed_commit: "f64bb4e1d20fe189db8b36496187695add544bdf"
-    deployed_at: "2026-09-16T20:16:20+09:00"
-    notes: "Consumer Text Consult room details expose saved speaker display fields only; owned room listing supports SKU filtering. Helm revision 103; migration succeeded; 2/2 ready. Live health, unauthorized protection and OpenAPI contract verified. Secretctl status synced; no secret changes. Image digest sha256:201a07affd2232c4e6bb6856682788eba5fb8002336786aa3a8b9e855e4296ae."
+    tracked_branch: dev
+    deployed_tag: "shinjeom-api-v2.4.0-rc6"
+    deployed_commit: "e21f47760a41793a839c0c5df969ad0f51721257"
+    deployed_at: "2026-09-18T16:56:43+09:00"
+    notes: "In-app rating merged into dev; faceless remains rolled back. Helm revision 105; migration f18c6a43e0b7 -> b2c3d4e5f6a7 succeeded; 2/2 ready. 42 rating tests passed. Public API smoke verified auth, first-experience gating, prompt creation, rating persistence and cooldown; temporary smoke data removed. Secretctl synced with no secret changes. Image digest sha256:1a0a99005eb03654ca583bf7a8a35c8d362e7f154c94635152efa2d9934e5168."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
