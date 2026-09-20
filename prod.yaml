@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-09-19T00:26:27+09:00"
+updated_at: "2026-09-20T22:34:55+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -46,24 +46,24 @@ services:
   ken-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: ken-agent-v0.1.0-rc12
-    deployed_commit: 168ab5e5d90ba29c30dcdfbc4aee3370f0140cf7
-    deployed_at: "2026-09-11T21:04:22+09:00"
-    notes: "Template greetings; inactivity CronJob disabled; Gemini thinking medium; replicas 2 (Helm revision 8); resource requests and limits unchanged"
+    deployed_tag: ken-agent-v0.1.0-rc13
+    deployed_commit: ce4cc0ae760e0e5f89c00146e1a46a210cfb6221
+    deployed_at: "2026-09-20T22:26:25+09:00"
+    notes: "Promoted without rebuilding from the staging-tested image. Accepts original user image formats; Gemini image requests are capped below 19 MB with quality 100 preferred before fallback compression/resizing. Helm 9; 2/2 ready; /healthz ok. The stable worker pool autoscaled from 1 to 2 during the rolling update. Digest sha256:25071e19bb9fe4f2ac29328cf48c3dbfd3ac5904d4436d60b60136bf57d23b2b."
   mio-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
-    deployed_tag: mio-agent-v0.1.0-rc3
-    deployed_commit: 168ab5e5d90ba29c30dcdfbc4aee3370f0140cf7
-    deployed_at: "2026-09-11T20:58:02+09:00"
-    notes: "First prod deployment; Redis Mio namespace and ACL enabled (shared-redis revision 3); product inactive; inactivity CronJob disabled; replicas 2 (Helm revision 2); resource requests and limits unchanged"
+    deployed_tag: mio-agent-v0.1.0-rc4
+    deployed_commit: ce4cc0ae760e0e5f89c00146e1a46a210cfb6221
+    deployed_at: "2026-09-20T22:29:57+09:00"
+    notes: "Promoted without rebuilding from the staging-tested image. Accepts original user image formats; Gemini image requests are capped below 19 MB with quality 100 preferred before fallback compression/resizing. Helm 3; 2/2 ready; /healthz ok. Digest sha256:934c360fc43f989d25f7fdef2b0dbb0750e1202de61ad8674d5fd540e46ab77d."
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: "dev"
-    deployed_tag: "shinjeom-api-v2.4.1"
-    deployed_commit: "9778210330f2aacb434081da3fd5619f2783a968"
-    deployed_at: "2026-09-18T23:54:31+09:00"
-    notes: "Prod-only placeholder frequency fix, Helm 39; 2/2 ready. Release source is fix/plot-translation-placeholder-presence (not merged into tracked dev). Runtime configuration unchanged from Helm 38; free limit 10 and limits/sales enabled. Tests 66 passed; health healthy. Real draft validation still blocked by translated hashtag count differences; no plot published. Staging remains Helm 109 / v2.4.0-rc10. See docs/2026-09-18-plot-placeholder-prod-fix.md and docs/2026-09-18-manshin-pass-api-activation.md."
+    tracked_branch: "fix/plot-translation-placeholder-presence"
+    deployed_tag: "shinjeom-api-v2.5.0-rc1"
+    deployed_commit: "ac56bad3c92193f10bf616c95ca91372a931d189"
+    deployed_at: "2026-09-20T22:31:53+09:00"
+    notes: "Promoted without rebuilding from the staging-tested image. User input images are validated in place without forced resize/re-encoding or a temporary-object copy. Cut over after confirming zero pending text/report image uploads in the prior 15 minutes and fully terminating old API pods. Helm 40; migration hook 40 completed; 2/2 ready; internal and public health endpoints healthy. The adjacent payment-expiry run completed with HTTP 200. Digest sha256:916fb67bc9f5dcd50961b80f591bd923ff8fb8e04af150673a7bbbab0bda77ed."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: dev
