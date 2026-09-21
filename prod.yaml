@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-09-20T22:34:55+09:00"
+updated_at: "2026-09-21T17:34:37+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -59,11 +59,11 @@ services:
     notes: "Promoted without rebuilding from the staging-tested image. Accepts original user image formats; Gemini image requests are capped below 19 MB with quality 100 preferred before fallback compression/resizing. Helm 3; 2/2 ready; /healthz ok. Digest sha256:934c360fc43f989d25f7fdef2b0dbb0750e1202de61ad8674d5fd540e46ab77d."
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: "fix/plot-translation-placeholder-presence"
-    deployed_tag: "shinjeom-api-v2.5.0-rc1"
-    deployed_commit: "ac56bad3c92193f10bf616c95ca91372a931d189"
-    deployed_at: "2026-09-20T22:31:53+09:00"
-    notes: "Promoted without rebuilding from the staging-tested image. User input images are validated in place without forced resize/re-encoding or a temporary-object copy. Cut over after confirming zero pending text/report image uploads in the prior 15 minutes and fully terminating old API pods. Helm 40; migration hook 40 completed; 2/2 ready; internal and public health endpoints healthy. The adjacent payment-expiry run completed with HTTP 200. Digest sha256:916fb67bc9f5dcd50961b80f591bd923ff8fb8e04af150673a7bbbab0bda77ed."
+    tracked_branch: "feature/manshin-pass-iap-reliability"
+    deployed_tag: "shinjeom-api-v2.5.0-rc3"
+    deployed_commit: "a40bfccd5b26ee5cdf34aa305cc02a4a376d84d7"
+    deployed_at: "2026-09-21T17:34:37+09:00"
+    notes: "Promoted the staging-tested image without rebuilding. Adds authenticated IAP catalog diagnostics, room selection/title support, current-room deletion protection, and relaxed plot localization checks. Helm 41; migration hook completed; DB revision a91f2c7e4b60 and room columns verified; 2/2 ready; internal/public health 200; unauthenticated diagnostics 401; both new pods started without error logs. Runtime secrets synced. Digest sha256:826804f065df03b7db1abd6b9c0ffb776cacda54d8804dcb971ff84ed7128207."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: dev
