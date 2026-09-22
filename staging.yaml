@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-22T17:13:25+09:00"
+updated_at: "2026-09-22T18:37:11+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -60,10 +60,10 @@ services:
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: "dev"
-    deployed_tag: "shinjeom-api-v2.5.0-rc4"
-    deployed_commit: "b3eb9576ffc590908f46ba81acbc28ce051297e1"
-    deployed_at: "2026-09-22T17:13:25+09:00"
-    notes: "PR #281: reuse saju profiles for chat participation. Helm 114; migration c3d8e1f5a702 -> d4e9f2a6b813 completed; three new columns verified; 2/2 ready; internal/public health 200; unauthenticated player-profiles 401. Runtime secrets synced. Digest sha256:1072bddace5e19b3aae5f98bc290544f3a1a783c0566f821a6dc6b9b9f0dcf3e."
+    deployed_tag: "shinjeom-api-v2.5.0-rc5"
+    deployed_commit: "4ada3bb241eb17eef66858d269de7ef73ac56f8a"
+    deployed_at: "2026-09-22T18:33:13+09:00"
+    notes: "Conversation history API, ten-plot bulk deletion and durable message-preview projection. Helm 115; migration d4e9f2a6b813 -> e5f0a3b7c924 completed; three preview columns and history index verified; 2/2 ready, zero restarts or startup errors; internal/public health 200; unauthenticated history 401; authenticated preview payload validation 422. Runtime secrets synced. Digest sha256:5600cc7ecfd0aa30e09f8e5707606f7aa0f12052aaece9254cf3c0a4f5b4f92c."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
@@ -87,11 +87,11 @@ services:
     notes: "Staging pass catalog registered and read back with no pending changes; review screenshots remain pending. Local staging release URLs configured. User will Archive ShinjeomStaging and upload to TestFlight; no mobile build uploaded by this deployment. Existing Xcode local StoreKit configuration retained."
   faceless:
     repo_path: ../shinjeom-faceless
-    tracked_branch: "feature/text-consult-web-access"
-    deployed_tag: "faceless-v0.1.0-rc11"
-    deployed_commit: "a1b8118df52c252e2f6b1a06a51e1cb5aaf09196"
-    deployed_at: "2026-09-21T13:46:54+09:00"
-    notes: "Allows blank optional plot introduction and character-description translations while retaining required names, schema, speaker, and length checks. Helm 11; 1/1 ready; startup healthy. Digest sha256:cf25469def653551884a57dce654730cdcf6bb863071236378a2c53ab042e304."
+    tracked_branch: "main"
+    deployed_tag: "faceless-v0.1.0-rc12"
+    deployed_commit: "d78021de6f26bbfdef15815ad7bf4c34b0a19bbd"
+    deployed_at: "2026-09-22T18:35:23+09:00"
+    notes: "Persist conversation message previews after durable completion/selection with Redis retries. Deployed after API rc5 and migration e5f0a3b7c924. Helm 12; 1/1 ready, zero restarts or startup errors; internal/public health 200; Redis healthy; usage enabled; API preview valid-token validation 422 and invalid-token 401; no pending projection deliveries at verification. Runtime secrets synced. Digest sha256:8081b403915b9bc5a9db00429d31933232e89ca2a2362aeb4269747fd5f977f5."
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
     tracked_branch: "main"
