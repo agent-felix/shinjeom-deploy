@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-21T17:29:46+09:00"
+updated_at: "2026-09-22T17:13:25+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -59,11 +59,11 @@ services:
     notes: "Accepts original user image formats; Gemini image requests are capped below 19 MB with quality 100 preferred before fallback compression/resizing. Helm 4; 1/1 ready; /healthz ok. Digest sha256:934c360fc43f989d25f7fdef2b0dbb0750e1202de61ad8674d5fd540e46ab77d."
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: "feature/manshin-pass-iap-reliability"
-    deployed_tag: "shinjeom-api-v2.5.0-rc3"
-    deployed_commit: "a40bfccd5b26ee5cdf34aa305cc02a4a376d84d7"
-    deployed_at: "2026-09-21T17:29:46+09:00"
-    notes: "Authenticated IAP catalog diagnostics for App Review troubleshooting. Helm 112; migration hook completed; DB revision a91f2c7e4b60 and room columns verified; internal/public health 200; unauthenticated diagnostics 401. Runtime secrets synced. Digest sha256:826804f065df03b7db1abd6b9c0ffb776cacda54d8804dcb971ff84ed7128207."
+    tracked_branch: "dev"
+    deployed_tag: "shinjeom-api-v2.5.0-rc4"
+    deployed_commit: "b3eb9576ffc590908f46ba81acbc28ce051297e1"
+    deployed_at: "2026-09-22T17:13:25+09:00"
+    notes: "PR #281: reuse saju profiles for chat participation. Helm 114; migration c3d8e1f5a702 -> d4e9f2a6b813 completed; three new columns verified; 2/2 ready; internal/public health 200; unauthenticated player-profiles 401. Runtime secrets synced. Digest sha256:1072bddace5e19b3aae5f98bc290544f3a1a783c0566f821a6dc6b9b9f0dcf3e."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
