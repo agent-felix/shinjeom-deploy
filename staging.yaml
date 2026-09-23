@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-22T18:37:11+09:00"
+updated_at: "2026-09-23T10:38:51+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -59,11 +59,11 @@ services:
     notes: "Accepts original user image formats; Gemini image requests are capped below 19 MB with quality 100 preferred before fallback compression/resizing. Helm 4; 1/1 ready; /healthz ok. Digest sha256:934c360fc43f989d25f7fdef2b0dbb0750e1202de61ad8674d5fd540e46ab77d."
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: "dev"
-    deployed_tag: "shinjeom-api-v2.5.0-rc5"
-    deployed_commit: "4ada3bb241eb17eef66858d269de7ef73ac56f8a"
-    deployed_at: "2026-09-22T18:33:13+09:00"
-    notes: "Conversation history API, ten-plot bulk deletion and durable message-preview projection. Helm 115; migration d4e9f2a6b813 -> e5f0a3b7c924 completed; three preview columns and history index verified; 2/2 ready, zero restarts or startup errors; internal/public health 200; unauthenticated history 401; authenticated preview payload validation 422. Runtime secrets synced. Digest sha256:5600cc7ecfd0aa30e09f8e5707606f7aa0f12052aaece9254cf3c0a4f5b4f92c."
+    tracked_branch: "feature/manshin-pass-monthly-bonus"
+    deployed_tag: "shinjeom-api-v2.5.0-rc6"
+    deployed_commit: "8d5f721642297f04dce1c4e521ca040cf92bbc3e"
+    deployed_at: "2026-09-23T10:35:44+09:00"
+    notes: "Configurable monthly Manshin Pass bonuses with reversible posting state and hourly reconciliation CronJob. Helm 116; migration e5f0a3b7c924 -> d4f9a2b6c803 completed; 2/2 ready, zero restarts, application startup complete, and public health 200. Runtime secrets synced. Test run stopped at operator request after 449 passed with zero failures. Digest sha256:1423ff80b840fbde6447a4de38dfb57f1540065340abcbf41503137cd67ef424."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
