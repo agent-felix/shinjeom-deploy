@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-23T10:38:51+09:00"
+updated_at: "2026-09-23T11:38:22+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -48,28 +48,28 @@ services:
     tracked_branch: main
     deployed_tag: ken-agent-v0.1.0-rc13
     deployed_commit: ce4cc0ae760e0e5f89c00146e1a46a210cfb6221
-    deployed_at: "2026-09-20T21:46:39+09:00"
+    deployed_at: "2026-09-20T21:46:50+09:00"
     notes: "Accepts original user image formats; Gemini image requests are capped below 19 MB with quality 100 preferred before fallback compression/resizing. Helm 15; 1/1 ready; /healthz ok. Digest sha256:25071e19bb9fe4f2ac29328cf48c3dbfd3ac5904d4436d60b60136bf57d23b2b."
   mio-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
     deployed_tag: mio-agent-v0.1.0-rc4
     deployed_commit: ce4cc0ae760e0e5f89c00146e1a46a210cfb6221
-    deployed_at: "2026-09-20T21:47:15+09:00"
+    deployed_at: "2026-09-20T21:47:25+09:00"
     notes: "Accepts original user image formats; Gemini image requests are capped below 19 MB with quality 100 preferred before fallback compression/resizing. Helm 4; 1/1 ready; /healthz ok. Digest sha256:934c360fc43f989d25f7fdef2b0dbb0750e1202de61ad8674d5fd540e46ab77d."
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: "feature/manshin-pass-monthly-bonus"
     deployed_tag: "shinjeom-api-v2.5.0-rc6"
     deployed_commit: "8d5f721642297f04dce1c4e521ca040cf92bbc3e"
-    deployed_at: "2026-09-23T10:35:44+09:00"
+    deployed_at: "2026-09-23T10:36:53+09:00"
     notes: "Configurable monthly Manshin Pass bonuses with reversible posting state and hourly reconciliation CronJob. Helm 116; migration e5f0a3b7c924 -> d4f9a2b6c803 completed; 2/2 ready, zero restarts, application startup complete, and public health 200. Runtime secrets synced. Test run stopped at operator request after 449 passed with zero failures. Digest sha256:1423ff80b840fbde6447a4de38dfb57f1540065340abcbf41503137cd67ef424."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
     deployed_tag: long-term-memory-v3.0.2
     deployed_commit: e55b5bfb54b380b79bd56f65987e7f5283faf4c4
-    deployed_at: "2026-08-04T17:31:58+09:00"
+    deployed_at: "2026-09-14T18:54:06+09:00"
     notes: ""
   orrery-api:
     repo_path: ../orrery
@@ -90,7 +90,7 @@ services:
     tracked_branch: "main"
     deployed_tag: "faceless-v0.1.0-rc12"
     deployed_commit: "d78021de6f26bbfdef15815ad7bf4c34b0a19bbd"
-    deployed_at: "2026-09-22T18:35:23+09:00"
+    deployed_at: "2026-09-22T18:35:24+09:00"
     notes: "Persist conversation message previews after durable completion/selection with Redis retries. Deployed after API rc5 and migration e5f0a3b7c924. Helm 12; 1/1 ready, zero restarts or startup errors; internal/public health 200; Redis healthy; usage enabled; API preview valid-token validation 422 and invalid-token 401; no pending projection deliveries at verification. Runtime secrets synced. Digest sha256:8081b403915b9bc5a9db00429d31933232e89ca2a2362aeb4269747fd5f977f5."
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
