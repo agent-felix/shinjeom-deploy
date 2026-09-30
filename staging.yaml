@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-30T13:42:23+09:00"
+updated_at: "2026-10-01T00:11:45+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -59,18 +59,18 @@ services:
     notes: "Accepts original user image formats; Gemini image requests are capped below 19 MB with quality 100 preferred before fallback compression/resizing. Helm 4; 1/1 ready; /healthz ok. Digest sha256:934c360fc43f989d25f7fdef2b0dbb0750e1202de61ad8674d5fd540e46ab77d."
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: "migration/shinjeom-api-ecs-fargate"
-    deployed_tag: "ecs-migration-5a2c6ef146b0"
-    deployed_commit: "b298a6b7493425510cadb2b756f0922a4c0b7453"
-    deployed_at: "2026-09-30T13:42:23+09:00"
-    notes: "Staging ECS Fargate procedure validation; API task definition shinjeom-api-staging:6, desired=running=1, rollout COMPLETED. Migration task definition :1 passed before API promotion; DB revision d4f9a2b6c803 unchanged. Failure probe exit 42 blocked promotion and preserved the old API deployment. Health and DB products HTTP 200. Digest sha256:6f59db1223f6d2816bec753646955957e871e7cbf727685ca592ededfee5c4a4. Prior Kubernetes API image shinjeom-api-v2.5.0-rc6, 2 Pods and 4 CronJobs remain for rollback/transition. Git commit and matching validation tag are local, not pushed."
+    tracked_branch: "migration/shinjeom-api-ecs-ec2"
+    deployed_tag: "ecs-ec2-6b794eb354bd"
+    deployed_commit: "6b794eb354bd68ae2468adae1273955faf3f3763"
+    deployed_at: "2026-09-30T23:55:24+09:00"
+    notes: "Staging ECS EC2 shinjeom-api-staging-ec2:2 on one AL2023 t3.small; digest sha256:77c4fe006572c5bb192bc5e149fc210e54daf6ae08c5f599e994e2eb38151f9a. Host migration d4f9a2b6c803 -> f6a1b4c8d935 passed before promotion; exit-42 probe created no success gate. Existing ALB/DNS/NAT retained. Health/products 120/120 HTTP 200; private S3 put/get/delete passed. Fargate backend rollback and ASG host replacement/recovery verified. Four legacy CronJobs suspended; host jobs enabled; cleanup/sync/payment manual runs succeeded; payment cron at 2026-10-01 00:10 KST also succeeded. First host daily-push and full user journeys remain to verify. Fargate :6 and Kubernetes API v2.5.0-rc6 (2 Pods) preserved for rollback. CloudWatch alarm states only by user decision. Image source commit/tag are local, not pushed to Git; image is pushed to ECR."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
-    deployed_tag: long-term-memory-v3.0.2
-    deployed_commit: e55b5bfb54b380b79bd56f65987e7f5283faf4c4
-    deployed_at: "2026-09-14T18:54:06+09:00"
-    notes: ""
+    deployed_tag: long-term-memory-v3.0.4
+    deployed_commit: null
+    deployed_at: null
+    notes: "Runtime API/worker observed at v3.0.4 on 2026-10-01 during ECS migration verification. Source commit and original deployment time are unverified; corrected the stale v3.0.2 registry entry."
   orrery-api:
     repo_path: ../orrery
     tracked_branch: main
