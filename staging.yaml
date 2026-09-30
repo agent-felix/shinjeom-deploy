@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-23T11:38:22+09:00"
+updated_at: "2026-09-30T13:42:23+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -59,11 +59,11 @@ services:
     notes: "Accepts original user image formats; Gemini image requests are capped below 19 MB with quality 100 preferred before fallback compression/resizing. Helm 4; 1/1 ready; /healthz ok. Digest sha256:934c360fc43f989d25f7fdef2b0dbb0750e1202de61ad8674d5fd540e46ab77d."
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: "feature/manshin-pass-monthly-bonus"
-    deployed_tag: "shinjeom-api-v2.5.0-rc6"
-    deployed_commit: "8d5f721642297f04dce1c4e521ca040cf92bbc3e"
-    deployed_at: "2026-09-23T10:36:53+09:00"
-    notes: "Configurable monthly Manshin Pass bonuses with reversible posting state and hourly reconciliation CronJob. Helm 116; migration e5f0a3b7c924 -> d4f9a2b6c803 completed; 2/2 ready, zero restarts, application startup complete, and public health 200. Runtime secrets synced. Test run stopped at operator request after 449 passed with zero failures. Digest sha256:1423ff80b840fbde6447a4de38dfb57f1540065340abcbf41503137cd67ef424."
+    tracked_branch: "migration/shinjeom-api-ecs-fargate"
+    deployed_tag: "ecs-migration-5a2c6ef146b0"
+    deployed_commit: "b298a6b7493425510cadb2b756f0922a4c0b7453"
+    deployed_at: "2026-09-30T13:42:23+09:00"
+    notes: "Staging ECS Fargate procedure validation; API task definition shinjeom-api-staging:6, desired=running=1, rollout COMPLETED. Migration task definition :1 passed before API promotion; DB revision d4f9a2b6c803 unchanged. Failure probe exit 42 blocked promotion and preserved the old API deployment. Health and DB products HTTP 200. Digest sha256:6f59db1223f6d2816bec753646955957e871e7cbf727685ca592ededfee5c4a4. Prior Kubernetes API image shinjeom-api-v2.5.0-rc6, 2 Pods and 4 CronJobs remain for rollback/transition. Git commit and matching validation tag are local, not pushed."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
