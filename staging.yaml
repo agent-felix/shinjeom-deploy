@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-10-01T00:11:45+09:00"
+updated_at: "2026-10-01T11:04:37+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -60,10 +60,10 @@ services:
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: "migration/shinjeom-api-ecs-ec2"
-    deployed_tag: "ecs-ec2-6b794eb354bd"
-    deployed_commit: "6b794eb354bd68ae2468adae1273955faf3f3763"
-    deployed_at: "2026-09-30T23:55:24+09:00"
-    notes: "Staging ECS EC2 shinjeom-api-staging-ec2:2 on one AL2023 t3.small; digest sha256:77c4fe006572c5bb192bc5e149fc210e54daf6ae08c5f599e994e2eb38151f9a. Host migration d4f9a2b6c803 -> f6a1b4c8d935 passed before promotion; exit-42 probe created no success gate. Existing ALB/DNS/NAT retained. Health/products 120/120 HTTP 200; private S3 put/get/delete passed. Fargate backend rollback and ASG host replacement/recovery verified. Four legacy CronJobs suspended; host jobs enabled; cleanup/sync/payment manual runs succeeded; payment cron at 2026-10-01 00:10 KST also succeeded. First host daily-push and full user journeys remain to verify. Fargate :6 and Kubernetes API v2.5.0-rc6 (2 Pods) preserved for rollback. CloudWatch alarm states only by user decision. Image source commit/tag are local, not pushed to Git; image is pushed to ECR."
+    deployed_tag: "ecs-ec2-http-fd5836c91c77"
+    deployed_commit: null
+    deployed_at: "2026-10-01T10:56:48+09:00"
+    notes: "Staging ECS on EC2: shinjeom-api-staging-ec2:4, AL2023 t3.small x2 across ap-northeast-2a/2c, one API task per host. Digest sha256:2da6caadab1680e642901fc4608b2907b33d931f88bb9a08715f946a3fd54a62. Startup migration f6a1b4c8d935 -> a8c3e1d7b902; rolling min50/max100, 79 ALB samples with at least one healthy target. Two-host auth cleanup: one execution, one replay, DB attempts=1. Installed cron payment expiry: one success, one replay. Old host replaced by i-006f801bcf1d15085; i-026ea10e6d5f79af1 retained; automatic ASG/bootstrap/API recovery, 42/42 health HTTP200, final two healthy targets. 35 tests passed; ECS/RDS plans no changes; schedules enabled, admission resumed, deployment lock removed. Retired API backend, dedicated migration task/logs, legacy host runner/scripts, ECR artifacts and SSM job records removed. Kubernetes API 2 Pods and four suspended CronJobs retained for final cleanup. First hourly sync/daily push and full user journeys remain to observe. Runtime image built from working tree before Git commit. Final source/operations commit 8e0274dfb4d0635169754fe495fd27340840f7c0 includes the runtime source and later operator/docs updates. ECR artifact is published; deployed_commit remains unset for the pre-commit image snapshot. Operator release verification also checks both task IPs are healthy ALB targets."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: feature/refactor-ltm-deploy-process
