@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-10-01T16:02:00+09:00"
+updated_at: "2026-10-01T17:31:29+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -74,10 +74,12 @@ services:
     tracked_branch: "migration/shinjeom-api-ecs-ec2"
     deployed_tag: "ecs-ec2-body-limit-1fad2ed"
     deployed_commit: "1fad2ed358ba04717fbe4a917ce0b021f93c95e4"
-    deployed_at: "2026-10-01T15:57:55+09:00"
-    configuration_commit: "0ddd638a3a0705664430bf4e8020ae69999faef4"
-    task_definition: "shinjeom-api-staging-ec2:6"
-    notes: "Configuration-only release: common LTM /api/v1 URL and original tenant key restored. Existing image/source/digest sha256:c98d45449d418ad5279b33f1e33ee60ac0c5fc509c17bef929e784e49becae16 retained. Two tasks on distinct AZ hosts, two healthy ALB targets, API/DB HTTP 200, both tasks read existing LTM thread/session events with HTTP 200; old /ecs route 404 and invalid key 401. Deployment lock removed, schedules resumed, Terraform No changes. K8s API remains retired. Do not roll back to revision :5's removed LTM path. Tests not run; Production unchanged. See docs/2026-10-01-ltm-common-contract-staging.md."
+    deployed_at: "2026-10-01T17:30:29+09:00"
+    configuration_commit: "72c92e1aafe6eec5e0f41b779c5cae0b7d3148aa"
+    configuration_base_commit: "6d52f4ed961b7070c3cd076da3b19bd169da6a31"
+    configuration_tfvars_sha256: "67dc094fc52be2224e94ff67100615e685fe1e5246beb8747fdee5b8475729f6"
+    task_definition: "shinjeom-api-staging-ec2:7"
+    notes: "Resource-only release, configuration committed after deployment: Task CPU 256 -> 512 units, Task/container memory 512 -> 1024 MiB. EC2 t3.small hosts, image/source/digest sha256:c98d45449d418ad5279b33f1e33ee60ac0c5fc509c17bef929e784e49becae16 and common LTM /api/v1 contract unchanged. Two tasks on distinct AZ hosts, two healthy ALB targets, startup schema a8c3e1d7b902 verified, API/DB HTTP 200. Deployment lock removed, schedules resumed, Terraform No changes. Tests not run. See docs/2026-10-01-api-ecs-task-resize-staging.md."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: migration/shinjeom-api-ecs-ec2
