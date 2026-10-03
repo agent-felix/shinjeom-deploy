@@ -88,10 +88,12 @@ services:
   faceless:
     repo_path: ../shinjeom-faceless
     tracked_branch: feature/text-consult-web-access
-    deployed_tag: faceless-v0.1.0-rc10
-    deployed_commit: f73240a1d24640298db31cf4a593a893d8e9590a
-    deployed_at: "2026-09-18T22:42:55+09:00"
-    notes: "Helm revision 3; application 1/1 and Redis 1/1 ready. Enabled TEXT_CONSULT_USAGE_ENABLED after API v2.4.0 deployment; authenticated API usage checks verified. API commercial limits (10 free answers) and Apple sales were enabled by the subsequent Helm 38 API rollout. Production configuration commit bb5aeab84a37305dd61135f4d3699535b0153207; image remains faceless-v0.1.0-rc10 without rebuilding, digest sha256:c828b04d9333812337c027878c93569a3b0bb00086f3f0e537aad9a6c42a5730. DNS, TLS and dedicated runtime keys were prepared earlier. See docs/2026-09-18-api-v2.4.0-rollout.md."
+    deployed_tag: faceless-v0.1.0-rc13
+    deployed_commit: 4aefd368afe94ebdd466b2530b4b1155ed0ef57f
+    deployed_at: "2026-10-03T12:27:19+09:00"
+    chart_commit: 25a7ec2f3f74f90fb2cd61838bfe77d3c90013cf
+    helm_revision: 6
+    notes: "Promoted the staging-tested OCI index without rebuilding: sha256:0ef6f587df0da1e5d63cf592caceaa9cd9e949c3912928c3b80e91294d1dfbe4. Compatible reader first at revision 5, one active long-room backfill (1096 generations; 6 chunks; 81s; budget 858283 to 78697), then enabled default compaction at revision 6. Original 2191 events and source hash unchanged; checkpoint and public history verified. A concurrent real user turn completed; one temporary room_busy occurred during backfill. Application/Redis ready, drain and ingress timeouts 360s. Keep rc13 if disabling summaries; do not roll back to rc12. See docs/2026-10-03-faceless-context-compaction-production.md."
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
     tracked_branch: main
