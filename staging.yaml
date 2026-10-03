@@ -105,12 +105,12 @@ services:
   faceless:
     repo_path: ../shinjeom-faceless
     tracked_branch: "main"
-    deployed_tag: "faceless-v0.1.0-rc12"
-    deployed_commit: "d78021de6f26bbfdef15815ad7bf4c34b0a19bbd"
-    deployed_at: "2026-10-01T15:50:32+09:00"
-    chart_commit: "19a4f2b36ff4e44c06d8eb6f8223238da635eeaf"
-    helm_revision: 15
-    notes: "Chart-only release: internal RPM removed, public 120 RPM and NAT allowlist retained; image/source unchanged. API and Redis ready. Digest sha256:8081b403915b9bc5a9db00429d31933232e89ca2a2362aeb4269747fd5f977f5. See docs/2026-10-01-ltm-common-contract-staging.md."
+    deployed_tag: "faceless-v0.1.0-rc13"
+    deployed_commit: "4aefd368afe94ebdd466b2530b4b1155ed0ef57f"
+    deployed_at: "2026-10-03T12:09:28+09:00"
+    chart_commit: "7a4ad8e41288f46bc5ae6ff99e3216d29c187f0e"
+    helm_revision: 17
+    notes: "Reader-first rollout at revision 16, then enabled default context compaction at revision 17. API and Redis 1/1; drain and ingress timeouts 360s. 242 tests passed. Isolated staging previews verified actual backfill dry-run, partial failure/recovery, checkpoint reuse, public SSE, regeneration, selection, suggestions and replay; automatic compaction reduced budget 382263 to 64687 in two chunks. OCI index sha256:0ef6f587df0da1e5d63cf592caceaa9cd9e949c3912928c3b80e91294d1dfbe4. Do not roll back to rc12 after summary writes. Production untouched. See docs/2026-10-03-faceless-context-compaction-staging.md."
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
     tracked_branch: "main"
