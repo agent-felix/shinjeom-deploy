@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-09-23T10:38:51+09:00"
+updated_at: "2026-10-01T17:31:29+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -20,57 +20,74 @@ services:
     tracked_branch: main
     deployed_tag: yeona-agent-v0.1.3
     deployed_commit: d7818943d503a0af3dcde9aedca7ed1409db50d8
-    deployed_at: "2026-08-04T18:04:57+09:00"
-    notes: ""
+    deployed_at: "2026-10-01T15:50:34+09:00"
+    chart_commit: "9cb93362727bd5596a72f7feaa4da62de206f515"
+    helm_revision: 7
+    notes: "Chart-only release: service-to-service RPM removed; NAT allowlist/auth retained. Image/tag/source unchanged. See docs/2026-10-01-ltm-common-contract-staging.md."
   darae-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
     deployed_tag: darae-agent-v0.1.0-rc3
     deployed_commit: 168ab5e5d90ba29c30dcdfbc4aee3370f0140cf7
-    deployed_at: "2026-09-11T12:56:21+09:00"
-    notes: "Synced Notion greeting templates and per-variant Korean addressing"
+    deployed_at: "2026-10-01T15:50:35+09:00"
+    chart_commit: "23c1d0f5e8ea51dbbde83974fb3058d63ec4617b"
+    helm_revision: 30
+    notes: "Chart-only release: internal RPM removed, public 120 RPM and NAT allowlist retained; image/source unchanged. See docs/2026-10-01-ltm-common-contract-staging.md."
   minjun-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
     deployed_tag: minjun-agent-v0.1.0-rc3
     deployed_commit: 168ab5e5d90ba29c30dcdfbc4aee3370f0140cf7
-    deployed_at: "2026-09-11T12:57:09+09:00"
-    notes: "Synced Notion greeting templates and per-variant Korean addressing"
+    deployed_at: "2026-10-01T15:50:37+09:00"
+    chart_commit: "23c1d0f5e8ea51dbbde83974fb3058d63ec4617b"
+    helm_revision: 21
+    notes: "Chart-only release: internal RPM removed, public 120 RPM and NAT allowlist retained; image/source unchanged. See docs/2026-10-01-ltm-common-contract-staging.md."
   heejin-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
     deployed_tag: heejin-agent-v0.2.0-rc5
     deployed_commit: 168ab5e5d90ba29c30dcdfbc4aee3370f0140cf7
-    deployed_at: "2026-09-11T12:59:47+09:00"
-    notes: "Synced Notion greeting templates and per-variant Korean addressing"
+    deployed_at: "2026-10-01T15:50:38+09:00"
+    chart_commit: "23c1d0f5e8ea51dbbde83974fb3058d63ec4617b"
+    helm_revision: 14
+    notes: "Chart-only release: internal RPM removed, public 120 RPM and NAT allowlist retained; image/source unchanged. See docs/2026-10-01-ltm-common-contract-staging.md."
   ken-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
     deployed_tag: ken-agent-v0.1.0-rc13
     deployed_commit: ce4cc0ae760e0e5f89c00146e1a46a210cfb6221
-    deployed_at: "2026-09-20T21:46:39+09:00"
-    notes: "Accepts original user image formats; Gemini image requests are capped below 19 MB with quality 100 preferred before fallback compression/resizing. Helm 15; 1/1 ready; /healthz ok. Digest sha256:25071e19bb9fe4f2ac29328cf48c3dbfd3ac5904d4436d60b60136bf57d23b2b."
+    deployed_at: "2026-10-01T15:50:40+09:00"
+    chart_commit: "23c1d0f5e8ea51dbbde83974fb3058d63ec4617b"
+    helm_revision: 18
+    notes: "Chart-only release: internal RPM removed, public 120 RPM and NAT allowlist retained; image/source unchanged. Digest sha256:25071e19bb9fe4f2ac29328cf48c3dbfd3ac5904d4436d60b60136bf57d23b2b. See docs/2026-10-01-ltm-common-contract-staging.md."
   mio-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
     deployed_tag: mio-agent-v0.1.0-rc4
     deployed_commit: ce4cc0ae760e0e5f89c00146e1a46a210cfb6221
-    deployed_at: "2026-09-20T21:47:15+09:00"
-    notes: "Accepts original user image formats; Gemini image requests are capped below 19 MB with quality 100 preferred before fallback compression/resizing. Helm 4; 1/1 ready; /healthz ok. Digest sha256:934c360fc43f989d25f7fdef2b0dbb0750e1202de61ad8674d5fd540e46ab77d."
+    deployed_at: "2026-10-01T15:50:41+09:00"
+    chart_commit: "23c1d0f5e8ea51dbbde83974fb3058d63ec4617b"
+    helm_revision: 7
+    notes: "Chart-only release: internal RPM removed, public 120 RPM and NAT allowlist retained; image/source unchanged. Digest sha256:934c360fc43f989d25f7fdef2b0dbb0750e1202de61ad8674d5fd540e46ab77d. See docs/2026-10-01-ltm-common-contract-staging.md."
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: "feature/manshin-pass-monthly-bonus"
-    deployed_tag: "shinjeom-api-v2.5.0-rc6"
-    deployed_commit: "8d5f721642297f04dce1c4e521ca040cf92bbc3e"
-    deployed_at: "2026-09-23T10:35:44+09:00"
-    notes: "Configurable monthly Manshin Pass bonuses with reversible posting state and hourly reconciliation CronJob. Helm 116; migration e5f0a3b7c924 -> d4f9a2b6c803 completed; 2/2 ready, zero restarts, application startup complete, and public health 200. Runtime secrets synced. Test run stopped at operator request after 449 passed with zero failures. Digest sha256:1423ff80b840fbde6447a4de38dfb57f1540065340abcbf41503137cd67ef424."
+    tracked_branch: "migration/shinjeom-api-ecs-ec2"
+    deployed_tag: "ecs-ec2-body-limit-1fad2ed"
+    deployed_commit: "1fad2ed358ba04717fbe4a917ce0b021f93c95e4"
+    deployed_at: "2026-10-01T17:30:29+09:00"
+    configuration_commit: "72c92e1aafe6eec5e0f41b779c5cae0b7d3148aa"
+    configuration_base_commit: "6d52f4ed961b7070c3cd076da3b19bd169da6a31"
+    configuration_tfvars_sha256: "67dc094fc52be2224e94ff67100615e685fe1e5246beb8747fdee5b8475729f6"
+    task_definition: "shinjeom-api-staging-ec2:7"
+    notes: "Resource-only release, configuration committed after deployment: Task CPU 256 -> 512 units, Task/container memory 512 -> 1024 MiB. EC2 t3.small hosts, image/source/digest sha256:c98d45449d418ad5279b33f1e33ee60ac0c5fc509c17bef929e784e49becae16 and common LTM /api/v1 contract unchanged. Two tasks on distinct AZ hosts, two healthy ALB targets, startup schema a8c3e1d7b902 verified, API/DB HTTP 200. Deployment lock removed, schedules resumed, Terraform No changes. Tests not run. See docs/2026-10-01-api-ecs-task-resize-staging.md."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
-    tracked_branch: feature/refactor-ltm-deploy-process
-    deployed_tag: long-term-memory-v3.0.2
-    deployed_commit: e55b5bfb54b380b79bd56f65987e7f5283faf4c4
-    deployed_at: "2026-08-04T17:31:58+09:00"
-    notes: ""
+    tracked_branch: migration/shinjeom-api-ecs-ec2
+    deployed_tag: long-term-memory-v3.0.5-rc1
+    deployed_commit: "0ce924206fae59a6b3e1b6c0cfca1011f30d480b"
+    deployed_at: "2026-10-01T15:51:07+09:00"
+    helm_revision: 16
+    notes: "Common tenant API restored; ECS-specific routes/auth/env removed. Digest sha256:96c3d68e81bc0ddb850c873509f25a2958778e4a99d77188480c9e64f2cfe9d1. Original key/label and Faceless tenant retained; central/K8s dedicated credential removed with secretctl a06f843, status synced. API 2/2 and worker 1/1 ready. Staging /api/v1 Prefix ingress retains NAT allowlist and has no RPM cap. Tests not run; see docs/2026-10-01-ltm-common-contract-staging.md."
   orrery-api:
     repo_path: ../orrery
     tracked_branch: main
@@ -88,10 +105,12 @@ services:
   faceless:
     repo_path: ../shinjeom-faceless
     tracked_branch: "main"
-    deployed_tag: "faceless-v0.1.0-rc12"
-    deployed_commit: "d78021de6f26bbfdef15815ad7bf4c34b0a19bbd"
-    deployed_at: "2026-09-22T18:35:23+09:00"
-    notes: "Persist conversation message previews after durable completion/selection with Redis retries. Deployed after API rc5 and migration e5f0a3b7c924. Helm 12; 1/1 ready, zero restarts or startup errors; internal/public health 200; Redis healthy; usage enabled; API preview valid-token validation 422 and invalid-token 401; no pending projection deliveries at verification. Runtime secrets synced. Digest sha256:8081b403915b9bc5a9db00429d31933232e89ca2a2362aeb4269747fd5f977f5."
+    deployed_tag: "faceless-v0.1.0-rc13"
+    deployed_commit: "4aefd368afe94ebdd466b2530b4b1155ed0ef57f"
+    deployed_at: "2026-10-03T12:09:28+09:00"
+    chart_commit: "7a4ad8e41288f46bc5ae6ff99e3216d29c187f0e"
+    helm_revision: 17
+    notes: "Reader-first rollout at revision 16, then enabled default context compaction at revision 17. API and Redis 1/1; drain and ingress timeouts 360s. 242 tests passed. Isolated staging previews verified actual backfill dry-run, partial failure/recovery, checkpoint reuse, public SSE, regeneration, selection, suggestions and replay; automatic compaction reduced budget 382263 to 64687 in two chunks. OCI index sha256:0ef6f587df0da1e5d63cf592caceaa9cd9e949c3912928c3b80e91294d1dfbe4. Do not roll back to rc12 after summary writes. Production untouched. See docs/2026-10-03-faceless-context-compaction-staging.md."
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
     tracked_branch: "main"
