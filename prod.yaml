@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-09-21T17:34:37+09:00"
+updated_at: "2026-10-02T08:21:47Z"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -60,10 +60,10 @@ services:
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: "feature/manshin-pass-iap-reliability"
-    deployed_tag: "shinjeom-api-v2.5.0-rc3"
-    deployed_commit: "a40bfccd5b26ee5cdf34aa305cc02a4a376d84d7"
-    deployed_at: "2026-09-21T17:34:37+09:00"
-    notes: "Promoted the staging-tested image without rebuilding. Adds authenticated IAP catalog diagnostics, room selection/title support, current-room deletion protection, and relaxed plot localization checks. Helm 41; migration hook completed; DB revision a91f2c7e4b60 and room columns verified; 2/2 ready; internal/public health 200; unauthenticated diagnostics 401; both new pods started without error logs. Runtime secrets synced. Digest sha256:826804f065df03b7db1abd6b9c0ffb776cacda54d8804dcb971ff84ed7128207."
+    deployed_tag: "shinjeom-api-v2.5.0-rc6"
+    deployed_commit: null
+    deployed_at: null
+    notes: "Read-only inventory correction on 2026-10-02 around 17:00 KST; no deployment performed. Kubernetes Deployment uses rc6, 2/2 pods running with no restarts, both on the same node. ECR agsn-prod/us-west-2 prod/shinjeom-api rc6 tag digest: sha256:6af890fd1f6335c156f1539221b458301e7a8ee45755ddffe40a4de253421211. Build provenance, deployment time and current DB revision were not verified, so commit/time are intentionally null; tracked_branch is retained from the prior record, not reverified. Superseded rc3 record: commit a40bfccd5b26ee5cdf34aa305cc02a4a376d84d7, deployed 2026-09-21T17:34:37+09:00, Helm 41, DB a91f2c7e4b60, digest sha256:826804f065df03b7db1abd6b9c0ffb776cacda54d8804dcb971ff84ed7128207. Production ECS is not provisioned; CronJobs remain enabled. See docs/2026-10-02-api-prod-inventory.md for the pre-migration inventory and ../shinjeom-api/docs/ECS_PRODUCTION_MIGRATION_PLAN.md for the execution plan. New SES preparation is planned separately; existing SES runtime credentials remain unchanged."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: dev

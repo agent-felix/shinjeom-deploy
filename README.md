@@ -15,9 +15,9 @@ This operating model is designed for a small team:
 
 - manual and explicit
 - low cognitive load
-- no custom deploy wrappers
+- explicit deployment paths documented by each service
 - minimal abstraction
-- plain `docker`, `helm`, and `kubectl`
+- plain `docker`, `helm`, `kubectl`, AWS CLI, and Terraform
 - AWS Secrets Manager as the secret source of truth
 
 This avoids using long-lived `staging` and `prod` code branches just to remember deployment state.
@@ -63,6 +63,13 @@ Canonical deploy environment tokens are:
 Use those tokens in scripts and operator commands. Do not mix `prod` and `production`.
 
 ## Core Rules
+
+The Kubernetes rules below remain the default for services still on Kubernetes.
+`shinjeom-api` has an ECS migration exception: Terraform manages its ECS infrastructure, Task Definitions,
+and Service release; the documented environment-lock release script coordinates migration/deployment checks.
+Do not mix that path with Helm or an independent `aws ecs update-service` release.
+See [API migration plan](../shinjeom-api/docs/ECS_MIGRATION_PLAN.md) and
+[API EC2 operations](../shinjeom-api/docs/ECS_EC2_OPERATIONS.md).
 
 1. Terraform manages cloud infrastructure only.
 2. Helm manages Kubernetes app releases only.
@@ -201,6 +208,10 @@ Keep only narrow operator scripts such as:
 - `sync-secrets.py`
 
 These are allowed because they solve secret-handling work that is tedious and error-prone in raw CLI.
+
+The API's documented ECS release/cron-transition scripts are the scoped exception described above.
+Its existing release script assumes one host and a separate migration gate and must be changed before
+operating the two-host target. This does not introduce general build/push/secret-sync/deploy wrappers.
 
 Delete deploy wrapper scripts such as:
 
@@ -393,6 +404,32 @@ Example:
 Do not rebuild a new image for prod from the same branch state.
 
 Prod should receive the same artifact that already passed staging.
+
+## Shinjeom API ECS Operating Target
+
+Decision recorded: 2026-10-01 (KST). This is a target, not a deployment event.
+Current recorded Staging uses one ECS EC2 host/API Task and one-shot Docker job/migration containers;
+Production remains on Kubernetes until its cutover is verified.
+
+- both environments will use two EC2 hosts across two AZs, with two API Tasks, one per host
+- `desired_count=2`, `minimumHealthyPercent=50`, `maximumPercent=100` replace one Task at a time
+- size each host for one API with concurrent HTTP jobs, or startup migration, whichever needs more resources, plus host overhead/headroom
+- one host cron owner calls internal API endpoints, with failover and deployment coordination
+- each new API container migrates/verifies schema before starting the server; no separate job/migration container
+- Staging verifies single-API traffic, startup migration failure, sequential rollout, host recovery,
+  cron handoff, timeout/retry/idempotency, and rollback on an advanced but compatible schema
+
+During rollout one API must handle all traffic. API rollback does not downgrade the DB.
+There is no requirement for each host to fit two API Tasks: release the old Task's resources before placing
+its replacement. Migration and the API server run sequentially in the same container, so their memory
+requirements are compared, not added. Concurrent HTTP jobs share the API Task's resources.
+HTTP jobs currently have a 240-second application limit and a 300-second ALB idle timeout; verify caller
+timeouts and workload size before replacing the longer-running host CLI path.
+Use the API migration/operations documents for implemented procedures and remaining work;
+the generic Helm commands below apply only to the remaining Kubernetes releases.
+Keep `staging.yaml`, `prod.yaml`, deployed timestamps, and dated deployment reports unchanged until a real
+deployment occurs. After deployment, record the actual tag, commit, digest, Task Definition, DB revision,
+migration/rollout result, and runtime topology. Do not record this target as already deployed.
 
 ## Rollback Rule
 
