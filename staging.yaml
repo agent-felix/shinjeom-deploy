@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-10-01T17:31:29+09:00"
+updated_at: "2026-10-05T19:40:06+09:00"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -23,7 +23,7 @@ services:
     deployed_at: "2026-10-01T15:50:34+09:00"
     chart_commit: "9cb93362727bd5596a72f7feaa4da62de206f515"
     helm_revision: 7
-    notes: "Chart-only release: service-to-service RPM removed; NAT allowlist/auth retained. Image/tag/source unchanged. See docs/2026-10-01-ltm-common-contract-staging.md."
+    notes: "Service-to-service endpoints use NAT allowlist/auth without an RPM cap."
   darae-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
@@ -32,7 +32,7 @@ services:
     deployed_at: "2026-10-01T15:50:35+09:00"
     chart_commit: "23c1d0f5e8ea51dbbde83974fb3058d63ec4617b"
     helm_revision: 30
-    notes: "Chart-only release: internal RPM removed, public 120 RPM and NAT allowlist retained; image/source unchanged. See docs/2026-10-01-ltm-common-contract-staging.md."
+    notes: "Internal endpoints use NAT allowlist/auth without an RPM cap; public endpoints retain 120 RPM."
   minjun-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
@@ -41,7 +41,7 @@ services:
     deployed_at: "2026-10-01T15:50:37+09:00"
     chart_commit: "23c1d0f5e8ea51dbbde83974fb3058d63ec4617b"
     helm_revision: 21
-    notes: "Chart-only release: internal RPM removed, public 120 RPM and NAT allowlist retained; image/source unchanged. See docs/2026-10-01-ltm-common-contract-staging.md."
+    notes: "Internal endpoints use NAT allowlist/auth without an RPM cap; public endpoints retain 120 RPM."
   heejin-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
@@ -50,7 +50,7 @@ services:
     deployed_at: "2026-10-01T15:50:38+09:00"
     chart_commit: "23c1d0f5e8ea51dbbde83974fb3058d63ec4617b"
     helm_revision: 14
-    notes: "Chart-only release: internal RPM removed, public 120 RPM and NAT allowlist retained; image/source unchanged. See docs/2026-10-01-ltm-common-contract-staging.md."
+    notes: "Internal endpoints use NAT allowlist/auth without an RPM cap; public endpoints retain 120 RPM."
   ken-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
@@ -59,7 +59,7 @@ services:
     deployed_at: "2026-10-01T15:50:40+09:00"
     chart_commit: "23c1d0f5e8ea51dbbde83974fb3058d63ec4617b"
     helm_revision: 18
-    notes: "Chart-only release: internal RPM removed, public 120 RPM and NAT allowlist retained; image/source unchanged. Digest sha256:25071e19bb9fe4f2ac29328cf48c3dbfd3ac5904d4436d60b60136bf57d23b2b. See docs/2026-10-01-ltm-common-contract-staging.md."
+    notes: "Internal endpoints use NAT allowlist/auth without an RPM cap; public endpoints retain 120 RPM. Digest sha256:25071e19bb9fe4f2ac29328cf48c3dbfd3ac5904d4436d60b60136bf57d23b2b."
   mio-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
@@ -68,10 +68,10 @@ services:
     deployed_at: "2026-10-01T15:50:41+09:00"
     chart_commit: "23c1d0f5e8ea51dbbde83974fb3058d63ec4617b"
     helm_revision: 7
-    notes: "Chart-only release: internal RPM removed, public 120 RPM and NAT allowlist retained; image/source unchanged. Digest sha256:934c360fc43f989d25f7fdef2b0dbb0750e1202de61ad8674d5fd540e46ab77d. See docs/2026-10-01-ltm-common-contract-staging.md."
+    notes: "Internal endpoints use NAT allowlist/auth without an RPM cap; public endpoints retain 120 RPM. Digest sha256:934c360fc43f989d25f7fdef2b0dbb0750e1202de61ad8674d5fd540e46ab77d."
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: "migration/shinjeom-api-ecs-ec2"
+    tracked_branch: dev
     deployed_tag: "ecs-ec2-body-limit-1fad2ed"
     deployed_commit: "1fad2ed358ba04717fbe4a917ce0b021f93c95e4"
     deployed_at: "2026-10-01T17:30:29+09:00"
@@ -79,7 +79,7 @@ services:
     configuration_base_commit: "6d52f4ed961b7070c3cd076da3b19bd169da6a31"
     configuration_tfvars_sha256: "67dc094fc52be2224e94ff67100615e685fe1e5246beb8747fdee5b8475729f6"
     task_definition: "shinjeom-api-staging-ec2:7"
-    notes: "Resource-only release, configuration committed after deployment: Task CPU 256 -> 512 units, Task/container memory 512 -> 1024 MiB. EC2 t3.small hosts, image/source/digest sha256:c98d45449d418ad5279b33f1e33ee60ac0c5fc509c17bef929e784e49becae16 and common LTM /api/v1 contract unchanged. Two tasks on distinct AZ hosts, two healthy ALB targets, startup schema a8c3e1d7b902 verified, API/DB HTTP 200. Deployment lock removed, schedules resumed, Terraform No changes. Tests not run. See docs/2026-10-01-api-ecs-task-resize-staging.md."
+    notes: "ECS on EC2 in shinjeom-staging/ap-northeast-2. Two t3.small hosts on distinct AZs; Task CPU 512 units, memory 1024 MiB. Image digest sha256:c98d45449d418ad5279b33f1e33ee60ac0c5fc509c17bef929e784e49becae16. LTM uses the common /api/v1 tenant contract. Host schedules enabled; no Kubernetes API recovery path."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: migration/shinjeom-api-ecs-ec2
@@ -87,7 +87,7 @@ services:
     deployed_commit: "0ce924206fae59a6b3e1b6c0cfca1011f30d480b"
     deployed_at: "2026-10-01T15:51:07+09:00"
     helm_revision: 16
-    notes: "Common tenant API restored; ECS-specific routes/auth/env removed. Digest sha256:96c3d68e81bc0ddb850c873509f25a2958778e4a99d77188480c9e64f2cfe9d1. Original key/label and Faceless tenant retained; central/K8s dedicated credential removed with secretctl a06f843, status synced. API 2/2 and worker 1/1 ready. Staging /api/v1 Prefix ingress retains NAT allowlist and has no RPM cap. Tests not run; see docs/2026-10-01-ltm-common-contract-staging.md."
+    notes: "Common /api/v1 tenant API with the existing app label/key and Faceless tenant. NAT allowlist/auth, no ingress RPM cap. Digest sha256:96c3d68e81bc0ddb850c873509f25a2958778e4a99d77188480c9e64f2cfe9d1."
   orrery-api:
     repo_path: ../orrery
     tracked_branch: main
