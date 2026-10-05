@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-10-05T13:26:13Z"
+updated_at: "2026-10-05T15:32:56Z"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -64,7 +64,7 @@ services:
     deployed_commit: "1fad2ed358ba04717fbe4a917ce0b021f93c95e4"
     deployed_at: null
     task_definition: "shinjeom-api-prod-ec2:1"
-    notes: "ECS on EC2 in shinjeom-prod/us-west-2. Two t3.medium hosts on distinct AZs; Task CPU 1024 units, memory 2048 MiB. Image digest sha256:c98d45449d418ad5279b33f1e33ee60ac0c5fc509c17bef929e784e49becae16 matches staging. API DNS points to ECS; host schedules enabled. SES uses the shinjeom-prod sender. K8s API retained for recovery, CronJobs suspended. Original image deployment time is not recorded."
+    notes: "ECS on EC2 in shinjeom-prod/us-west-2. Two t3.medium hosts on distinct AZs; Task CPU 1024 units, memory 2048 MiB. Image digest sha256:c98d45449d418ad5279b33f1e33ee60ac0c5fc509c17bef929e784e49becae16 matches staging. API DNS points to ECS; host schedules enabled. SES uses the shinjeom-prod sender. ECS-only API; no Kubernetes recovery path. Original image deployment time is not recorded."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: dev
