@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-10-02T08:21:47Z"
+updated_at: "2026-10-05T15:32:56Z"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -59,11 +59,12 @@ services:
     notes: "Promoted without rebuilding from the staging-tested image. Accepts original user image formats; Gemini image requests are capped below 19 MB with quality 100 preferred before fallback compression/resizing. Helm 3; 2/2 ready; /healthz ok. Digest sha256:934c360fc43f989d25f7fdef2b0dbb0750e1202de61ad8674d5fd540e46ab77d."
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: "feature/manshin-pass-iap-reliability"
-    deployed_tag: "shinjeom-api-v2.5.0-rc6"
-    deployed_commit: null
+    tracked_branch: dev
+    deployed_tag: "ecs-ec2-body-limit-1fad2ed"
+    deployed_commit: "1fad2ed358ba04717fbe4a917ce0b021f93c95e4"
     deployed_at: null
-    notes: "Read-only inventory correction on 2026-10-02 around 17:00 KST; no deployment performed. Kubernetes Deployment uses rc6, 2/2 pods running with no restarts, both on the same node. ECR agsn-prod/us-west-2 prod/shinjeom-api rc6 tag digest: sha256:6af890fd1f6335c156f1539221b458301e7a8ee45755ddffe40a4de253421211. Build provenance, deployment time and current DB revision were not verified, so commit/time are intentionally null; tracked_branch is retained from the prior record, not reverified. Superseded rc3 record: commit a40bfccd5b26ee5cdf34aa305cc02a4a376d84d7, deployed 2026-09-21T17:34:37+09:00, Helm 41, DB a91f2c7e4b60, digest sha256:826804f065df03b7db1abd6b9c0ffb776cacda54d8804dcb971ff84ed7128207. Production ECS is not provisioned; CronJobs remain enabled. See docs/2026-10-02-api-prod-inventory.md for the pre-migration inventory and ../shinjeom-api/docs/ECS_PRODUCTION_MIGRATION_PLAN.md for the execution plan. New SES preparation is planned separately; existing SES runtime credentials remain unchanged."
+    task_definition: "shinjeom-api-prod-ec2:1"
+    notes: "ECS on EC2 in shinjeom-prod/us-west-2. Two t3.medium hosts on distinct AZs; Task CPU 1024 units, memory 2048 MiB. Image digest sha256:c98d45449d418ad5279b33f1e33ee60ac0c5fc509c17bef929e784e49becae16 matches staging. API DNS points to ECS; host schedules enabled. SES uses the shinjeom-prod sender. ECS-only API; no Kubernetes recovery path. Original image deployment time is not recorded."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: dev
