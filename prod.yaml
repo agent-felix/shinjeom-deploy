@@ -1,7 +1,6 @@
 environment: prod
 updated_at: "2026-10-07T07:15:02Z"
 verified_at: "2026-10-07T07:15:02Z"
-verification_report: docs/2026-10-07-deployment-state-audit.md
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -74,7 +73,7 @@ services:
     deployed_commit: "1fad2ed358ba04717fbe4a917ce0b021f93c95e4"
     deployed_at: "2026-10-05T22:17:30+09:00"
     task_definition: "shinjeom-api-prod-ec2:1"
-    notes: "ECS on EC2 in shinjeom-prod/us-west-2. Image digest sha256:c98d45449d418ad5279b33f1e33ee60ac0c5fc509c17bef929e784e49becae16; image tag and source commit unchanged. Current ECS deployment completed; 2/2 Tasks RUNNING. deployed_at is the current ECS deployment creation time, not the original image promotion time. ECS-only API; no Kubernetes recovery path. See docs/2026-10-07-deployment-state-audit.md."
+    notes: "ECS on EC2 in shinjeom-prod/us-west-2. Image digest sha256:c98d45449d418ad5279b33f1e33ee60ac0c5fc509c17bef929e784e49becae16; image tag and source commit unchanged. Current ECS deployment completed; 2/2 Tasks RUNNING. deployed_at is the current ECS deployment creation time, not the original image promotion time. ECS-only API; no Kubernetes recovery path."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: dev
@@ -101,7 +100,7 @@ services:
     deployed_build: "8"
     asc_build_id: "465b66a4-dc35-4e85-a718-33b212b272e9"
     build_uploaded_at: "2026-09-23T02:44:49Z"
-    notes: "App Store Connect version 2.5.0 is READY_FOR_SALE / READY_FOR_DISTRIBUTION and explicitly linked to build 8. Source Git commit/tag and App Store release time are not available from the queried metadata and remain null. See docs/2026-10-07-deployment-state-audit.md."
+    notes: "App Store Connect version 2.5.0 is READY_FOR_SALE / READY_FOR_DISTRIBUTION and explicitly linked to build 8. Source Git commit/tag and App Store release time are not available from the queried metadata and remain null."
   faceless:
     repo_path: ../shinjeom-faceless
     tracked_branch: main
@@ -110,7 +109,7 @@ services:
     deployed_at: "2026-10-07T14:27:31+09:00"
     chart_commit: c8bb78e4168a8a89ffed2a5fb5b885e029dbcc84
     helm_revision: 8
-    notes: "Promoted staging-tested OCI index without rebuilding: sha256:e09f66e64925eaa3923e87d841b6a76cd7581b4daeb4462298a81a1e51d5d321. Separate history cache Redis with 128MiB maxmemory and 64MiB client memory limit. All three Pods Ready; health, public auth/CORS, Redis isolation and NetworkPolicy verified; lock Redis unchanged. Compaction/usage and existing ECS ingress/callback retained. No synthetic production conversations or backfills. Live conversation/cache-hit validation pending organic traffic at verification. Disable historyCache to roll back caching; do not roll back to rc12. See docs/2026-10-07-faceless-history-cache.md."
+    notes: "Promoted staging-tested OCI index without rebuilding: sha256:e09f66e64925eaa3923e87d841b6a76cd7581b4daeb4462298a81a1e51d5d321. Separate history cache Redis with 128MiB maxmemory and 64MiB client memory limit. All three Pods Ready; health, public auth/CORS, Redis isolation and NetworkPolicy verified; lock Redis unchanged. Compaction/usage and existing ECS ingress/callback retained. No synthetic production conversations or backfills. Live conversation/cache-hit validation pending organic traffic at verification. Disable historyCache to roll back caching; do not roll back to rc12."
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
     tracked_branch: main
@@ -119,7 +118,7 @@ services:
     deployed_at: null
     artifact_last_modified_at: "2026-09-23T02:57:47Z"
     entrypoint_asset: "index-BcOitXsh.js"
-    notes: "Public HTML matches S3 manshin-backstage-prod/faceless/index.html and references index-BcOitXsh.js with index-bu6zSiF1.css. HTML changed after the previously recorded rc3 deployment (696480077ebe3a9e9291996811c388eb28c2a441). Current source commit, immutable tag and deployment time cannot be attested from artifact metadata; previous rc3 attribution is withdrawn. S3 LastModified is an artifact timestamp, not a verified deployment time. See docs/2026-10-07-deployment-state-audit.md."
+    notes: "Public HTML matches S3 manshin-backstage-prod/faceless/index.html and references index-BcOitXsh.js with index-bu6zSiF1.css. HTML changed after the previously recorded rc3 deployment (696480077ebe3a9e9291996811c388eb28c2a441). Current source commit, immutable tag and deployment time cannot be attested from artifact metadata; previous rc3 attribution is withdrawn. S3 LastModified is an artifact timestamp, not a verified deployment time."
   shinjeom-web:
     repo_path: ../shinjeom-web
     tracked_branch: "main"
@@ -127,4 +126,4 @@ services:
     deployed_commit: "6169d929902260bc36d8aa096483cf602bb2441d"
     deployed_at: "2026-10-07T06:15:11Z"
     deployed_version: "1.1.0"
-    notes: "GitHub Actions deploy.yml run 37580172559 succeeded on main. Public settings JavaScript confirms version 1.1.0 and commit 6169d929902260bc36d8aa096483cf602bb2441d. No immutable release tag. deployed_at is the Deploy step completion time. See docs/2026-10-07-deployment-state-audit.md."
+    notes: "GitHub Actions deploy.yml run 37580172559 succeeded on main. Public settings JavaScript confirms version 1.1.0 and commit 6169d929902260bc36d8aa096483cf602bb2441d. No immutable release tag. deployed_at is the Deploy step completion time."
