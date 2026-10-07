@@ -1,5 +1,5 @@
 environment: prod
-updated_at: "2026-10-05T15:32:56Z"
+updated_at: "2026-10-07T05:29:13Z"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -88,13 +88,13 @@ services:
     notes: ""
   faceless:
     repo_path: ../shinjeom-faceless
-    tracked_branch: feature/text-consult-web-access
-    deployed_tag: faceless-v0.1.0-rc13
-    deployed_commit: 4aefd368afe94ebdd466b2530b4b1155ed0ef57f
-    deployed_at: "2026-10-03T12:27:19+09:00"
-    chart_commit: 25a7ec2f3f74f90fb2cd61838bfe77d3c90013cf
-    helm_revision: 6
-    notes: "Promoted the staging-tested OCI index without rebuilding: sha256:0ef6f587df0da1e5d63cf592caceaa9cd9e949c3912928c3b80e91294d1dfbe4. Compatible reader first at revision 5, one active long-room backfill (1096 generations; 6 chunks; 81s; budget 858283 to 78697), then enabled default compaction at revision 6. Original 2191 events and source hash unchanged; checkpoint and public history verified. A concurrent real user turn completed; one temporary room_busy occurred during backfill. Application/Redis ready, drain and ingress timeouts 360s. Keep rc13 if disabling summaries; do not roll back to rc12. See docs/2026-10-03-faceless-context-compaction-production.md."
+    tracked_branch: main
+    deployed_tag: faceless-v0.1.0-rc14
+    deployed_commit: c8bb78e4168a8a89ffed2a5fb5b885e029dbcc84
+    deployed_at: "2026-10-07T14:27:31+09:00"
+    chart_commit: c8bb78e4168a8a89ffed2a5fb5b885e029dbcc84
+    helm_revision: 8
+    notes: "Promoted staging-tested OCI index without rebuilding: sha256:e09f66e64925eaa3923e87d841b6a76cd7581b4daeb4462298a81a1e51d5d321. Separate history cache Redis with 128MiB maxmemory and 64MiB client memory limit. All three Pods Ready; health, public auth/CORS, Redis isolation and NetworkPolicy verified; lock Redis unchanged. Compaction/usage and existing ECS ingress/callback retained. No synthetic production conversations or backfills. Live conversation/cache-hit validation pending organic traffic at verification. Disable historyCache to roll back caching; do not roll back to rc12. See docs/2026-10-07-faceless-history-cache.md."
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
     tracked_branch: main

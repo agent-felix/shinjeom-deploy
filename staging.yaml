@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-10-05T19:40:06+09:00"
+updated_at: "2026-10-07T05:29:13Z"
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
@@ -104,13 +104,13 @@ services:
     notes: "Staging pass catalog registered and read back with no pending changes; review screenshots remain pending. Local staging release URLs configured. User will Archive ShinjeomStaging and upload to TestFlight; no mobile build uploaded by this deployment. Existing Xcode local StoreKit configuration retained."
   faceless:
     repo_path: ../shinjeom-faceless
-    tracked_branch: "main"
-    deployed_tag: "faceless-v0.1.0-rc13"
-    deployed_commit: "4aefd368afe94ebdd466b2530b4b1155ed0ef57f"
-    deployed_at: "2026-10-03T12:09:28+09:00"
-    chart_commit: "7a4ad8e41288f46bc5ae6ff99e3216d29c187f0e"
-    helm_revision: 17
-    notes: "Reader-first rollout at revision 16, then enabled default context compaction at revision 17. API and Redis 1/1; drain and ingress timeouts 360s. 242 tests passed. Isolated staging previews verified actual backfill dry-run, partial failure/recovery, checkpoint reuse, public SSE, regeneration, selection, suggestions and replay; automatic compaction reduced budget 382263 to 64687 in two chunks. OCI index sha256:0ef6f587df0da1e5d63cf592caceaa9cd9e949c3912928c3b80e91294d1dfbe4. Do not roll back to rc12 after summary writes. Production untouched. See docs/2026-10-03-faceless-context-compaction-staging.md."
+    tracked_branch: "staging"
+    deployed_tag: "faceless-v0.1.0-rc14"
+    deployed_commit: "c8bb78e4168a8a89ffed2a5fb5b885e029dbcc84"
+    deployed_at: "2026-10-07T14:25:08+09:00"
+    chart_commit: "c8bb78e4168a8a89ffed2a5fb5b885e029dbcc84"
+    helm_revision: 18
+    notes: "Separate disposable history cache Redis; 128MiB maxmemory, 64MiB client memory limit. OCI index sha256:e09f66e64925eaa3923e87d841b6a76cd7581b4daeb4462298a81a1e51d5d321. 277 tests and 7 subtests passed. Isolated preview verified public SSE, regeneration, selection, replay, cold/warm equality, expiry rebuild and isolated cache outage fallback. Concurrent 8MiB snapshots passed at 250ms timeout without client eviction. All three Pods Ready; lock Redis unchanged; compaction/usage retained. Do not roll back to rc12. See docs/2026-10-07-faceless-history-cache.md."
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
     tracked_branch: "main"
