@@ -1,19 +1,23 @@
 environment: staging
-updated_at: "2026-10-07T05:29:13Z"
+updated_at: "2026-10-07T07:15:02Z"
+verified_at: "2026-10-07T07:15:02Z"
+verification_report: docs/2026-10-07-deployment-state-audit.md
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
     tracked_branch: feature/add-saju-profile
     deployed_tag: shinjeom-agents-sarang-v3.0.10
     deployed_commit: a0efe607921e3fc84b90d69542b728b1008fae5f
-    deployed_at: "2026-08-28T11:47:28+09:00"
+    deployed_at: "2026-09-29T21:48:06+09:00"
+    helm_revision: 52
     notes: ""
   shinjeom-agents-yeona:
     repo_path: ../shinjeom-agents
     tracked_branch: feature/add-saju-profile
     deployed_tag: shinjeom-agents-yeona-v3.0.5
     deployed_commit: 15fab663325779458b2d1457d5452a79437afcc4
-    deployed_at: "2026-08-28T11:54:54+09:00"
+    deployed_at: "2026-09-29T21:44:03+09:00"
+    helm_revision: 37
     notes: ""
   yeona-agent:
     repo_path: ../yeona-agent
@@ -74,12 +78,12 @@ services:
     tracked_branch: dev
     deployed_tag: "ecs-ec2-body-limit-1fad2ed"
     deployed_commit: "1fad2ed358ba04717fbe4a917ce0b021f93c95e4"
-    deployed_at: "2026-10-01T17:30:29+09:00"
+    deployed_at: "2026-10-07T14:01:50+09:00"
     configuration_commit: "72c92e1aafe6eec5e0f41b779c5cae0b7d3148aa"
     configuration_base_commit: "6d52f4ed961b7070c3cd076da3b19bd169da6a31"
     configuration_tfvars_sha256: "67dc094fc52be2224e94ff67100615e685fe1e5246beb8747fdee5b8475729f6"
-    task_definition: "shinjeom-api-staging-ec2:7"
-    notes: "ECS on EC2 in shinjeom-staging/ap-northeast-2. Two t3.small hosts on distinct AZs; Task CPU 512 units, memory 1024 MiB. Image digest sha256:c98d45449d418ad5279b33f1e33ee60ac0c5fc509c17bef929e784e49becae16. LTM uses the common /api/v1 tenant contract. Host schedules enabled; no Kubernetes API recovery path."
+    task_definition: "shinjeom-api-staging-ec2:8"
+    notes: "ECS on EC2 in shinjeom-staging/ap-northeast-2. Image digest sha256:c98d45449d418ad5279b33f1e33ee60ac0c5fc509c17bef929e784e49becae16; image tag and source commit unchanged. Current ECS deployment completed; 2/2 Tasks RUNNING. deployed_at is the current ECS deployment creation time, not the original image promotion time. Task Definition advanced from revision 7 to 8. Previously recorded configuration commits have not been re-attested. ECS-only API; no Kubernetes recovery path. See docs/2026-10-07-deployment-state-audit.md."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: migration/shinjeom-api-ecs-ec2
@@ -93,7 +97,8 @@ services:
     tracked_branch: main
     deployed_tag: orrery-api-v0.1.5
     deployed_commit: 77c0bf62db2404bb3732b6ea45e7306d24a7ecf2
-    deployed_at: "2026-08-28T10:43:35+09:00"
+    deployed_at: "2026-10-06T14:01:40+09:00"
+    helm_revision: 8
     notes: "Helm resources updated from 984f4a9"
   shinjeom-mobile:
     repo_path: ../shinjeom-mobile
@@ -101,7 +106,11 @@ services:
     deployed_tag: null
     deployed_commit: null
     deployed_at: null
-    notes: "Staging pass catalog registered and read back with no pending changes; review screenshots remain pending. Local staging release URLs configured. User will Archive ShinjeomStaging and upload to TestFlight; no mobile build uploaded by this deployment. Existing Xcode local StoreKit configuration retained."
+    latest_uploaded_version: "2.5.0"
+    latest_uploaded_build: "8"
+    asc_build_id: "ad0d9a0c-3476-4f06-b4d2-3f3b6866b1ae"
+    build_uploaded_at: "2026-09-23T01:49:52Z"
+    notes: "App Store Connect latest uploaded build is 2.5.0 (8), VALID and not expired. Upload is not proof of TestFlight group distribution; staging App Store version 1.0 remains PREPARE_FOR_SUBMISSION. Source Git commit/tag and TestFlight distribution time are not available from the queried metadata and remain null. See docs/2026-10-07-deployment-state-audit.md."
   faceless:
     repo_path: ../shinjeom-faceless
     tracked_branch: "staging"
@@ -114,14 +123,17 @@ services:
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
     tracked_branch: "main"
-    deployed_tag: "shinjeom-backstage-v0.1.0-rc3"
-    deployed_commit: "696480077ebe3a9e9291996811c388eb28c2a441"
-    deployed_at: "2026-09-18T17:46:51+09:00"
-    notes: "Localized plot editor from clean tagged worktree. 59 browser tests passed. Published to manshin-backstage-staging/faceless; CloudFront invalidation completed; public HTML and JS/CSS match release artifacts."
+    deployed_tag: null
+    deployed_commit: null
+    deployed_at: null
+    artifact_last_modified_at: "2026-09-22T02:47:07Z"
+    entrypoint_asset: "index-DxMkwwSn.js"
+    notes: "Public HTML matches S3 manshin-backstage-staging/faceless/index.html and references index-DxMkwwSn.js with index-bu6zSiF1.css. HTML changed after the previously recorded rc3 deployment (696480077ebe3a9e9291996811c388eb28c2a441). Current source commit, immutable tag and deployment time cannot be attested from artifact metadata; previous rc3 attribution is withdrawn. S3 LastModified is an artifact timestamp, not a verified deployment time. See docs/2026-10-07-deployment-state-audit.md."
   shinjeom-web:
     repo_path: ../shinjeom-web
     tracked_branch: "staging"
     deployed_tag: null
-    deployed_commit: "2de7e0acf9bf71bf75ceca6b65f9db661b7e56bf"
-    deployed_at: "2026-09-18T23:34:58+09:00"
-    notes: "Web 1.1.0 via the normal branch/Actions workflow, replacing the earlier direct staging release. Includes PRs #96/#97 and test synchronization fix #98. User requested promotion without waiting for dev; staging ran its own full checks, build, deploy and smoke successfully. Run 35356302206. Public home/settings/chat list/chat shell returned 200; locale redirect 302; deployed SHA and staging Faceless origin found in served JavaScript. See docs/2026-09-18-manshin-pass-web-release.md."
+    deployed_commit: "6169d929902260bc36d8aa096483cf602bb2441d"
+    deployed_at: "2026-10-07T06:10:36Z"
+    deployed_version: "1.1.0"
+    notes: "GitHub Actions deploy.yml run 37579694191 succeeded on staging. Public settings JavaScript confirms version 1.1.0 and commit 6169d929902260bc36d8aa096483cf602bb2441d. No immutable release tag. deployed_at is the Deploy step completion time. See docs/2026-10-07-deployment-state-audit.md."
