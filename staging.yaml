@@ -1,19 +1,23 @@
 environment: staging
-updated_at: "2026-10-01T17:31:29+09:00"
+updated_at: "2026-10-07T07:15:02Z"
+verified_at: "2026-10-07T07:15:02Z"
+verification_report: docs/2026-10-07-deployment-state-audit.md
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
     tracked_branch: feature/add-saju-profile
     deployed_tag: shinjeom-agents-sarang-v3.0.10
     deployed_commit: a0efe607921e3fc84b90d69542b728b1008fae5f
-    deployed_at: "2026-08-28T11:47:28+09:00"
+    deployed_at: "2026-09-29T21:48:06+09:00"
+    helm_revision: 52
     notes: ""
   shinjeom-agents-yeona:
     repo_path: ../shinjeom-agents
     tracked_branch: feature/add-saju-profile
     deployed_tag: shinjeom-agents-yeona-v3.0.5
     deployed_commit: 15fab663325779458b2d1457d5452a79437afcc4
-    deployed_at: "2026-08-28T11:54:54+09:00"
+    deployed_at: "2026-09-29T21:44:03+09:00"
+    helm_revision: 37
     notes: ""
   yeona-agent:
     repo_path: ../yeona-agent
@@ -23,7 +27,7 @@ services:
     deployed_at: "2026-10-01T15:50:34+09:00"
     chart_commit: "9cb93362727bd5596a72f7feaa4da62de206f515"
     helm_revision: 7
-    notes: "Chart-only release: service-to-service RPM removed; NAT allowlist/auth retained. Image/tag/source unchanged. See docs/2026-10-01-ltm-common-contract-staging.md."
+    notes: "Service-to-service endpoints use NAT allowlist/auth without an RPM cap."
   darae-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
@@ -32,7 +36,7 @@ services:
     deployed_at: "2026-10-01T15:50:35+09:00"
     chart_commit: "23c1d0f5e8ea51dbbde83974fb3058d63ec4617b"
     helm_revision: 30
-    notes: "Chart-only release: internal RPM removed, public 120 RPM and NAT allowlist retained; image/source unchanged. See docs/2026-10-01-ltm-common-contract-staging.md."
+    notes: "Internal endpoints use NAT allowlist/auth without an RPM cap; public endpoints retain 120 RPM."
   minjun-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
@@ -41,7 +45,7 @@ services:
     deployed_at: "2026-10-01T15:50:37+09:00"
     chart_commit: "23c1d0f5e8ea51dbbde83974fb3058d63ec4617b"
     helm_revision: 21
-    notes: "Chart-only release: internal RPM removed, public 120 RPM and NAT allowlist retained; image/source unchanged. See docs/2026-10-01-ltm-common-contract-staging.md."
+    notes: "Internal endpoints use NAT allowlist/auth without an RPM cap; public endpoints retain 120 RPM."
   heejin-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
@@ -50,7 +54,7 @@ services:
     deployed_at: "2026-10-01T15:50:38+09:00"
     chart_commit: "23c1d0f5e8ea51dbbde83974fb3058d63ec4617b"
     helm_revision: 14
-    notes: "Chart-only release: internal RPM removed, public 120 RPM and NAT allowlist retained; image/source unchanged. See docs/2026-10-01-ltm-common-contract-staging.md."
+    notes: "Internal endpoints use NAT allowlist/auth without an RPM cap; public endpoints retain 120 RPM."
   ken-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
@@ -59,7 +63,7 @@ services:
     deployed_at: "2026-10-01T15:50:40+09:00"
     chart_commit: "23c1d0f5e8ea51dbbde83974fb3058d63ec4617b"
     helm_revision: 18
-    notes: "Chart-only release: internal RPM removed, public 120 RPM and NAT allowlist retained; image/source unchanged. Digest sha256:25071e19bb9fe4f2ac29328cf48c3dbfd3ac5904d4436d60b60136bf57d23b2b. See docs/2026-10-01-ltm-common-contract-staging.md."
+    notes: "Internal endpoints use NAT allowlist/auth without an RPM cap; public endpoints retain 120 RPM. Digest sha256:25071e19bb9fe4f2ac29328cf48c3dbfd3ac5904d4436d60b60136bf57d23b2b."
   mio-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
@@ -68,18 +72,18 @@ services:
     deployed_at: "2026-10-01T15:50:41+09:00"
     chart_commit: "23c1d0f5e8ea51dbbde83974fb3058d63ec4617b"
     helm_revision: 7
-    notes: "Chart-only release: internal RPM removed, public 120 RPM and NAT allowlist retained; image/source unchanged. Digest sha256:934c360fc43f989d25f7fdef2b0dbb0750e1202de61ad8674d5fd540e46ab77d. See docs/2026-10-01-ltm-common-contract-staging.md."
+    notes: "Internal endpoints use NAT allowlist/auth without an RPM cap; public endpoints retain 120 RPM. Digest sha256:934c360fc43f989d25f7fdef2b0dbb0750e1202de61ad8674d5fd540e46ab77d."
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: "migration/shinjeom-api-ecs-ec2"
+    tracked_branch: dev
     deployed_tag: "ecs-ec2-body-limit-1fad2ed"
     deployed_commit: "1fad2ed358ba04717fbe4a917ce0b021f93c95e4"
-    deployed_at: "2026-10-01T17:30:29+09:00"
+    deployed_at: "2026-10-07T14:01:50+09:00"
     configuration_commit: "72c92e1aafe6eec5e0f41b779c5cae0b7d3148aa"
     configuration_base_commit: "6d52f4ed961b7070c3cd076da3b19bd169da6a31"
     configuration_tfvars_sha256: "67dc094fc52be2224e94ff67100615e685fe1e5246beb8747fdee5b8475729f6"
-    task_definition: "shinjeom-api-staging-ec2:7"
-    notes: "Resource-only release, configuration committed after deployment: Task CPU 256 -> 512 units, Task/container memory 512 -> 1024 MiB. EC2 t3.small hosts, image/source/digest sha256:c98d45449d418ad5279b33f1e33ee60ac0c5fc509c17bef929e784e49becae16 and common LTM /api/v1 contract unchanged. Two tasks on distinct AZ hosts, two healthy ALB targets, startup schema a8c3e1d7b902 verified, API/DB HTTP 200. Deployment lock removed, schedules resumed, Terraform No changes. Tests not run. See docs/2026-10-01-api-ecs-task-resize-staging.md."
+    task_definition: "shinjeom-api-staging-ec2:8"
+    notes: "ECS on EC2 in shinjeom-staging/ap-northeast-2. Image digest sha256:c98d45449d418ad5279b33f1e33ee60ac0c5fc509c17bef929e784e49becae16; image tag and source commit unchanged. Current ECS deployment completed; 2/2 Tasks RUNNING. deployed_at is the current ECS deployment creation time, not the original image promotion time. Task Definition advanced from revision 7 to 8. Previously recorded configuration commits have not been re-attested. ECS-only API; no Kubernetes recovery path. See docs/2026-10-07-deployment-state-audit.md."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: migration/shinjeom-api-ecs-ec2
@@ -87,13 +91,14 @@ services:
     deployed_commit: "0ce924206fae59a6b3e1b6c0cfca1011f30d480b"
     deployed_at: "2026-10-01T15:51:07+09:00"
     helm_revision: 16
-    notes: "Common tenant API restored; ECS-specific routes/auth/env removed. Digest sha256:96c3d68e81bc0ddb850c873509f25a2958778e4a99d77188480c9e64f2cfe9d1. Original key/label and Faceless tenant retained; central/K8s dedicated credential removed with secretctl a06f843, status synced. API 2/2 and worker 1/1 ready. Staging /api/v1 Prefix ingress retains NAT allowlist and has no RPM cap. Tests not run; see docs/2026-10-01-ltm-common-contract-staging.md."
+    notes: "Common /api/v1 tenant API with the existing app label/key and Faceless tenant. NAT allowlist/auth, no ingress RPM cap. Digest sha256:96c3d68e81bc0ddb850c873509f25a2958778e4a99d77188480c9e64f2cfe9d1."
   orrery-api:
     repo_path: ../orrery
     tracked_branch: main
     deployed_tag: orrery-api-v0.1.5
     deployed_commit: 77c0bf62db2404bb3732b6ea45e7306d24a7ecf2
-    deployed_at: "2026-08-28T10:43:35+09:00"
+    deployed_at: "2026-10-06T14:01:40+09:00"
+    helm_revision: 8
     notes: "Helm resources updated from 984f4a9"
   shinjeom-mobile:
     repo_path: ../shinjeom-mobile
@@ -101,27 +106,34 @@ services:
     deployed_tag: null
     deployed_commit: null
     deployed_at: null
-    notes: "Staging pass catalog registered and read back with no pending changes; review screenshots remain pending. Local staging release URLs configured. User will Archive ShinjeomStaging and upload to TestFlight; no mobile build uploaded by this deployment. Existing Xcode local StoreKit configuration retained."
+    latest_uploaded_version: "2.5.0"
+    latest_uploaded_build: "8"
+    asc_build_id: "ad0d9a0c-3476-4f06-b4d2-3f3b6866b1ae"
+    build_uploaded_at: "2026-09-23T01:49:52Z"
+    notes: "App Store Connect latest uploaded build is 2.5.0 (8), VALID and not expired. Upload is not proof of TestFlight group distribution; staging App Store version 1.0 remains PREPARE_FOR_SUBMISSION. Source Git commit/tag and TestFlight distribution time are not available from the queried metadata and remain null. See docs/2026-10-07-deployment-state-audit.md."
   faceless:
     repo_path: ../shinjeom-faceless
-    tracked_branch: "main"
-    deployed_tag: "faceless-v0.1.0-rc13"
-    deployed_commit: "4aefd368afe94ebdd466b2530b4b1155ed0ef57f"
-    deployed_at: "2026-10-03T12:09:28+09:00"
-    chart_commit: "7a4ad8e41288f46bc5ae6ff99e3216d29c187f0e"
-    helm_revision: 17
-    notes: "Reader-first rollout at revision 16, then enabled default context compaction at revision 17. API and Redis 1/1; drain and ingress timeouts 360s. 242 tests passed. Isolated staging previews verified actual backfill dry-run, partial failure/recovery, checkpoint reuse, public SSE, regeneration, selection, suggestions and replay; automatic compaction reduced budget 382263 to 64687 in two chunks. OCI index sha256:0ef6f587df0da1e5d63cf592caceaa9cd9e949c3912928c3b80e91294d1dfbe4. Do not roll back to rc12 after summary writes. Production untouched. See docs/2026-10-03-faceless-context-compaction-staging.md."
+    tracked_branch: "staging"
+    deployed_tag: "faceless-v0.1.0-rc14"
+    deployed_commit: "c8bb78e4168a8a89ffed2a5fb5b885e029dbcc84"
+    deployed_at: "2026-10-07T14:25:08+09:00"
+    chart_commit: "c8bb78e4168a8a89ffed2a5fb5b885e029dbcc84"
+    helm_revision: 18
+    notes: "Separate disposable history cache Redis; 128MiB maxmemory, 64MiB client memory limit. OCI index sha256:e09f66e64925eaa3923e87d841b6a76cd7581b4daeb4462298a81a1e51d5d321. 277 tests and 7 subtests passed. Isolated preview verified public SSE, regeneration, selection, replay, cold/warm equality, expiry rebuild and isolated cache outage fallback. Concurrent 8MiB snapshots passed at 250ms timeout without client eviction. All three Pods Ready; lock Redis unchanged; compaction/usage retained. Do not roll back to rc12. See docs/2026-10-07-faceless-history-cache.md."
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
     tracked_branch: "main"
-    deployed_tag: "shinjeom-backstage-v0.1.0-rc3"
-    deployed_commit: "696480077ebe3a9e9291996811c388eb28c2a441"
-    deployed_at: "2026-09-18T17:46:51+09:00"
-    notes: "Localized plot editor from clean tagged worktree. 59 browser tests passed. Published to manshin-backstage-staging/faceless; CloudFront invalidation completed; public HTML and JS/CSS match release artifacts."
+    deployed_tag: null
+    deployed_commit: null
+    deployed_at: null
+    artifact_last_modified_at: "2026-09-22T02:47:07Z"
+    entrypoint_asset: "index-DxMkwwSn.js"
+    notes: "Public HTML matches S3 manshin-backstage-staging/faceless/index.html and references index-DxMkwwSn.js with index-bu6zSiF1.css. HTML changed after the previously recorded rc3 deployment (696480077ebe3a9e9291996811c388eb28c2a441). Current source commit, immutable tag and deployment time cannot be attested from artifact metadata; previous rc3 attribution is withdrawn. S3 LastModified is an artifact timestamp, not a verified deployment time. See docs/2026-10-07-deployment-state-audit.md."
   shinjeom-web:
     repo_path: ../shinjeom-web
     tracked_branch: "staging"
     deployed_tag: null
-    deployed_commit: "2de7e0acf9bf71bf75ceca6b65f9db661b7e56bf"
-    deployed_at: "2026-09-18T23:34:58+09:00"
-    notes: "Web 1.1.0 via the normal branch/Actions workflow, replacing the earlier direct staging release. Includes PRs #96/#97 and test synchronization fix #98. User requested promotion without waiting for dev; staging ran its own full checks, build, deploy and smoke successfully. Run 35356302206. Public home/settings/chat list/chat shell returned 200; locale redirect 302; deployed SHA and staging Faceless origin found in served JavaScript. See docs/2026-09-18-manshin-pass-web-release.md."
+    deployed_commit: "6169d929902260bc36d8aa096483cf602bb2441d"
+    deployed_at: "2026-10-07T06:10:36Z"
+    deployed_version: "1.1.0"
+    notes: "GitHub Actions deploy.yml run 37579694191 succeeded on staging. Public settings JavaScript confirms version 1.1.0 and commit 6169d929902260bc36d8aa096483cf602bb2441d. No immutable release tag. deployed_at is the Deploy step completion time. See docs/2026-10-07-deployment-state-audit.md."

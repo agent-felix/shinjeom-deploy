@@ -15,9 +15,9 @@ This operating model is designed for a small team:
 
 - manual and explicit
 - low cognitive load
-- no custom deploy wrappers
+- explicit deployment paths documented by each service
 - minimal abstraction
-- plain `docker`, `helm`, and `kubectl`
+- plain `docker`, `helm`, `kubectl`, AWS CLI, and Terraform
 - AWS Secrets Manager as the secret source of truth
 
 This avoids using long-lived `staging` and `prod` code branches just to remember deployment state.
@@ -63,6 +63,10 @@ Canonical deploy environment tokens are:
 Use those tokens in scripts and operator commands. Do not mix `prod` and `production`.
 
 ## Core Rules
+
+The Kubernetes rules below remain the default for services still on Kubernetes.
+`shinjeom-api` uses a separate ECS release path; follow [API deployment](../shinjeom-api/DEPLOY.md),
+not the generic Helm commands below. Keep YAML focused on current artifacts; Git retains prior history.
 
 1. Terraform manages cloud infrastructure only.
 2. Helm manages Kubernetes app releases only.
@@ -202,6 +206,8 @@ Keep only narrow operator scripts such as:
 
 These are allowed because they solve secret-handling work that is tedious and error-prone in raw CLI.
 
+The API release path is the scoped exception described in Core Rules.
+
 Delete deploy wrapper scripts such as:
 
 - build + push + secret sync + helm deploy in one command
@@ -210,7 +216,11 @@ Those wrappers hide too much and create drift between services.
 
 ## Secret Management Standard
 
-Secret flow:
+The API consumes its environment-specific ECS runtime Secret directly; see
+[API Secret management](../shinjeom-api/docs/SECRETS.md). Central Secret/Kubernetes
+synchronization does not update ECS values or running Tasks.
+
+For services on Kubernetes, secret flow:
 
 1. local secret JSON file is prepared outside Git
 2. `put-secret.py` uploads it to AWS Secrets Manager

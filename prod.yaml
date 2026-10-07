@@ -1,82 +1,95 @@
 environment: prod
-updated_at: "2026-09-21T17:34:37+09:00"
+updated_at: "2026-10-07T07:15:02Z"
+verified_at: "2026-10-07T07:15:02Z"
+verification_report: docs/2026-10-07-deployment-state-audit.md
 services:
   shinjeom-agents-sarang:
     repo_path: ../shinjeom-agents
     tracked_branch: feature/add-saju-profile
     deployed_tag: shinjeom-agents-sarang-v3.0.9
     deployed_commit: 15fab663325779458b2d1457d5452a79437afcc4
-    deployed_at: "2026-08-28T14:00:36+09:00"
+    deployed_at: "2026-10-04T23:05:14+09:00"
+    helm_revision: 25
     notes: ""
   shinjeom-agents-yeona:
     repo_path: ../shinjeom-agents
     tracked_branch: feature/add-saju-profile
     deployed_tag: shinjeom-agents-yeona-v3.0.5
     deployed_commit: 15fab663325779458b2d1457d5452a79437afcc4
-    deployed_at: "2026-08-28T14:06:09+09:00"
+    deployed_at: "2026-10-04T23:01:09+09:00"
+    helm_revision: 18
     notes: ""
   yeona-agent:
     repo_path: ../yeona-agent
     tracked_branch: main
     deployed_tag: yeona-agent-v0.1.3
     deployed_commit: d7818943d503a0af3dcde9aedca7ed1409db50d8
-    deployed_at: "2026-08-11T19:53:04+09:00"
+    deployed_at: "2026-10-06T14:02:33+09:00"
+    helm_revision: 5
     notes: ""
   darae-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
     deployed_tag: darae-agent-v0.1.0-rc3
     deployed_commit: 168ab5e5d90ba29c30dcdfbc4aee3370f0140cf7
-    deployed_at: "2026-09-11T21:08:14+09:00"
-    notes: "Template greetings; inactivity CronJob disabled; replicas 2"
+    deployed_at: "2026-10-06T14:01:44+09:00"
+    helm_revision: 15
+    notes: "Template greetings; inactivity CronJob disabled; replicas 1"
   minjun-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
     deployed_tag: minjun-agent-v0.1.0-rc3
     deployed_commit: 168ab5e5d90ba29c30dcdfbc4aee3370f0140cf7
-    deployed_at: "2026-09-11T21:12:55+09:00"
-    notes: "Template greetings; inactivity CronJob disabled; replicas 2"
+    deployed_at: "2026-10-06T14:01:54+09:00"
+    helm_revision: 15
+    notes: "Template greetings; inactivity CronJob disabled; replicas 1"
   heejin-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
     deployed_tag: heejin-agent-v0.2.0-rc5
     deployed_commit: 168ab5e5d90ba29c30dcdfbc4aee3370f0140cf7
-    deployed_at: "2026-09-11T21:06:21+09:00"
-    notes: "Template greetings; inactivity CronJob disabled; replicas 2"
+    deployed_at: "2026-10-06T14:02:05+09:00"
+    helm_revision: 6
+    notes: "Template greetings; inactivity CronJob disabled; replicas 1"
   ken-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
     deployed_tag: ken-agent-v0.1.0-rc13
     deployed_commit: ce4cc0ae760e0e5f89c00146e1a46a210cfb6221
-    deployed_at: "2026-09-20T22:26:25+09:00"
+    deployed_at: "2026-10-06T14:02:14+09:00"
+    helm_revision: 11
     notes: "Promoted without rebuilding from the staging-tested image. Accepts original user image formats; Gemini image requests are capped below 19 MB with quality 100 preferred before fallback compression/resizing. Helm 9; 2/2 ready; /healthz ok. The stable worker pool autoscaled from 1 to 2 during the rolling update. Digest sha256:25071e19bb9fe4f2ac29328cf48c3dbfd3ac5904d4436d60b60136bf57d23b2b."
   mio-agent:
     repo_path: ../shinjeom-report-agents
     tracked_branch: main
     deployed_tag: mio-agent-v0.1.0-rc4
     deployed_commit: ce4cc0ae760e0e5f89c00146e1a46a210cfb6221
-    deployed_at: "2026-09-20T22:29:57+09:00"
+    deployed_at: "2026-10-06T14:02:24+09:00"
+    helm_revision: 5
     notes: "Promoted without rebuilding from the staging-tested image. Accepts original user image formats; Gemini image requests are capped below 19 MB with quality 100 preferred before fallback compression/resizing. Helm 3; 2/2 ready; /healthz ok. Digest sha256:934c360fc43f989d25f7fdef2b0dbb0750e1202de61ad8674d5fd540e46ab77d."
   shinjeom-api:
     repo_path: ../shinjeom-api
-    tracked_branch: "feature/manshin-pass-iap-reliability"
-    deployed_tag: "shinjeom-api-v2.5.0-rc3"
-    deployed_commit: "a40bfccd5b26ee5cdf34aa305cc02a4a376d84d7"
-    deployed_at: "2026-09-21T17:34:37+09:00"
-    notes: "Promoted the staging-tested image without rebuilding. Adds authenticated IAP catalog diagnostics, room selection/title support, current-room deletion protection, and relaxed plot localization checks. Helm 41; migration hook completed; DB revision a91f2c7e4b60 and room columns verified; 2/2 ready; internal/public health 200; unauthenticated diagnostics 401; both new pods started without error logs. Runtime secrets synced. Digest sha256:826804f065df03b7db1abd6b9c0ffb776cacda54d8804dcb971ff84ed7128207."
+    tracked_branch: dev
+    deployed_tag: "ecs-ec2-body-limit-1fad2ed"
+    deployed_commit: "1fad2ed358ba04717fbe4a917ce0b021f93c95e4"
+    deployed_at: "2026-10-05T22:17:30+09:00"
+    task_definition: "shinjeom-api-prod-ec2:1"
+    notes: "ECS on EC2 in shinjeom-prod/us-west-2. Image digest sha256:c98d45449d418ad5279b33f1e33ee60ac0c5fc509c17bef929e784e49becae16; image tag and source commit unchanged. Current ECS deployment completed; 2/2 Tasks RUNNING. deployed_at is the current ECS deployment creation time, not the original image promotion time. ECS-only API; no Kubernetes recovery path. See docs/2026-10-07-deployment-state-audit.md."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: dev
     deployed_tag: long-term-memory-v3.0.2
     deployed_commit: e55b5bfb54b380b79bd56f65987e7f5283faf4c4
-    deployed_at: "2026-08-11T17:58:10+09:00"
+    deployed_at: "2026-10-04T22:57:07+09:00"
+    helm_revision: 8
     notes: "On 2026-09-18, added the dedicated Faceless key through secretctl while preserving the original key. API and worker rolling restarts completed; API 2/2, worker 1/1 ready. Existing autoscaler increased stable workers from 1 to 2 for rollout CPU capacity. Image unchanged."
   orrery-api:
     repo_path: ../orrery
     tracked_branch: main
     deployed_tag: orrery-api-v0.1.5
     deployed_commit: 77c0bf62db2404bb3732b6ea45e7306d24a7ecf2
-    deployed_at: "2026-08-28T10:56:32+09:00"
+    deployed_at: "2026-10-06T14:02:42+09:00"
+    helm_revision: 6
     notes: "Helm resources updated from 984f4a9"
   shinjeom-mobile:
     repo_path: ../shinjeom-mobile
@@ -84,27 +97,34 @@ services:
     deployed_tag: null
     deployed_commit: null
     deployed_at: null
-    notes: ""
+    deployed_version: "2.5.0"
+    deployed_build: "8"
+    asc_build_id: "465b66a4-dc35-4e85-a718-33b212b272e9"
+    build_uploaded_at: "2026-09-23T02:44:49Z"
+    notes: "App Store Connect version 2.5.0 is READY_FOR_SALE / READY_FOR_DISTRIBUTION and explicitly linked to build 8. Source Git commit/tag and App Store release time are not available from the queried metadata and remain null. See docs/2026-10-07-deployment-state-audit.md."
   faceless:
     repo_path: ../shinjeom-faceless
-    tracked_branch: feature/text-consult-web-access
-    deployed_tag: faceless-v0.1.0-rc13
-    deployed_commit: 4aefd368afe94ebdd466b2530b4b1155ed0ef57f
-    deployed_at: "2026-10-03T12:27:19+09:00"
-    chart_commit: 25a7ec2f3f74f90fb2cd61838bfe77d3c90013cf
-    helm_revision: 6
-    notes: "Promoted the staging-tested OCI index without rebuilding: sha256:0ef6f587df0da1e5d63cf592caceaa9cd9e949c3912928c3b80e91294d1dfbe4. Compatible reader first at revision 5, one active long-room backfill (1096 generations; 6 chunks; 81s; budget 858283 to 78697), then enabled default compaction at revision 6. Original 2191 events and source hash unchanged; checkpoint and public history verified. A concurrent real user turn completed; one temporary room_busy occurred during backfill. Application/Redis ready, drain and ingress timeouts 360s. Keep rc13 if disabling summaries; do not roll back to rc12. See docs/2026-10-03-faceless-context-compaction-production.md."
+    tracked_branch: main
+    deployed_tag: faceless-v0.1.0-rc14
+    deployed_commit: c8bb78e4168a8a89ffed2a5fb5b885e029dbcc84
+    deployed_at: "2026-10-07T14:27:31+09:00"
+    chart_commit: c8bb78e4168a8a89ffed2a5fb5b885e029dbcc84
+    helm_revision: 8
+    notes: "Promoted staging-tested OCI index without rebuilding: sha256:e09f66e64925eaa3923e87d841b6a76cd7581b4daeb4462298a81a1e51d5d321. Separate history cache Redis with 128MiB maxmemory and 64MiB client memory limit. All three Pods Ready; health, public auth/CORS, Redis isolation and NetworkPolicy verified; lock Redis unchanged. Compaction/usage and existing ECS ingress/callback retained. No synthetic production conversations or backfills. Live conversation/cache-hit validation pending organic traffic at verification. Disable historyCache to roll back caching; do not roll back to rc12. See docs/2026-10-07-faceless-history-cache.md."
   shinjeom-backstage:
     repo_path: ../shinjeom-backstage
     tracked_branch: main
-    deployed_tag: shinjeom-backstage-v0.1.0-rc3
-    deployed_commit: 696480077ebe3a9e9291996811c388eb28c2a441
-    deployed_at: "2026-09-18T22:04:05+09:00"
-    notes: "Published before API rollout at the user's request, from the same clean tag as staging with production API/Faceless URLs. Private S3 manshin-backstage-prod/faceless; CloudFront E326HEXH1LVR6L; invalidation IAZSO6XO3Q1L8NRSUM4VKS3L09 completed. TypeScript/build passed; HTTPS 200, HTML/JS/CSS/font match artifacts, browser login screen verified. API v2.4.0 now supplies Backstage CORS and plot/billing DB support; authenticated login and plot authoring can be tested with an administrator account. See docs/2026-09-18-backstage-prod-deployment.md."
+    deployed_tag: null
+    deployed_commit: null
+    deployed_at: null
+    artifact_last_modified_at: "2026-09-23T02:57:47Z"
+    entrypoint_asset: "index-BcOitXsh.js"
+    notes: "Public HTML matches S3 manshin-backstage-prod/faceless/index.html and references index-BcOitXsh.js with index-bu6zSiF1.css. HTML changed after the previously recorded rc3 deployment (696480077ebe3a9e9291996811c388eb28c2a441). Current source commit, immutable tag and deployment time cannot be attested from artifact metadata; previous rc3 attribution is withdrawn. S3 LastModified is an artifact timestamp, not a verified deployment time. See docs/2026-10-07-deployment-state-audit.md."
   shinjeom-web:
     repo_path: ../shinjeom-web
     tracked_branch: "main"
     deployed_tag: null
-    deployed_commit: "4a434316848e44fce0635daa5dc80b2dfe389818"
-    deployed_at: "2026-09-19T00:26:27+09:00"
-    notes: "User-requested direct production S3 deployment from local fix/manshin-pass-price-confirmation. Unconfirmed native pass prices show Apple checkout guidance. Full web suite 1244 passed; assets/lint/typecheck/build/media checks passed. CloudFront invalidation IENQ74S9KLUFKOMHABI65BJ41H completed. Public pages and JS match the build; root locale redirect verified. Native retry change is committed locally as 9fbb09fc and still requires a new TestFlight build. Shared branches and staging were not changed. See docs/2026-09-19-pass-price-web-direct-release.md."
+    deployed_commit: "6169d929902260bc36d8aa096483cf602bb2441d"
+    deployed_at: "2026-10-07T06:15:11Z"
+    deployed_version: "1.1.0"
+    notes: "GitHub Actions deploy.yml run 37580172559 succeeded on main. Public settings JavaScript confirms version 1.1.0 and commit 6169d929902260bc36d8aa096483cf602bb2441d. No immutable release tag. deployed_at is the Deploy step completion time. See docs/2026-10-07-deployment-state-audit.md."
