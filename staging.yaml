@@ -1,5 +1,5 @@
 environment: staging
-updated_at: "2026-10-07T07:15:02Z"
+updated_at: "2026-10-08T00:54:29Z"
 verified_at: "2026-10-07T07:15:02Z"
 verification_report: docs/2026-10-07-deployment-state-audit.md
 services:
@@ -76,14 +76,15 @@ services:
   shinjeom-api:
     repo_path: ../shinjeom-api
     tracked_branch: dev
-    deployed_tag: "ecs-ec2-body-limit-1fad2ed"
-    deployed_commit: "1fad2ed358ba04717fbe4a917ce0b021f93c95e4"
-    deployed_at: "2026-10-07T14:01:50+09:00"
-    configuration_commit: "72c92e1aafe6eec5e0f41b779c5cae0b7d3148aa"
-    configuration_base_commit: "6d52f4ed961b7070c3cd076da3b19bd169da6a31"
-    configuration_tfvars_sha256: "67dc094fc52be2224e94ff67100615e685fe1e5246beb8747fdee5b8475729f6"
-    task_definition: "shinjeom-api-staging-ec2:8"
-    notes: "ECS on EC2 in shinjeom-staging/ap-northeast-2. Image digest sha256:c98d45449d418ad5279b33f1e33ee60ac0c5fc509c17bef929e784e49becae16; image tag and source commit unchanged. Current ECS deployment completed; 2/2 Tasks RUNNING. deployed_at is the current ECS deployment creation time, not the original image promotion time. Task Definition advanced from revision 7 to 8. Previously recorded configuration commits have not been re-attested. ECS-only API; no Kubernetes recovery path. See docs/2026-10-07-deployment-state-audit.md."
+    deployed_tag: "ecs-release-guard-bbca05e-20261008"
+    deployed_commit: "bbca05e613b58276322e2ab16ab1daae22eea5bd"
+    deployed_at: "2026-10-08T09:48:05.768000+09:00"
+    verified_at: "2026-10-08T00:54:29Z"
+    configuration_commit: "f39e63184facaf2029f478630bc2314e82baf9e7"
+    configuration_base_commit: "bbca05e613b58276322e2ab16ab1daae22eea5bd"
+    configuration_tfvars_sha256: "b47358ffcc68f6e746dce725269642b068511158d2e8fe7ec59e6cdc93855c2e"
+    task_definition: "shinjeom-api-staging-ec2:9"
+    notes: "ECS on EC2 in shinjeom-staging/ap-northeast-2. Image digest sha256:48af5df31b50aaaff5754578323f7b7ed334d96d539b42ade99beb23fd8ee811. Built linux/amd64 single-platform image from dev merge commit bbca05e (PR #289; includes #285, excludes #288). Image-only --check passed and the saved-plan release completed. PRIMARY COMPLETED; 2/2 Tasks RUNNING on distinct hosts/AZs; pending 0; ALB healthy 2. API health and DB product probes passed on both hosts; public health and regional conversation-language responses verified. Staging prerequisites observed Ready: Faceless rc16, Yeona v3.0.6, Sarang v3.0.11. Original scheduler activation retained and release lock removed by release script. Production unchanged. Only API deployment was updated; environment-level verified_at and other service records remain their previous audit snapshot."
   long-term-memory:
     repo_path: ../agent-station/apps/long-term-memory
     tracked_branch: migration/shinjeom-api-ecs-ec2
